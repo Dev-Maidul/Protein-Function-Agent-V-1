@@ -1,0 +1,999 @@
+{
+ "interproscan-version": "5.78-109.0",
+"results": [ {
+  "sequence" : "MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD",
+  "md5" : "c133dfce69f606f20865e9008199f852",
+  "matches" : [ {
+    "signature" : {
+      "accession" : "cd08367",
+      "name" : "P53",
+      "description" : "P53",
+      "type" : "DOMAIN",
+      "signatureLibraryRelease" : {
+        "library" : "CDD",
+        "version" : "3.21"
+      },
+      "entry" : {
+        "accession" : "IPR011615",
+        "name" : "p53_DNA-bd",
+        "description" : "p53, DNA-binding domain",
+        "type" : "DOMAIN",
+        "goXRefs" : [ {
+          "name" : "transcription cis-regulatory region binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0000976"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 109,
+      "end" : 288,
+      "representative" : false,
+      "sites" : null,
+      "evalue" : 1.26747E-97,
+      "score" : 286.858,
+      "location-fragments" : [ {
+        "start" : 109,
+        "end" : 288,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "model-ac" : "cd08367"
+  }, {
+    "signature" : {
+      "accession" : "PIRSR602117-3",
+      "name" : "PIRSR602117-3",
+      "description" : null,
+      "type" : null,
+      "signatureLibraryRelease" : {
+        "library" : "PIRSR",
+        "version" : "2025_05"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 3,
+      "end" : 393,
+      "representative" : false,
+      "sites" : [ ],
+      "hmmStart" : 2,
+      "hmmEnd" : 379,
+      "hmmLength" : 379,
+      "evalue" : 0.0,
+      "score" : 587.1,
+      "envelopeStart" : 1,
+      "envelopeEnd" : 2,
+      "location-fragments" : [ {
+        "start" : 3,
+        "end" : 393,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 0.0,
+    "score" : 587.1,
+    "scope" : null,
+    "model-ac" : "PIRSR602117-3"
+  }, {
+    "signature" : {
+      "accession" : "SSF47719",
+      "name" : "p53 tetramerization domain",
+      "description" : null,
+      "type" : "HOMOLOGOUS_SUPERFAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "SUPERFAMILY",
+        "version" : "1.75"
+      },
+      "entry" : {
+        "accession" : "IPR036674",
+        "name" : "p53_tetramer_sf",
+        "description" : "p53-like tetramerisation domain superfamily",
+        "type" : "HOMOLOGOUS_SUPERFAMILY",
+        "goXRefs" : [ {
+          "name" : "protein tetramerization",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0051262"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 319,
+      "end" : 357,
+      "representative" : false,
+      "hmmLength" : 42,
+      "location-fragments" : [ {
+        "start" : 319,
+        "end" : 357,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.31E-11,
+    "model-ac" : "0043538"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 351,
+      "end" : 393,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 351,
+        "end" : 393,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : ""
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "G3DSA:2.60.40.720",
+      "name" : "",
+      "description" : null,
+      "type" : "HOMOLOGOUS_SUPERFAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "GENE3D",
+        "version" : "4.3.0"
+      },
+      "entry" : {
+        "accession" : "IPR012346",
+        "name" : "p53/RUNT-type_TF_DNA-bd_sf",
+        "description" : "p53/RUNT-type transcription factor, DNA-binding domain superfamily",
+        "type" : "HOMOLOGOUS_SUPERFAMILY",
+        "goXRefs" : [ {
+          "name" : "DNA binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003677"
+        }, {
+          "name" : "nucleus",
+          "databaseName" : "GO",
+          "category" : "CELLULAR_COMPONENT",
+          "id" : "GO:0005634"
+        }, {
+          "name" : "DNA-binding transcription factor activity",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003700"
+        }, {
+          "name" : "regulation of DNA-templated transcription",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006355"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 95,
+      "end" : 294,
+      "representative" : true,
+      "hmmStart" : 3,
+      "hmmEnd" : 198,
+      "hmmLength" : 201,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 1.5E-85,
+      "score" : 288.2,
+      "envelopeStart" : 95,
+      "envelopeEnd" : 294,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 95,
+        "end" : 294,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.2E-85,
+    "score" : 288.6,
+    "model-ac" : "2ioiA00"
+  }, {
+    "signature" : {
+      "accession" : "G3DSA:4.10.170.10",
+      "name" : "",
+      "description" : null,
+      "type" : "HOMOLOGOUS_SUPERFAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "GENE3D",
+        "version" : "4.3.0"
+      },
+      "entry" : {
+        "accession" : "IPR036674",
+        "name" : "p53_tetramer_sf",
+        "description" : "p53-like tetramerisation domain superfamily",
+        "type" : "HOMOLOGOUS_SUPERFAMILY",
+        "goXRefs" : [ {
+          "name" : "protein tetramerization",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0051262"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 319,
+      "end" : 360,
+      "representative" : true,
+      "hmmStart" : 1,
+      "hmmEnd" : 42,
+      "hmmLength" : 42,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 7.8E-25,
+      "score" : 87.7,
+      "envelopeStart" : 319,
+      "envelopeEnd" : 360,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 319,
+        "end" : 360,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 4.5E-25,
+    "score" : 88.5,
+    "model-ac" : "1olgA00"
+  }, {
+    "signature" : {
+      "accession" : "SSF49417",
+      "name" : "p53-like transcription factors",
+      "description" : null,
+      "type" : "HOMOLOGOUS_SUPERFAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "SUPERFAMILY",
+        "version" : "1.75"
+      },
+      "entry" : {
+        "accession" : "IPR008967",
+        "name" : "p53-like_TF_DNA-bd_sf",
+        "description" : "p53-like transcription factor, DNA-binding domain superfamily",
+        "type" : "HOMOLOGOUS_SUPERFAMILY",
+        "goXRefs" : [ {
+          "name" : "DNA-binding transcription factor activity",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003700"
+        }, {
+          "name" : "regulation of DNA-templated transcription",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006355"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 97,
+      "end" : 287,
+      "representative" : false,
+      "hmmLength" : 191,
+      "location-fragments" : [ {
+        "start" : 97,
+        "end" : 287,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.16E-90,
+    "model-ac" : "0045080"
+  }, {
+    "signature" : {
+      "accession" : "PIRSR602117-1",
+      "name" : "PIRSR602117-1",
+      "description" : null,
+      "type" : null,
+      "signatureLibraryRelease" : {
+        "library" : "PIRSR",
+        "version" : "2025_05"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 3,
+      "end" : 393,
+      "representative" : false,
+      "sites" : [ ],
+      "hmmStart" : 2,
+      "hmmEnd" : 379,
+      "hmmLength" : 379,
+      "evalue" : 0.0,
+      "score" : 587.1,
+      "envelopeStart" : 1,
+      "envelopeEnd" : 2,
+      "location-fragments" : [ {
+        "start" : 3,
+        "end" : 393,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 0.0,
+    "score" : 587.1,
+    "scope" : null,
+    "model-ac" : "PIRSR602117-1"
+  }, {
+    "signature" : {
+      "accession" : "PTHR11447",
+      "name" : "CELLULAR TUMOR ANTIGEN P53",
+      "description" : null,
+      "type" : "FAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "PANTHER",
+        "version" : "19.0"
+      },
+      "entry" : {
+        "accession" : "IPR002117",
+        "name" : "p53_tumour_suppressor",
+        "description" : "p53 tumour suppressor family",
+        "type" : "FAMILY",
+        "goXRefs" : [ {
+          "name" : "DNA binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003677"
+        }, {
+          "name" : "nucleus",
+          "databaseName" : "GO",
+          "category" : "CELLULAR_COMPONENT",
+          "id" : "GO:0005634"
+        }, {
+          "name" : "apoptotic process",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006915"
+        }, {
+          "name" : "DNA-binding transcription factor activity",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003700"
+        }, {
+          "name" : "regulation of DNA-templated transcription",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006355"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 3,
+      "end" : 369,
+      "representative" : true,
+      "hmmStart" : 3,
+      "hmmEnd" : 376,
+      "hmmLength" : 0,
+      "hmmBounds" : "INCOMPLETE",
+      "envelopeStart" : 1,
+      "envelopeEnd" : 388,
+      "location-fragments" : [ {
+        "start" : 3,
+        "end" : 369,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "accession" : "PTHR11447:SF6",
+    "name" : "CELLULAR TUMOR ANTIGEN P53",
+    "evalue" : 0.0,
+    "score" : 466.4,
+    "proteinClass" : null,
+    "graftPoint" : "PTN002606378",
+    "goXRefs" : [ {
+      "name" : "regulation of transcription by RNA polymerase II",
+      "databaseName" : "GO",
+      "category" : "BIOLOGICAL_PROCESS",
+      "id" : "GO:0006357"
+    }, {
+      "name" : "DNA-binding transcription factor activity, RNA polymerase II-specific",
+      "databaseName" : "GO",
+      "category" : "MOLECULAR_FUNCTION",
+      "id" : "GO:0000981"
+    }, {
+      "name" : "RNA polymerase II cis-regulatory region sequence-specific DNA binding",
+      "databaseName" : "GO",
+      "category" : "MOLECULAR_FUNCTION",
+      "id" : "GO:0000978"
+    } ],
+    "model-ac" : "PTHR11447:SF6"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 69,
+      "end" : 90,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 69,
+        "end" : 90,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : "Proline-rich"
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 282,
+      "end" : 325,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 282,
+        "end" : 325,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : ""
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "PF00870",
+      "name" : "P53",
+      "description" : "P53 DNA-binding domain",
+      "type" : "DOMAIN",
+      "signatureLibraryRelease" : {
+        "library" : "PFAM",
+        "version" : "38.2"
+      },
+      "entry" : {
+        "accession" : "IPR011615",
+        "name" : "p53_DNA-bd",
+        "description" : "p53, DNA-binding domain",
+        "type" : "DOMAIN",
+        "goXRefs" : [ {
+          "name" : "transcription cis-regulatory region binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0000976"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 100,
+      "end" : 288,
+      "representative" : false,
+      "hmmStart" : 2,
+      "hmmEnd" : 192,
+      "hmmLength" : 193,
+      "hmmBounds" : "INCOMPLETE",
+      "evalue" : 1.1E-59,
+      "score" : 213.0,
+      "envelopeStart" : 99,
+      "envelopeEnd" : 289,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 100,
+        "end" : 288,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 8.8E-60,
+    "score" : 213.4,
+    "model-ac" : "PF00870"
+  }, {
+    "signature" : {
+      "accession" : "PS00348",
+      "name" : "P53",
+      "description" : "p53 family signature.",
+      "type" : "CONSERVED_SITE",
+      "signatureLibraryRelease" : {
+        "library" : "PROSITE_PATTERNS",
+        "version" : "2026_01"
+      },
+      "entry" : {
+        "accession" : "IPR057064",
+        "name" : "P53_central_site",
+        "description" : "p53, central conserved site",
+        "type" : "CONSERVED_SITE",
+        "goXRefs" : [ ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 237,
+      "end" : 249,
+      "representative" : false,
+      "level" : "STRONG",
+      "cigarAlignment" : "13M",
+      "alignment" : "MCNSSCMGGMNRR",
+      "location-fragments" : [ {
+        "start" : 237,
+        "end" : 249,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "model-ac" : "PS00348"
+  }, {
+    "signature" : {
+      "accession" : "PF07710",
+      "name" : "P53_tetramer",
+      "description" : "P53 tetramerisation motif",
+      "type" : "CONSERVED_SITE",
+      "signatureLibraryRelease" : {
+        "library" : "PFAM",
+        "version" : "38.2"
+      },
+      "entry" : {
+        "accession" : "IPR010991",
+        "name" : "p53_tetrameristn",
+        "description" : "p53, tetramerisation domain",
+        "type" : "DOMAIN",
+        "goXRefs" : [ {
+          "name" : "protein tetramerization",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0051262"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 319,
+      "end" : 357,
+      "representative" : false,
+      "hmmStart" : 1,
+      "hmmEnd" : 41,
+      "hmmLength" : 42,
+      "hmmBounds" : "N_TERMINAL_COMPLETE",
+      "evalue" : 2.3E-13,
+      "score" : 60.6,
+      "envelopeStart" : 319,
+      "envelopeEnd" : 358,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 319,
+        "end" : 357,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.2E-13,
+    "score" : 61.5,
+    "model-ac" : "PF07710"
+  }, {
+    "signature" : {
+      "accession" : "G3DSA:4.10.170.10:FF:000003",
+      "name" : null,
+      "description" : "Cellular tumor antigen p53",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "FUNFAM",
+        "version" : "4.3.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 319,
+      "end" : 360,
+      "representative" : false,
+      "hmmStart" : 1,
+      "hmmEnd" : 42,
+      "hmmLength" : 42,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 3.7E-29,
+      "score" : 101.7,
+      "envelopeStart" : 319,
+      "envelopeEnd" : 360,
+      "postProcessed" : false,
+      "location-fragments" : [ {
+        "start" : 319,
+        "end" : 360,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 2.2E-29,
+    "score" : 102.4,
+    "model-ac" : "4.10.170.10-FF-000003"
+  }, {
+    "signature" : {
+      "accession" : "PIRSR602117-2",
+      "name" : "PIRSR602117-2",
+      "description" : null,
+      "type" : null,
+      "signatureLibraryRelease" : {
+        "library" : "PIRSR",
+        "version" : "2025_05"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 3,
+      "end" : 393,
+      "representative" : false,
+      "sites" : [ ],
+      "hmmStart" : 2,
+      "hmmEnd" : 379,
+      "hmmLength" : 379,
+      "evalue" : 0.0,
+      "score" : 587.1,
+      "envelopeStart" : 1,
+      "envelopeEnd" : 2,
+      "location-fragments" : [ {
+        "start" : 3,
+        "end" : 393,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 0.0,
+    "score" : 587.1,
+    "scope" : null,
+    "model-ac" : "PIRSR602117-2"
+  }, {
+    "signature" : {
+      "accession" : "G3DSA:6.10.50.20",
+      "name" : "",
+      "description" : null,
+      "type" : "HOMOLOGOUS_SUPERFAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "GENE3D",
+        "version" : "4.3.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 13,
+      "end" : 61,
+      "representative" : false,
+      "hmmStart" : 1,
+      "hmmEnd" : 49,
+      "hmmLength" : 49,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 2.3E-25,
+      "score" : 90.9,
+      "envelopeStart" : 13,
+      "envelopeEnd" : 61,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 13,
+        "end" : 61,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 4.7E-28,
+    "score" : 99.5,
+    "model-ac" : "2l14B00"
+  }, {
+    "signature" : {
+      "accession" : "PR00386",
+      "name" : "P53SUPPRESSR",
+      "description" : "P53 tumour supressor signature",
+      "type" : "FAMILY",
+      "signatureLibraryRelease" : {
+        "library" : "PRINTS",
+        "version" : "42.0"
+      },
+      "entry" : {
+        "accession" : "IPR002117",
+        "name" : "p53_tumour_suppressor",
+        "description" : "p53 tumour suppressor family",
+        "type" : "FAMILY",
+        "goXRefs" : [ {
+          "name" : "DNA binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003677"
+        }, {
+          "name" : "nucleus",
+          "databaseName" : "GO",
+          "category" : "CELLULAR_COMPONENT",
+          "id" : "GO:0005634"
+        }, {
+          "name" : "apoptotic process",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006915"
+        }, {
+          "name" : "DNA-binding transcription factor activity",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0003700"
+        }, {
+          "name" : "regulation of DNA-templated transcription",
+          "databaseName" : "GO",
+          "category" : "BIOLOGICAL_PROCESS",
+          "id" : "GO:0006355"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 116,
+      "end" : 142,
+      "representative" : false,
+      "pvalue" : 1.0E-16,
+      "score" : 81.79,
+      "motifNumber" : 1,
+      "location-fragments" : [ {
+        "start" : 116,
+        "end" : 142,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    }, {
+      "start" : 158,
+      "end" : 179,
+      "representative" : false,
+      "pvalue" : 3.44E-14,
+      "score" : 77.15,
+      "motifNumber" : 2,
+      "location-fragments" : [ {
+        "start" : 158,
+        "end" : 179,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    }, {
+      "start" : 213,
+      "end" : 234,
+      "representative" : false,
+      "pvalue" : 6.66E-16,
+      "score" : 78.66,
+      "motifNumber" : 3,
+      "location-fragments" : [ {
+        "start" : 213,
+        "end" : 234,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    }, {
+      "start" : 236,
+      "end" : 258,
+      "representative" : false,
+      "pvalue" : 1.0E-16,
+      "score" : 92.51,
+      "motifNumber" : 4,
+      "location-fragments" : [ {
+        "start" : 236,
+        "end" : 258,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    }, {
+      "start" : 264,
+      "end" : 286,
+      "representative" : false,
+      "pvalue" : 4.44E-16,
+      "score" : 85.02,
+      "motifNumber" : 5,
+      "location-fragments" : [ {
+        "start" : 264,
+        "end" : 286,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    }, {
+      "start" : 326,
+      "end" : 350,
+      "representative" : false,
+      "pvalue" : 1.0E-16,
+      "score" : 70.56,
+      "motifNumber" : 6,
+      "location-fragments" : [ {
+        "start" : 326,
+        "end" : 350,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 6.0E-87,
+    "graphscan" : "IIIIII",
+    "model-ac" : "PR00386"
+  }, {
+    "signature" : {
+      "accession" : "PF08563",
+      "name" : "P53_TAD",
+      "description" : "P53 transactivation motif",
+      "type" : "CONSERVED_SITE",
+      "signatureLibraryRelease" : {
+        "library" : "PFAM",
+        "version" : "38.2"
+      },
+      "entry" : {
+        "accession" : "IPR013872",
+        "name" : "p53_transactivation_domain",
+        "description" : "p53, transactivation domain",
+        "type" : "DOMAIN",
+        "goXRefs" : [ {
+          "name" : "protein binding",
+          "databaseName" : "GO",
+          "category" : "MOLECULAR_FUNCTION",
+          "id" : "GO:0005515"
+        } ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 6,
+      "end" : 30,
+      "representative" : true,
+      "hmmStart" : 1,
+      "hmmEnd" : 25,
+      "hmmLength" : 25,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 2.3E-8,
+      "score" : 44.5,
+      "envelopeStart" : 6,
+      "envelopeEnd" : 30,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 6,
+        "end" : 30,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.1E-8,
+    "score" : 45.6,
+    "model-ac" : "PF08563"
+  }, {
+    "signature" : {
+      "accession" : "PF18521",
+      "name" : "TAD2",
+      "description" : "Transactivation domain 2",
+      "type" : "CONSERVED_SITE",
+      "signatureLibraryRelease" : {
+        "library" : "PFAM",
+        "version" : "38.2"
+      },
+      "entry" : {
+        "accession" : "IPR040926",
+        "name" : "p53_TAD2",
+        "description" : "Cellular tumor antigen p53, transactivation domain 2",
+        "type" : "DOMAIN",
+        "goXRefs" : [ ],
+        "pathwayXRefs" : [ ]
+      }
+    },
+    "locations" : [ {
+      "start" : 35,
+      "end" : 59,
+      "representative" : true,
+      "hmmStart" : 1,
+      "hmmEnd" : 25,
+      "hmmLength" : 25,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 2.2E-14,
+      "score" : 64.1,
+      "envelopeStart" : 35,
+      "envelopeEnd" : 59,
+      "postProcessed" : true,
+      "location-fragments" : [ {
+        "start" : 35,
+        "end" : 59,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 1.2E-14,
+    "score" : 65.0,
+    "model-ac" : "PF18521"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 365,
+      "end" : 384,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 365,
+        "end" : 384,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : "Positive Polyelectrolyte"
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 50,
+      "end" : 96,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 50,
+        "end" : 96,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : ""
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "mobidb-lite",
+      "name" : "disorder_prediction",
+      "description" : "consensus disorder prediction",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "MOBIDB_LITE",
+        "version" : "4.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 282,
+      "end" : 299,
+      "representative" : false,
+      "location-fragments" : [ {
+        "start" : 282,
+        "end" : 299,
+        "dc-status" : "CONTINUOUS"
+      } ],
+      "sequence-feature" : "Polyampholyte"
+    } ],
+    "model-ac" : "mobidb-lite"
+  }, {
+    "signature" : {
+      "accession" : "G3DSA:2.60.40.720:FF:000003",
+      "name" : null,
+      "description" : "Cellular tumor antigen p53",
+      "type" : "REGION",
+      "signatureLibraryRelease" : {
+        "library" : "FUNFAM",
+        "version" : "4.3.0"
+      },
+      "entry" : null
+    },
+    "locations" : [ {
+      "start" : 94,
+      "end" : 294,
+      "representative" : false,
+      "hmmStart" : 1,
+      "hmmEnd" : 200,
+      "hmmLength" : 201,
+      "hmmBounds" : "COMPLETE",
+      "evalue" : 0.0,
+      "score" : 445.6,
+      "envelopeStart" : 94,
+      "envelopeEnd" : 294,
+      "postProcessed" : false,
+      "location-fragments" : [ {
+        "start" : 94,
+        "end" : 294,
+        "dc-status" : "CONTINUOUS"
+      } ]
+    } ],
+    "evalue" : 0.0,
+    "score" : 446.0,
+    "model-ac" : "2.60.40.720-FF-000003"
+  } ],
+  "xref" : [ {
+    "name" : "EMBOSS_001",
+    "id" : "EMBOSS_001"
+  } ]
+} ]
+}
