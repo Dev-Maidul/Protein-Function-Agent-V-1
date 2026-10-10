@@ -95,12 +95,37 @@
 - **নোট:** `data/` ফোল্ডারটা (~670MB — FASTA + .dmnd index) git-এ কমিট করা
   হয়নি (`.gitignore`-এ আছে) — উপরের তিনটা কমান্ড দিয়েই reproduce করা যায়।
 
+## 6. ProTrek_35M (`tools/protrek.py`)
+- **কী করে:** একটা protein sequence ও কয়েকটা candidate function-description
+  (text) দিলে, কোনটা সবচেয়ে বেশি মিলছে সেটা trimodal contrastive embedding
+  দিয়ে rank করে।
+- **Source:** কোড — https://github.com/westlake-repl/ProTrek (MIT license),
+  `vendor/ProTrek/`-এ clone করা (মাত্র ~2.1MB, কোনো বড় ফাইল নেই; `.gitignore`-এ
+  আছে, reproduce করতে: `git clone --depth 1 https://github.com/westlake-repl/ProTrek.git vendor/ProTrek`)।
+  Weight — https://huggingface.co/westlake-repl/ProTrek_35M_UniRef50 (~678MB) —
+  **নতুন করে download করা হয়নি**, আগে থেকেই `Westlake-ProteinAI-Prep/ProTrek/weights/`-এ
+  থাকা checkpoint `weights/ProTrek_35M_UniRef50`-এ symlink করা হয়েছে
+  (অন্য মেশিনে চালাতে হলে সরাসরি HuggingFace থেকে download করতে হবে)।
+- **তিনটা version-mismatch monkey-patch লাগে** (আগের প্রজেক্টেই আবিষ্কার করা
+  হয়েছিল, এখানে পুনরায় ব্যবহার করা হয়েছে) — repo পুরনো `torchmetrics`/
+  `transformers` API আশা করে।
+- **Verify করা হয়েছে (সৎভাবে রিপোর্ট করা হচ্ছে):** human p53 (P04637)-এর পূর্ণ
+  sequence দিয়ে ৫টা candidate description-এর সাথে মিলিয়ে দেখা হয়েছে real
+  wrapper code দিয়েই (mock না) — মডেল লোড+inference মিলিয়ে **~8.4 সেকেন্ড**
+  (MPS backend)। **ফলাফল এবার ভুল এসেছে:** top-1 prediction হলো "A structural
+  protein found in hair and nails" (+7.803), আর সঠিক উত্তর "A tumor suppressor
+  protein..." (+7.239) খুব কাছাকাছি স্কোরে দ্বিতীয় হয়েছে। আগের প্রজেক্টে
+  insulin দিয়ে test করে সঠিক top-1 পাওয়া গিয়েছিল — কিন্তু p53-এ এবার ভুল
+  হয়েছে, এটা **লুকানো হচ্ছে না**। এটা নিজেই একটা গুরুত্বপূর্ণ পর্যবেক্ষণ —
+  model সবসময় সঠিক না, candidate-set-এর উপরও নির্ভর করে (p53-এর অনেক domain
+  structural/binding-related, তাই "structural protein" confuse করতে পারে)।
+  Phase 3 evaluation-এ এটা আরও systematic ভাবে measure করা হবে। Fixture:
+  `tests/fixtures/protrek_scores_P04637.json`।
+
 ---
 
-## এখনো implement হয়নি (bigger downloads লাগে, ব্যবহারকারীর অনুমতির অপেক্ষায়)
+## এখনো implement হয়নি (bigger download লাগে, ব্যবহারকারীর অনুমতির অপেক্ষায়)
 
-- **ProTrek_35M (westlake-repl)** — ~140-700MB checkpoint download লাগবে
-  (model variant অনুযায়ী)।
 - **ESM-2 (35M/150M) + kNN + hubness** — model weight download + একটা
   Swiss-Prot subset-এর embedding বানাতে হবে।
 - **PubMed E-utilities** — lowest priority, এখনো শুরু করা হয়নি।

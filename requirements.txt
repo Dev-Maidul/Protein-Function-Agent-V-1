@@ -1,3 +1,12 @@
 requests==2.32.3
 python-dotenv==1.0.1
 pytest==8.3.3
+
+# Only needed for tools/protrek.py (and tools/esm2_knn.py later) -- heavy
+# (~2GB with torch). Versions pinned to what's verified working in this
+# project (and in the sibling Westlake-ProteinAI-Prep project) against the
+# ProTrek repo's ~2024-era pinned APIs.
+torch==2.14.0
+transformers==5.17.0
+torchmetrics==1.9.0
+pytorch-lightning==2.6.6

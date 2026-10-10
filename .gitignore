@@ -10,3 +10,9 @@ runs/*/
 # Swiss-Prot FASTA + DIAMOND index (~670MB total) -- too large for git, and
 # reproducible with the exact `curl`/`diamond makedb` commands in docs/TOOLS.md
 data/
+
+# Vendored upstream repo code (cloned fresh, not written here) and model
+# weights (symlinked from another local project on this machine) -- both
+# reproducible via the commands in docs/TOOLS.md, neither belongs in this git history
+vendor/
+weights/
