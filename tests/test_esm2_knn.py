@@ -18,17 +18,21 @@ def _fake_hubness():
     return {"k": 3, "k_occurrence": [1, 50, 2, 3, 1], "mean": 11.4, "std": 19.0, "hub_threshold": 40.0}
 
 
-def test_esm2_knn_flags_hub_neighbour():
+def test_esm2_knn_flags_hub_neighbour(tmp_path):
     index = _fake_index()
     query_emb = index["embeddings"][1] + 0.01  # close to A2, the flagged hub
 
-    # default index_path/hubness_path point at this project's real,
-    # already-built files (see docs/TOOLS.md) -- only the loader functions and
-    # the live embedding call are mocked, to keep this test fast and offline.
+    # _load_index/_load_hubness are mocked, so these just need to exist on
+    # disk for the wrapper's upfront .exists() check -- content is irrelevant.
+    fake_index_path = tmp_path / "index.npz"
+    fake_hubness_path = tmp_path / "hubness.json"
+    fake_index_path.write_bytes(b"")
+    fake_hubness_path.write_text("{}")
+
     with patch("tools.esm2_knn._load_index", return_value=index), patch(
         "tools.esm2_knn._load_hubness", return_value=_fake_hubness()
     ), patch("tools.esm2_knn._embed_query", return_value=query_emb):
-        ev = esm2_knn.run("FAKESEQUENCE", top_k=3)
+        ev = esm2_knn.run("FAKESEQUENCE", top_k=3, index_path=fake_index_path, hubness_path=fake_hubness_path)
 
     assert ev.error is None
     assert ev.raw_scores["neighbour_count"] == 3

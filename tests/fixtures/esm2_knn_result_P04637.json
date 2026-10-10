@@ -1,84 +1,111 @@
 {
-  "summary": "10 nearest neighbour(s) in Swiss-Prot subset; top=A7E369 (cos_sim=0.976) -- 1 flagged as hub(s), treat with caution",
-  "runtime_s": 7.642,
+  "tool": "esm2_knn",
+  "query": "MEEPQSDPSVEPPLSQETFSDLWKLLPENN...",
+  "result_summary": "10 nearest neighbour(s) in Swiss-Prot subset; top=O09185 (cos_sim=0.995) -- 2 flagged as hub(s), treat with caution",
   "raw_scores": {
     "neighbour_count": 10,
     "neighbours": [
       {
-        "accession": "A7E369",
-        "description": "UPF0524 protein C3orf70 homolog OS=Bos taurus OX=9913 PE=2 SV=2",
-        "cosine_similarity": 0.9760977029800415,
-        "k_occurrence": 8,
+        "accession": "O09185",
+        "description": "Cellular tumor antigen p53 (Tumor suppressor p53)",
+        "cosine_similarity": 0.9952160120010376,
+        "k_occurrence": 18,
         "is_hub": false
       },
       {
-        "accession": "Q5RC14",
-        "description": "Centriolar satellite-associated tubulin polyglutamylase complex regulator 1 OS=Pongo abelii OX=9601 GN=CSTPP1 PE=2 SV=1",
-        "cosine_similarity": 0.9736886024475098,
-        "k_occurrence": 29,
-        "is_hub": false
-      },
-      {
-        "accession": "Q68FL4",
-        "description": "S-adenosylhomocysteine hydrolase-like protein 2 OS=Mus musculus OX=10090 GN=Ahcyl2 PE=1 SV=1",
-        "cosine_similarity": 0.9720688462257385,
-        "k_occurrence": 30,
-        "is_hub": false
-      },
-      {
-        "accession": "Q5R7T9",
-        "description": "Metal-response element-binding transcription factor 2 OS=Pongo abelii OX=9601 GN=MTF2 PE=2 SV=1",
-        "cosine_similarity": 0.9720057845115662,
-        "k_occurrence": 48,
+        "accession": "D4A4K3",
+        "description": "Beclin 1-associated autophagy-related key regulator (Barkor) (Autophagy-related protein 14-like protein) (Atg14L)",
+        "cosine_similarity": 0.9836220741271973,
+        "k_occurrence": 55,
         "is_hub": true
       },
       {
-        "accession": "P0DW12",
-        "description": "TATA-box-binding protein-associated factor 11-like protein 7 OS=Homo sapiens OX=9606 GN=TAF11L7 PE=2 SV=1",
-        "cosine_similarity": 0.9715430736541748,
+        "accession": "O08856",
+        "description": "RNA polymerase II elongation factor ELL (Eleven-nineteen lysine-rich leukemia protein)",
+        "cosine_similarity": 0.9820247888565063,
+        "k_occurrence": 9,
+        "is_hub": false
+      },
+      {
+        "accession": "E7FBF7",
+        "description": "F-BAR domain only protein 1",
+        "cosine_similarity": 0.9818642139434814,
+        "k_occurrence": 34,
+        "is_hub": false
+      },
+      {
+        "accession": "O15178",
+        "description": "T-box transcription factor T (Brachyury protein) (Protein T)",
+        "cosine_similarity": 0.9814781546592712,
         "k_occurrence": 17,
         "is_hub": false
       },
       {
-        "accession": "P46527",
-        "description": "Cyclin-dependent kinase inhibitor 1B OS=Homo sapiens OX=9606 GN=CDKN1B PE=1 SV=1",
-        "cosine_similarity": 0.9709734320640564,
-        "k_occurrence": 12,
+        "accession": "A0A0R4IKJ1",
+        "description": "mRNA (2'-O-methyladenosine-N(6)-)-methyltransferase (EC 2.1.1.62) (Cap-specific adenosine methyltransferase) (CAPAM) (zCAPAM) (Phosphorylated CTD-interacting factor 1)",
+        "cosine_similarity": 0.9814156293869019,
+        "k_occurrence": 47,
+        "is_hub": true
+      },
+      {
+        "accession": "O15198",
+        "description": "SMAD family member 9 (SMAD 9) (Madh6) (Mothers against decapentaplegic homolog 9) (MAD homolog 9) (Mothers against DPP homolog 9)",
+        "cosine_similarity": 0.9810108542442322,
+        "k_occurrence": 16,
         "is_hub": false
       },
       {
-        "accession": "Q9V9Z1",
-        "description": "Large ribosomal subunit protein bL32m OS=Drosophila melanogaster OX=7227 GN=mRpL32 PE=2 SV=1",
-        "cosine_similarity": 0.9682703018188477,
-        "k_occurrence": 27,
+        "accession": "O14896",
+        "description": "Interferon regulatory factor 6 (IRF-6)",
+        "cosine_similarity": 0.9809812307357788,
+        "k_occurrence": 4,
         "is_hub": false
       },
       {
-        "accession": "P56721",
-        "description": "Transcription factor collier OS=Drosophila melanogaster OX=7227 GN=kn PE=2 SV=2",
-        "cosine_similarity": 0.9668701887130737,
-        "k_occurrence": 21,
+        "accession": "F5HF68",
+        "description": "VIRF-1",
+        "cosine_similarity": 0.9808386564254761,
+        "k_occurrence": 17,
         "is_hub": false
       },
       {
-        "accession": "Q8MJJ7",
-        "description": "m7GpppX diphosphatase OS=Bos taurus OX=9913 GN=DCPS PE=2 SV=1",
-        "cosine_similarity": 0.9666954874992371,
-        "k_occurrence": 21,
-        "is_hub": false
-      },
-      {
-        "accession": "Q8C4J0",
-        "description": "Coiled-coil domain-containing protein 60 OS=Mus musculus OX=10090 GN=Ccdc60 PE=2 SV=1",
-        "cosine_similarity": 0.966119647026062,
-        "k_occurrence": 21,
+        "accession": "A2ALS5",
+        "description": "Rap1 GTPase-activating protein 1 (Rap1GAP) (Rap1GAP1) (ARPP-90)",
+        "cosine_similarity": 0.9804832339286804,
+        "k_occurrence": 16,
         "is_hub": false
       }
     ],
-    "hub_count": 1,
-    "index_size": 800,
+    "hub_count": 2,
+    "index_size": 5000,
     "hubness_mean": 10.0,
-    "hubness_std": 10.558882516630252,
-    "hub_threshold": 41.67664754989076
-  }
+    "hubness_std": 8.704228857285406,
+    "hub_threshold": 36.112686571856216
+  },
+  "source_ids": [
+    "O09185",
+    "D4A4K3",
+    "O08856",
+    "E7FBF7",
+    "O15178",
+    "A0A0R4IKJ1",
+    "O15198",
+    "O14896",
+    "F5HF68",
+    "A2ALS5"
+  ],
+  "source_urls": [
+    "https://www.uniprot.org/uniprotkb/O09185",
+    "https://www.uniprot.org/uniprotkb/D4A4K3",
+    "https://www.uniprot.org/uniprotkb/O08856",
+    "https://www.uniprot.org/uniprotkb/E7FBF7",
+    "https://www.uniprot.org/uniprotkb/O15178",
+    "https://www.uniprot.org/uniprotkb/A0A0R4IKJ1",
+    "https://www.uniprot.org/uniprotkb/O15198",
+    "https://www.uniprot.org/uniprotkb/O14896",
+    "https://www.uniprot.org/uniprotkb/F5HF68",
+    "https://www.uniprot.org/uniprotkb/A2ALS5"
+  ],
+  "runtime_s": 8.195,
+  "error": null
 }

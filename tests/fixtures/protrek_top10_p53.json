@@ -1,0 +1,88 @@
+{
+  "tool": "protrek",
+  "query": "MEEPQSDPSVEPPLSQETFSDLWKLLPENN...",
+  "result_summary": "top match (+17.569, O15350): \"Participates in the apoptotic response to DNA damage. Isoforms containing the transactivation domain\"",
+  "raw_scores": {
+    "ranked": [
+      {
+        "accession": "O15350",
+        "description": "Participates in the apoptotic response to DNA damage. Isoforms containing the transactivation domain are pro-apoptotic, isoforms lacking the domain are anti-apoptotic and block the function of p53 and transactivating p73 isoforms. May be a tumor suppressor protein. Is an activator of FOXJ1 expression (By similarity)....",
+        "score": 17.568906784057617
+      },
+      {
+        "accession": "O02703",
+        "description": "Plays a role in the mitochondrial apoptotic process. Under normal conditions, BAX is largely cytosolic via constant retrotranslocation from mitochondria to the cytosol mediated by BCL2L1/Bcl-xL, which avoids accumulation of toxic BAX levels at the mitochondrial outer membrane (MOM). Under stress conditions, undergoes...",
+        "score": 14.176055908203125
+      },
+      {
+        "accession": "O14929",
+        "description": "Histone acetyltransferase that plays a role in different biological processes including cell cycle progression, glucose metabolism, histone production or DNA damage repair (PubMed:20953179, PubMed:23653357, PubMed:31278053, PubMed:32081014). Coordinates histone production and acetylation via H4 promoter binding...",
+        "score": 14.048027038574219
+      },
+      {
+        "accession": "A0A2K5TU92",
+        "description": "NAD-dependent protein deacetylase, deacylase and mono-ADP-ribosyltransferase that plays an essential role in DNA damage repair, telomere maintenance, metabolic homeostasis, inflammation, tumorigenesis and aging (PubMed:30135584). Displays protein-lysine deacetylase or defatty-acylase (demyristoylase and...",
+        "score": 13.518059730529785
+      },
+      {
+        "accession": "O15151",
+        "description": "Contributes to p53/TP53 regulation (PubMed:32300648). Inhibits p53/TP53- and p73/TP73-mediated cell cycle arrest and apoptosis by binding their transcriptional activation domains. Inhibits degradation of MDM2. Can reverse MDM2-targeted degradation of TP53 while maintaining suppression of TP53 transactivation and...",
+        "score": 13.452120780944824
+      },
+      {
+        "accession": "G5EFF5",
+        "description": "Nuclear receptor which binds directly to response elements in target gene promoters (PubMed:10859169, PubMed:15314028, PubMed:15383841, PubMed:15489294, PubMed:15611047, PubMed:16626392, PubMed:19828440, PubMed:21814518, PubMed:9477318). Activity is modulated by binding of steroid hormone ligands that include...",
+        "score": 13.27243709564209
+      },
+      {
+        "accession": "O02718",
+        "description": "Suppresses apoptosis in a variety of cell systems including factor-dependent lymphohematopoietic and neural cells. Regulates cell death by controlling the mitochondrial membrane permeability. Appears to function in a feedback loop system with caspases. Inhibits caspase activity either by preventing the release of...",
+        "score": 13.206930160522461
+      },
+      {
+        "accession": "O14737",
+        "description": "In response to DNA damage, associates with TP53/p53 to prevent MDM2-mediated degradation of TP53 and promote TP53-mediated signaling (PubMed:19616514, PubMed:22914926, PubMed:28051100). Also protects KAT5/TIP60 from degradation, which further promotes TP53/p53-mediated signaling (PubMed:19308289)..",
+        "score": 13.109078407287598
+      },
+      {
+        "accession": "A0A250YGJ5",
+        "description": "NAD-dependent protein deacetylase, deacylase and mono-ADP-ribosyltransferase that plays an essential role in DNA damage repair, telomere maintenance, metabolic homeostasis, inflammation, tumorigenesis and aging (By similarity). Displays protein-lysine deacetylase or defatty-acylase (demyristoylase and depalmitoylase)...",
+        "score": 13.083442687988281
+      },
+      {
+        "accession": "A0A0J9UVG7",
+        "description": "NAD-dependent protein-lysine deacylase that decrotonylates the PDC (pyruvate dehydrogenase complex) subunit LAT1 at 'Lys-148' to inhibit PDC activity and consequently ATP production (PubMed:34927582). Also decrotonylates histone H3 crotonylated at 'Lys-18' (H3K18cr), to repress the expression of genes involved in...",
+        "score": 13.07836627960205
+      }
+    ],
+    "candidate_pool_size": 5000,
+    "excluded_count": 0,
+    "device": "mps"
+  },
+  "source_ids": [
+    "O15350",
+    "O02703",
+    "O14929",
+    "A0A2K5TU92",
+    "O15151",
+    "G5EFF5",
+    "O02718",
+    "O14737",
+    "A0A250YGJ5",
+    "A0A0J9UVG7"
+  ],
+  "source_urls": [
+    "https://www.uniprot.org/uniprotkb/O15350",
+    "https://www.uniprot.org/uniprotkb/O02703",
+    "https://www.uniprot.org/uniprotkb/O14929",
+    "https://www.uniprot.org/uniprotkb/A0A2K5TU92",
+    "https://www.uniprot.org/uniprotkb/O15151",
+    "https://www.uniprot.org/uniprotkb/G5EFF5",
+    "https://www.uniprot.org/uniprotkb/O02718",
+    "https://www.uniprot.org/uniprotkb/O14737",
+    "https://www.uniprot.org/uniprotkb/A0A250YGJ5",
+    "https://www.uniprot.org/uniprotkb/A0A0J9UVG7"
+  ],
+  "runtime_s": 8.591,
+  "error": null
+}
