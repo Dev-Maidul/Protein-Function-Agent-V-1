@@ -122,10 +122,46 @@
   Phase 3 evaluation-এ এটা আরও systematic ভাবে measure করা হবে। Fixture:
   `tests/fixtures/protrek_scores_P04637.json`।
 
+## 7. ESM-2 embedding + kNN + hubness diagnostic (`tools/esm2_knn.py`, index built by `tools/build_esm2_index.py`)
+- **কী করে:** ESM-2 (35M) দিয়ে একটা protein sequence-এর embedding বানায়, তারপর
+  আগে থেকে বানানো একটা Swiss-Prot subset-এর embedding index-এ cosine-similarity
+  দিয়ে nearest neighbour খোঁজে। প্রতিটা neighbour-এর সাথে একটা **hubness flag**
+  দেয় — অর্থাৎ এই neighbour কি বারবার "nearest" হিসেবে উঠে আসে অনেক আলাদা
+  query-র জন্যও (k-occurrence বেশি), যেটা high-dimensional nearest-neighbour
+  search-এর একটা পরিচিত সমস্যা (ব্যবহারকারীর নিজের hubness গবেষণার সাথে সরাসরি
+  সম্পর্কিত) — hub flag করা neighbour-এর evidence কম বিশ্বাসযোগ্য ধরে নেওয়া হয়।
+- **Model:** https://huggingface.co/facebook/esm2_t12_35M_UR50D (Meta/FAIR,
+  ESM-এর নিজস্ব license — gated/open weight, non-commercial research use
+  দেখে নিতে হবে চূড়ান্ত ব্যবহারের আগে)।
+- **Index বানানো (একবারই, offline):**
+  ```bash
+  python -m tools.build_esm2_index --n 800 --max-len 1000 --k 10
+  ```
+  Swiss-Prot থেকে randomly 800টা sequence (≤1000 aa) sample করে, প্রতিটার
+  ESM-2 embedding বানায় (mean-pooled), তারপর leave-one-out top-10 neighbour
+  search করে প্রতিটা point-এর k-occurrence গোনে। **আলাদা কোনো নতুন download
+  লাগেনি** — একই `data/uniprot_sprot.fasta` যেটা DIAMOND-এর জন্য আগে download
+  করা হয়েছিল, সেটাই reuse করা হয়েছে।
+- **Verify করা হয়েছে (সৎভাবে, সীমাবদ্ধতা সহ):** real build script চালিয়ে
+  ৮০০টা sequence embed করতে লেগেছে **~75 সেকেন্ড** (CPU)। Hubness stats:
+  mean k-occurrence 10.0, std 10.56, hub threshold ~41.7 — মানে এই ছোট
+  random subset-এও hubness-এর স্পষ্ট variance আছে। তারপর human p53 (যেটা
+  index-এ নেই) দিয়ে real query চালিয়ে top-10 neighbour পাওয়া গেছে, যার মধ্যে
+  একটা (k_occurrence=48, threshold পার করেছে) **hub হিসেবে flag হয়েছে**।
+  **সীমাবদ্ধতা যা লুকানো হচ্ছে না:** সব neighbour-এর cosine similarity
+  সন্দেহজনকভাবে বেশি (>0.96) এবং neighbour-গুলো biologically p53-এর সাথে
+  সম্পর্কিত না (যেমন "Metal-response element-binding transcription factor")
+  — এটা সম্ভবত mean-pooled embedding-এর একটা পরিচিত সমস্যা (anisotropy —
+  সব embedding একটা dominant shared direction-এর দিকে ঝুঁকে থাকে) এবং
+  মাত্র ৮০০-sequence subset হওয়ায় প্রকৃত close homolog subset-এ নাও থাকতে
+  পারে। এটা একটা ছোট demo/mechanism-প্রদর্শনী, production-grade retrieval
+  না — Phase 3-এ আরও বড়/ভালো subset ও normalization নিয়ে আলোচনা করা হবে।
+  Fixture: `tests/fixtures/esm2_knn_result_P04637.json`, index/hubness ফাইল
+  `data/esm2_swissprot_subset.npz` ও `data/esm2_hubness.json` (git-এ রাখা
+  হয়নি, উপরের কমান্ড দিয়ে reproduce করা যায়)।
+
 ---
 
-## এখনো implement হয়নি (bigger download লাগে, ব্যবহারকারীর অনুমতির অপেক্ষায়)
+## এখনো implement হয়নি
 
-- **ESM-2 (35M/150M) + kNN + hubness** — model weight download + একটা
-  Swiss-Prot subset-এর embedding বানাতে হবে।
 - **PubMed E-utilities** — lowest priority, এখনো শুরু করা হয়নি।

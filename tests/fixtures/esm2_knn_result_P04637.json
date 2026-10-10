@@ -1,0 +1,84 @@
+{
+  "summary": "10 nearest neighbour(s) in Swiss-Prot subset; top=A7E369 (cos_sim=0.976) -- 1 flagged as hub(s), treat with caution",
+  "runtime_s": 7.642,
+  "raw_scores": {
+    "neighbour_count": 10,
+    "neighbours": [
+      {
+        "accession": "A7E369",
+        "description": "UPF0524 protein C3orf70 homolog OS=Bos taurus OX=9913 PE=2 SV=2",
+        "cosine_similarity": 0.9760977029800415,
+        "k_occurrence": 8,
+        "is_hub": false
+      },
+      {
+        "accession": "Q5RC14",
+        "description": "Centriolar satellite-associated tubulin polyglutamylase complex regulator 1 OS=Pongo abelii OX=9601 GN=CSTPP1 PE=2 SV=1",
+        "cosine_similarity": 0.9736886024475098,
+        "k_occurrence": 29,
+        "is_hub": false
+      },
+      {
+        "accession": "Q68FL4",
+        "description": "S-adenosylhomocysteine hydrolase-like protein 2 OS=Mus musculus OX=10090 GN=Ahcyl2 PE=1 SV=1",
+        "cosine_similarity": 0.9720688462257385,
+        "k_occurrence": 30,
+        "is_hub": false
+      },
+      {
+        "accession": "Q5R7T9",
+        "description": "Metal-response element-binding transcription factor 2 OS=Pongo abelii OX=9601 GN=MTF2 PE=2 SV=1",
+        "cosine_similarity": 0.9720057845115662,
+        "k_occurrence": 48,
+        "is_hub": true
+      },
+      {
+        "accession": "P0DW12",
+        "description": "TATA-box-binding protein-associated factor 11-like protein 7 OS=Homo sapiens OX=9606 GN=TAF11L7 PE=2 SV=1",
+        "cosine_similarity": 0.9715430736541748,
+        "k_occurrence": 17,
+        "is_hub": false
+      },
+      {
+        "accession": "P46527",
+        "description": "Cyclin-dependent kinase inhibitor 1B OS=Homo sapiens OX=9606 GN=CDKN1B PE=1 SV=1",
+        "cosine_similarity": 0.9709734320640564,
+        "k_occurrence": 12,
+        "is_hub": false
+      },
+      {
+        "accession": "Q9V9Z1",
+        "description": "Large ribosomal subunit protein bL32m OS=Drosophila melanogaster OX=7227 GN=mRpL32 PE=2 SV=1",
+        "cosine_similarity": 0.9682703018188477,
+        "k_occurrence": 27,
+        "is_hub": false
+      },
+      {
+        "accession": "P56721",
+        "description": "Transcription factor collier OS=Drosophila melanogaster OX=7227 GN=kn PE=2 SV=2",
+        "cosine_similarity": 0.9668701887130737,
+        "k_occurrence": 21,
+        "is_hub": false
+      },
+      {
+        "accession": "Q8MJJ7",
+        "description": "m7GpppX diphosphatase OS=Bos taurus OX=9913 GN=DCPS PE=2 SV=1",
+        "cosine_similarity": 0.9666954874992371,
+        "k_occurrence": 21,
+        "is_hub": false
+      },
+      {
+        "accession": "Q8C4J0",
+        "description": "Coiled-coil domain-containing protein 60 OS=Mus musculus OX=10090 GN=Ccdc60 PE=2 SV=1",
+        "cosine_similarity": 0.966119647026062,
+        "k_occurrence": 21,
+        "is_hub": false
+      }
+    ],
+    "hub_count": 1,
+    "index_size": 800,
+    "hubness_mean": 10.0,
+    "hubness_std": 10.558882516630252,
+    "hub_threshold": 41.67664754989076
+  }
+}
