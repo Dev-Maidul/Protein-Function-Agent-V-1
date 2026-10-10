@@ -6,3 +6,7 @@ runs/*/
 !runs/.gitkeep
 *.egg-info/
 .pytest_cache/
+
+# Swiss-Prot FASTA + DIAMOND index (~670MB total) -- too large for git, and
+# reproducible with the exact `curl`/`diamond makedb` commands in docs/TOOLS.md
+data/

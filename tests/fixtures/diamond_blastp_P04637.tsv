@@ -1,0 +1,10 @@
+P04637_query	sp|P04637|P53_HUMAN	100	393	0	0	1	393	1	393	8.19e-282	766	sp|P04637|P53_HUMAN Cellular tumor antigen p53 OS=Homo sapiens OX=9606 GN=TP53 PE=1 SV=4
+P04637_query	sp|P56423|P53_MACFA	95.4	393	18	0	1	393	1	393	8.98e-270	736	sp|P56423|P53_MACFA Cellular tumor antigen p53 OS=Macaca fascicularis OX=9541 GN=TP53 PE=2 SV=2
+P04637_query	sp|P61260|P53_MACFU	95.4	393	18	0	1	393	1	393	8.98e-270	736	sp|P61260|P53_MACFU Cellular tumor antigen p53 OS=Macaca fuscata fuscata OX=9543 GN=TP53 PE=2 SV=1
+P04637_query	sp|P56424|P53_MACMU	95.4	393	18	0	1	393	1	393	8.98e-270	736	sp|P56424|P53_MACMU Cellular tumor antigen p53 OS=Macaca mulatta OX=9544 GN=TP53 PE=2 SV=1
+P04637_query	sp|P13481|P53_CHLAE	94.9	393	20	0	1	393	1	393	7.38e-269	733	sp|P13481|P53_CHLAE Cellular tumor antigen p53 OS=Chlorocebus aethiops OX=9534 GN=TP53 PE=1 SV=1
+P04637_query	sp|Q9TTA1|P53_TUPBE	93.1	393	27	0	1	393	1	393	8.41e-259	708	sp|Q9TTA1|P53_TUPBE Cellular tumor antigen p53 OS=Tupaia belangeri OX=37347 GN=TP53 PE=2 SV=1
+P04637_query	sp|O36006|P53_MARMO	87.0	393	49	1	1	393	1	391	1.11e-235	649	sp|O36006|P53_MARMO Cellular tumor antigen p53 OS=Marmota monax OX=9995 GN=TP53 PE=2 SV=1
+P04637_query	sp|Q95330|P53_RABIT	86.0	394	51	3	1	393	1	391	4.80e-230	635	sp|Q95330|P53_RABIT Cellular tumor antigen p53 OS=Oryctolagus cuniculus OX=9986 GN=TP53 PE=2 SV=1
+P04637_query	sp|Q8SPZ3|P53_DELLE	85.3	394	50	4	1	393	1	387	8.83e-225	622	sp|Q8SPZ3|P53_DELLE Cellular tumor antigen p53 OS=Delphinapterus leucas OX=9749 GN=TP53 PE=2 SV=1
+P04637_query	sp|Q9TUB2|P53_PIG	82.5	395	58	6	1	393	1	386	4.05e-216	600	sp|Q9TUB2|P53_PIG Cellular tumor antigen p53 OS=Sus scrofa OX=9823 GN=TP53 PE=2 SV=1

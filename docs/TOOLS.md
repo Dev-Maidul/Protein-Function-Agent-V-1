@@ -72,12 +72,33 @@
   request-এ `403` দেয় (এই প্রজেক্টে লাইভ টেস্টে ধরা পড়েছে) — wrapper-এ তাই
   সবসময় একটা `User-Agent` header পাঠানো হয়।
 
+## 5. Local DIAMOND/BLAST বনাম Swiss-Prot (`tools/diamond_blast.py`)
+- **কী করে:** একটা amino-acid sequence-এর জন্য local Swiss-Prot database-এ
+  homolog (একই রকম sequence-এর protein) খোঁজে — CPU-তে, network ছাড়া, কোনো
+  rate limit নেই। EBI/NCBI BLAST web API fallback হিসেবে document করা আছে
+  কিন্তু implement করা হয়নি, কারণ local path দ্রুত ও quota-ছাড়া।
+- **Setup (একবারই):**
+  ```bash
+  brew install diamond
+  curl -L "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz" -o data/uniprot_sprot.fasta.gz
+  gunzip -k data/uniprot_sprot.fasta.gz
+  diamond makedb --in data/uniprot_sprot.fasta --db data/swissprot
+  ```
+- **License/terms:** Swiss-Prot data CC BY 4.0 (UniProt-এর license, উপরে ১-এ
+  উল্লেখ)। DIAMOND নিজে GPL-licensed open-source tool।
+- **Verify করা হয়েছে:** human p53 (৩৯৩ aa) দিয়ে real `diamond blastp` চালিয়ে
+  (সময় ~৭.৭ সেকেন্ড, পুরো index ৫,৭৫,৭৪৮টা sequence নিয়ে বানানো হয়েছে ~২.৮
+  সেকেন্ডে) — top hit ছিল p53-এর নিজের human entry (100% identity, sanity
+  check pass), তারপর বিভিন্ন primate-এর p53 ortholog (95.4%, 94.9%...) — ঠিক
+  যেমন আশা করা যায়। Fixtures: `tests/fixtures/diamond_blastp_P04637.tsv`,
+  `tests/fixtures/query_p53.fasta`।
+- **নোট:** `data/` ফোল্ডারটা (~670MB — FASTA + .dmnd index) git-এ কমিট করা
+  হয়নি (`.gitignore`-এ আছে) — উপরের তিনটা কমান্ড দিয়েই reproduce করা যায়।
+
 ---
 
 ## এখনো implement হয়নি (bigger downloads লাগে, ব্যবহারকারীর অনুমতির অপেক্ষায়)
 
-- **Local DIAMOND/BLAST বনাম Swiss-Prot** — ~90MB Swiss-Prot FASTA download +
-  DIAMOND index build লাগবে।
 - **ProTrek_35M (westlake-repl)** — ~140-700MB checkpoint download লাগবে
   (model variant অনুযায়ী)।
 - **ESM-2 (35M/150M) + kNN + hubness** — model weight download + একটা
