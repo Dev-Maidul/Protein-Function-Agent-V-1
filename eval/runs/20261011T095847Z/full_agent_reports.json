@@ -1,0 +1,222 @@
+{
+  "A0A024RBG1": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 2,
+    "token_usage": {
+      "input": 4958,
+      "output": 1470,
+      "total": 6428
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 2
+  },
+  "A0A086F3E3": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 6810,
+      "output": 3444,
+      "total": 10254
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 1
+  },
+  "A0A087WPF7": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 13590,
+      "output": 3050,
+      "total": 16640
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 2
+  },
+  "A0A096LP01": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 8521,
+      "output": 3456,
+      "total": 11977
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0B4J2F0": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 5903,
+      "output": 4000,
+      "total": 9903
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A087WRU1": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 9002,
+      "output": 4092,
+      "total": 13094
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0A0KTQ0": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 7,
+    "token_usage": {
+      "input": 23956,
+      "output": 4502,
+      "total": 28458
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 1
+  },
+  "A0A0A0KVA0": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 9018,
+      "output": 3932,
+      "total": 12950
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A059Q4T4": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 9332,
+      "output": 3052,
+      "total": 12384
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A063CBJ7": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 2,
+    "token_usage": {
+      "input": 4013,
+      "output": 2560,
+      "total": 6573
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 2
+  },
+  "A0A080WMA9": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 10867,
+      "output": 2757,
+      "total": 13624
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 1
+  },
+  "A0A0B4JD40": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 6963,
+      "output": 3011,
+      "total": 9974
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0A7EPL0": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 6,
+    "token_usage": {
+      "input": 20690,
+      "output": 6625,
+      "total": 27315
+    },
+    "n_go_terms": 1,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A067N4H9": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 2,
+    "token_usage": {
+      "input": 4590,
+      "output": 1103,
+      "total": 5693
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 1
+  },
+  "A0A067XRK9": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 11840,
+      "output": 3411,
+      "total": 15251
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A075TR33": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 9839,
+      "output": 2298,
+      "total": 12137
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A097PTA8": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 9030,
+      "output": 5513,
+      "total": 14543
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0A2IDH4": {
+    "stop_reason": "model did not use tool-calling for its final answer after 2 attempts (wrote plain text instead of calling submit_final_answer) -- stopped early rather than burning the remaining step budget",
+    "steps_used": 3,
+    "token_usage": {
+      "input": 9547,
+      "output": 2564,
+      "total": 12111
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0A2JC26": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 5,
+    "token_usage": {
+      "input": 15833,
+      "output": 4057,
+      "total": 19890
+    },
+    "n_go_terms": 2,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0A2JWD0": {
+    "stop_reason": "submitted final answer",
+    "steps_used": 4,
+    "token_usage": {
+      "input": 13382,
+      "output": 2835,
+      "total": 16217
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 3
+  }
+}

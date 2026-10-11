@@ -43,7 +43,12 @@ class LLMClient:
             )
         self.model = model
         self.max_tokens_per_run = int(os.environ.get("MAX_TOKENS_PER_RUN", "100000"))
-        self._client = OpenAI(base_url=base_url, api_key=api_key)
+        # The openai SDK's default request timeout (600s) is too short for local
+        # CPU inference with a "thinking" model on long sequences -- a real
+        # eval.run_eval run hit APITimeoutError on an 847aa protein and crashed
+        # the whole multi-hour batch. 1800s with no auto-retry (a retry just
+        # repeats the same slow call) is generous enough for this hardware.
+        self._client = OpenAI(base_url=base_url, api_key=api_key, timeout=1800, max_retries=0)
         self.usage = TokenUsage()
 
     def chat(self, messages: list[dict], tools: list[dict]) -> dict:

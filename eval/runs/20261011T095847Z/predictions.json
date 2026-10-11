@@ -1,0 +1,3496 @@
+{
+  "diamond": {
+    "A0A024RBG1": [],
+    "A0A086F3E3": [
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.35200000000000004
+      },
+      {
+        "go_id": "GO:0042802",
+        "confidence": 0.35200000000000004
+      },
+      {
+        "go_id": "GO:0022841",
+        "confidence": 0.35200000000000004
+      },
+      {
+        "go_id": "GO:0015252",
+        "confidence": 0.35200000000000004
+      },
+      {
+        "go_id": "GO:0071805",
+        "confidence": 0.35200000000000004
+      },
+      {
+        "go_id": "GO:0051289",
+        "confidence": 0.35200000000000004
+      }
+    ],
+    "A0A087WPF7": [
+      {
+        "go_id": "GO:0003723",
+        "confidence": 0.39399999999999996
+      }
+    ],
+    "A0A096LP01": [],
+    "A0A0B4J2F0": [],
+    "A0A087WRU1": [],
+    "A0A0A0KTQ0": [
+      {
+        "go_id": "GO:0009706",
+        "confidence": 0.33299999999999996
+      },
+      {
+        "go_id": "GO:0005794",
+        "confidence": 0.33299999999999996
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.33299999999999996
+      }
+    ],
+    "A0A0A0KVA0": [
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.327
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.327
+      }
+    ],
+    "A0A059Q4T4": [
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.364
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.364
+      },
+      {
+        "go_id": "GO:0016746",
+        "confidence": 0.364
+      },
+      {
+        "go_id": "GO:0035835",
+        "confidence": 0.364
+      }
+    ],
+    "A0A063CBJ7": [],
+    "A0A080WMA9": [
+      {
+        "go_id": "GO:0004073",
+        "confidence": 0.433
+      },
+      {
+        "go_id": "GO:0051287",
+        "confidence": 0.433
+      },
+      {
+        "go_id": "GO:0050661",
+        "confidence": 0.433
+      },
+      {
+        "go_id": "GO:0046983",
+        "confidence": 0.433
+      },
+      {
+        "go_id": "GO:0071266",
+        "confidence": 0.433
+      },
+      {
+        "go_id": "GO:0009088",
+        "confidence": 0.433
+      }
+    ],
+    "A0A0B4JD40": [
+      {
+        "go_id": "GO:0005652",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0005700",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0005521",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0019789",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0061630",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0051299",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0007060",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0010032",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0071763",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0006997",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0006513",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0000209",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0006355",
+        "confidence": 0.426
+      },
+      {
+        "go_id": "GO:0006511",
+        "confidence": 0.426
+      }
+    ],
+    "A0A0A7EPL0": [
+      {
+        "go_id": "GO:0000785",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0005654",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0042802",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0042803",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0061665",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0019789",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0003712",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0016925",
+        "confidence": 0.461
+      },
+      {
+        "go_id": "GO:0060966",
+        "confidence": 0.461
+      }
+    ],
+    "A0A067N4H9": [
+      {
+        "go_id": "GO:0009277",
+        "confidence": 0.49200000000000005
+      },
+      {
+        "go_id": "GO:0005199",
+        "confidence": 0.49200000000000005
+      }
+    ],
+    "A0A067XRK9": [],
+    "A0A075TR33": [
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.434
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.434
+      },
+      {
+        "go_id": "GO:0106150",
+        "confidence": 0.434
+      }
+    ],
+    "A0A097PTA8": [],
+    "A0A0A2IDH4": [
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.43
+      },
+      {
+        "go_id": "GO:0036469",
+        "confidence": 0.43
+      },
+      {
+        "go_id": "GO:0030170",
+        "confidence": 0.43
+      },
+      {
+        "go_id": "GO:0006568",
+        "confidence": 0.43
+      }
+    ],
+    "A0A0A2JC26": [
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.28300000000000003
+      },
+      {
+        "go_id": "GO:0016614",
+        "confidence": 0.28300000000000003
+      }
+    ],
+    "A0A0A2JWD0": []
+  },
+  "protrek": {
+    "A0A024RBG1": [
+      {
+        "go_id": "GO:0009507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0034432",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019693",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0002145",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000287",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016791",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0042132",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050278",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030388",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006094",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006071",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019253",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004750",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046872",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0005975",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006098",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009052",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005730",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000932",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0097526",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046540",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005688",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003723",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0017070",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000398",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000956",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0033962",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000387",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043729",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0052645",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009231",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001669",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005856",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003682",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045892",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008589",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004046",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0141215",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030855",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032098",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019530",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016818",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006753",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005759",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000210",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035529",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010943",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016462",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015949",
+        "confidence": 0.1
+      }
+    ],
+    "A0A086F3E3": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 1.0
+      },
+      {
+        "go_id": "GO:0045259",
+        "confidence": 1.0
+      },
+      {
+        "go_id": "GO:0046933",
+        "confidence": 1.0
+      },
+      {
+        "go_id": "GO:0042777",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0009535",
+        "confidence": 0.4
+      }
+    ],
+    "A0A087WPF7": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0015031",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0001228",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000981",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000978",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0006357",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008013",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043565",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0007420",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001704",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045892",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000122",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0030182",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045944",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000785",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001650",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016604",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003700",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042803",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1990837",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000976",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007291",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0097381",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0060342",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042622",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005502",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016038",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016056",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007603",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0141190",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007601",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004115",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0047555",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043153",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0141162",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060041",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005604",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005509",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0012505",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016525",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001937",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030948",
+        "confidence": 0.1
+      }
+    ],
+    "A0A096LP01": [
+      {
+        "go_id": "GO:0005743",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0043495",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0034551",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005759",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045271",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0044877",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007623",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006120",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005783",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005811",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140311",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030674",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0070417",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016042",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010897",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045259",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0015252",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046933",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0015986",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:1902600",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005730",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031982",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003676",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006606",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031966",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0015078",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016887",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042776",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0B4J2F0": [
+      {
+        "go_id": "GO:0140595",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005741",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:7770059",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045040",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005789",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000139",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005765",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0030868",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051117",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:1904293",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031333",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1904153",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:2000059",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1904240",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010508",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1903061",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0050277",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005975",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035963",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071353",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071222",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009052",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016310",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050727",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043030",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005730",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031982",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003676",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006606",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043231",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005759",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:1901612",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035694",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035695",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0099617",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0033617",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005743",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0043495",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0034551",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009986",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032991",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043532",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042030",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005516",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042802",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042803",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030218",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006783",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001937",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051346",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1905707",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051289",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005777",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010506",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005762",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005654",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004045",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003747",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016150",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032543",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0070126",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0072344",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:7770016",
+        "confidence": 0.1
+      }
+    ],
+    "A0A087WRU1": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005109",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061630",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004842",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060173",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0090090",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:2000051",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030178",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016567",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060828",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:2000095",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0072089",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006511",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0038018",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030877",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1990711",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0070016",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008013",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001223",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140416",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060070",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0072201",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031333",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048662",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060633",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045657",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045669",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0002528",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0001540",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001664",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061484",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0034451",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005879",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005930",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0031514",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035082",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0044782",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015630",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008017",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0001578",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045654",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0023051",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005929",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0002177",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0036126",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1905198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0120316",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0007286",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000124",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0070461",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003712",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006357",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005730",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032435",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043065",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031647",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A0KTQ0": [
+      {
+        "go_id": "GO:0005794",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009507",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004324",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008266",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016616",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050624",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0009820",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009570",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050518",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019288",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045550",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016628",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046474",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016651",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050358",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009710",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016887",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003723",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003724",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009658",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000373",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042254",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008470",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1902198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1902196",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006552",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050109",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A0KVA0": [
+      {
+        "go_id": "GO:0016651",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016616",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050624",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009820",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050358",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009710",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016628",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016747",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030639",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016114",
+        "confidence": 0.1
+      }
+    ],
+    "A0A059Q4T4": [
+      {
+        "go_id": "GO:0016746",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0006066",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009836",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009723",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010268",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009742",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016131",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010422",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009962",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009646",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009741",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030639",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016616",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050624",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009820",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030778",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008171",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046983",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030762",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050358",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009710",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0009507",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0047893",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0080043",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035251",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071456",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051707",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008792",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006527",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042179",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009409",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008295",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016747",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016114",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051213",
+        "confidence": 0.1
+      }
+    ],
+    "A0A063CBJ7": [
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0004222",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006508",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0020002",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0044167",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0044178",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031965",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140311",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0039548",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0039579",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0039563",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0039564",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0039502",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030430",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0042025",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0043657",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140418",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005783",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000324",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032934",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015908",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015918",
+        "confidence": 0.1
+      }
+    ],
+    "A0A080WMA9": [
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0004073",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051287",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0050661",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046983",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071266",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0009090",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009088",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0004414",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0008899",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0009092",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004124",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003961",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051009",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030170",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019344",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071269",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019346",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032991",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0047106",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008957",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046196",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006081",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006559",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009435",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019607",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016651",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003942",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0070401",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0006526",
+        "confidence": 0.2
+      }
+    ],
+    "A0A0B4JD40": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0022829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1990817",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006397",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0070847",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0016592",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003712",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0006357",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005667",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045944",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0061629",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003713",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003714",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000122",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032968",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0060261",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0051123",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016604",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005654",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A7EPL0": [
+      {
+        "go_id": "GO:0000785",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005654",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0061665",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003712",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140416",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061630",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046426",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032480",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0060339",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1905168",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016925",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006357",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0030915",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000976",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0006338",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0002215",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006974",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031348",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045892",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010113",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016444",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009627",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071482",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042742",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003700",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0046983",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000978",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048440",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048481",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045944",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1990841",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009693",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009585",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010600",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010928",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009741",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009409",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010244",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0044165",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0044219",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046872",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140321",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0140533",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:2000028",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0000987",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019760",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048354",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048358",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006355",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048768",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0003682",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0001217",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061628",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006351",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045814",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010220",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061631",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004842",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000209",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016567",
+        "confidence": 0.1
+      }
+    ],
+    "A0A067N4H9": [
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0031160",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009277",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005199",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0031410",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005773",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0008061",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0052736",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0052861",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061760",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050832",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009723",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009753",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009615",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0043455",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042762",
+        "confidence": 0.1
+      }
+    ],
+    "A0A067XRK9": [
+      {
+        "go_id": "GO:0048046",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0004553",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030247",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016762",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042546",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0010411",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0030246",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0106310",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0004674",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042742",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0002229",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005773",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0052736",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0052861",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0061760",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050832",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0009723",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009753",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009615",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004857",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005975",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0030599",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042545",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045490",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004672",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004675",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031625",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046777",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006468",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048544",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005789",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0032586",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006952",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005783",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009277",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0042973",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008843",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016998",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006032",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005768",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005794",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000137",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005634",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005802",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005506",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0031418",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004656",
+        "confidence": 0.1
+      }
+    ],
+    "A0A075TR33": [
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0005507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004497",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016114",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016628",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004190",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006508",
+        "confidence": 0.1
+      }
+    ],
+    "A0A097PTA8": [
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0008061",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0031410",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0005125",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0048018",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005102",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005164",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032813",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045176",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006915",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045167",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0034198",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043652",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0014009",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006955",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0045087",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0035006",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0040015",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1900074",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1903427",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0070050",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043065",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030335",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046330",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1904801",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0043068",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:2000379",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:1904058",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0002347",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0033209",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042060",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030248",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005975",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0009253",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004190",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006508",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005783",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000324",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032934",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015908",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0015918",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A2IDH4": [
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030170",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050175",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009094",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030411",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006582",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0018663",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042803",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019608",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051213",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009710",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005759",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008841",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004326",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009793",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006730",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046654",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008793",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004400",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0000105",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A2JC26": [
+      {
+        "go_id": "GO:0005739",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0005507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004190",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006508",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0020037",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005506",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004497",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016705",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005737",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004029",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050269",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006081",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042856",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016114",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008802",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008812",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019285",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A2JWD0": [
+      {
+        "go_id": "GO:0016491",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016020",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0020037",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005506",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004497",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0016705",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005829",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032478",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005759",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032476",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0032991",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0097269",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0021549",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008299",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050878",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0006744",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0051213",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009710",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0018663",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0071949",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0050660",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0042803",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0019608",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030778",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0008171",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0046983",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0030762",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0005507",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0004659",
+        "confidence": 0.1
+      },
+      {
+        "go_id": "GO:0009820",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0016765",
+        "confidence": 0.1
+      }
+    ]
+  },
+  "llm_no_tools": {
+    "A0A024RBG1": [
+      {
+        "go_id": "GO:0004672",
+        "confidence": 0.65
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.75
+      },
+      {
+        "go_id": "GO:0006468",
+        "confidence": 0.55
+      }
+    ],
+    "A0A086F3E3": [
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.85
+      },
+      {
+        "go_id": "GO:0004674",
+        "confidence": 0.75
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.65
+      }
+    ],
+    "A0A087WPF7": [
+      {
+        "go_id": "GO:0004674",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0003674",
+        "confidence": 0.5
+      }
+    ],
+    "A0A096LP01": [
+      {
+        "go_id": "GO:0005215",
+        "confidence": 0.85
+      },
+      {
+        "go_id": "GO:0006935",
+        "confidence": 0.65
+      },
+      {
+        "go_id": "GO:0004382",
+        "confidence": 0.55
+      },
+      {
+        "go_id": "GO:0004672",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0B4J2F0": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.95
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.85
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.75
+      }
+    ],
+    "A0A087WRU1": [
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0006955",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0006950",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0006954",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0006952",
+        "confidence": 0.6
+      }
+    ],
+    "A0A0A0KTQ0": [
+      {
+        "go_id": "GO:0003824",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0016021",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0044763",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0A0KVA0": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0006936",
+        "confidence": 0.6
+      }
+    ],
+    "A0A059Q4T4": [
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0006996",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0008150",
+        "confidence": 0.5
+      }
+    ],
+    "A0A063CBJ7": [
+      {
+        "go_id": "GO:0004252",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005588",
+        "confidence": 0.4
+      }
+    ],
+    "A0A080WMA9": [
+      {
+        "go_id": "GO:0006810",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0003824",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0005105",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0005216",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0005488",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0B4JD40": [
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0005215",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0005587",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0A7EPL0": [
+      {
+        "go_id": "GO:0003723",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0005198",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.6
+      }
+    ],
+    "A0A067N4H9": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.85
+      },
+      {
+        "go_id": "GO:0005915",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0016021",
+        "confidence": 0.65
+      },
+      {
+        "go_id": "GO:0006936",
+        "confidence": 0.7
+      }
+    ],
+    "A0A067XRK9": [
+      {
+        "go_id": "GO:0005525",
+        "confidence": 0.85
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.75
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.65
+      }
+    ],
+    "A0A075TR33": [
+      {
+        "go_id": "GO:0006810",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0005509",
+        "confidence": 0.4
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.3
+      }
+    ],
+    "A0A097PTA8": [
+      {
+        "go_id": "GO:0005576",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0007165",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0005198",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005880",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0A2IDH4": [
+      {
+        "go_id": "GO:0003674",
+        "confidence": 0.8
+      },
+      {
+        "go_id": "GO:0006950",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005575",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0006457",
+        "confidence": 0.5
+      }
+    ],
+    "A0A0A2JC26": [
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.3
+      },
+      {
+        "go_id": "GO:0004674",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0003674",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.2
+      },
+      {
+        "go_id": "GO:0005524",
+        "confidence": 0.1
+      }
+    ],
+    "A0A0A2JWD0": [
+      {
+        "go_id": "GO:0004674",
+        "confidence": 0.7
+      },
+      {
+        "go_id": "GO:0006468",
+        "confidence": 0.6
+      },
+      {
+        "go_id": "GO:0005886",
+        "confidence": 0.5
+      },
+      {
+        "go_id": "GO:0005515",
+        "confidence": 0.5
+      }
+    ]
+  },
+  "full_agent": {
+    "A0A024RBG1": [],
+    "A0A086F3E3": [],
+    "A0A087WPF7": [],
+    "A0A096LP01": [],
+    "A0A0B4J2F0": [],
+    "A0A087WRU1": [],
+    "A0A0A0KTQ0": [],
+    "A0A0A0KVA0": [],
+    "A0A059Q4T4": [],
+    "A0A063CBJ7": [],
+    "A0A080WMA9": [],
+    "A0A0B4JD40": [],
+    "A0A0A7EPL0": [
+      {
+        "go_id": "GO:0008270",
+        "confidence": 0.95
+      }
+    ],
+    "A0A067N4H9": [],
+    "A0A067XRK9": [],
+    "A0A075TR33": [],
+    "A0A097PTA8": [],
+    "A0A0A2IDH4": [],
+    "A0A0A2JC26": [
+      {
+        "go_id": "GO:0016664",
+        "confidence": 0.9
+      },
+      {
+        "go_id": "GO:0003674",
+        "confidence": 0.9
+      }
+    ],
+    "A0A0A2JWD0": []
+  }
+}

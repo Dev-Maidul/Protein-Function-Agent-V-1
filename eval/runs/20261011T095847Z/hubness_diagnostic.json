@@ -1,0 +1,7 @@
+{
+  "total_neighbours_examined": 200,
+  "hub_flag_rate": 0.05,
+  "hub_neighbour_hit_rate": 0.0,
+  "nonhub_neighbour_hit_rate": 0.25263157894736843,
+  "note": "hit = at least one of the neighbour's own GO terms overlaps the query's ground truth"
+}
