@@ -1,58 +1,58 @@
 {
   "tool": "protrek",
   "query": "MEEPQSDPSVEPPLSQETFSDLWKLLPENN...",
-  "result_summary": "top match (+17.569, O15350): \"Participates in the apoptotic response to DNA damage. Isoforms containing the transactivation domain\"",
+  "result_summary": "top match (+13.409, O35147): \"Promotes cell death. Successfully competes for the binding to Bcl-X(L), Bcl-2 and Bcl-W, thereby aff\"",
   "raw_scores": {
     "ranked": [
       {
-        "accession": "O15350",
-        "description": "Participates in the apoptotic response to DNA damage. Isoforms containing the transactivation domain are pro-apoptotic, isoforms lacking the domain are anti-apoptotic and block the function of p53 and transactivating p73 isoforms. May be a tumor suppressor protein. Is an activator of FOXJ1 expression (By similarity)....",
-        "score": 17.568906784057617
+        "accession": "O35147",
+        "description": "Promotes cell death. Successfully competes for the binding to Bcl-X(L), Bcl-2 and Bcl-W, thereby affecting the level of heterodimerization of these proteins with BAX. Can reverse the death repressor activity of Bcl-X(L), but not that of Bcl-2 (By similarity). Appears to act as a link between growth factor receptor...",
+        "score": 13.409122467041016
       },
       {
-        "accession": "O02703",
-        "description": "Plays a role in the mitochondrial apoptotic process. Under normal conditions, BAX is largely cytosolic via constant retrotranslocation from mitochondria to the cytosol mediated by BCL2L1/Bcl-xL, which avoids accumulation of toxic BAX levels at the mitochondrial outer membrane (MOM). Under stress conditions, undergoes...",
-        "score": 14.176055908203125
+        "accession": "Q8C0R0",
+        "description": "Deubiquitinase that plays a role in different processes including cell cycle regulation, DNA replication or DNA damage response. Antagonizes the anaphase-promoting complex (APC/C) during G1/S transition by mediating deubiquitination of cyclin-A (CCNA1 and CCNA2), thereby promoting S phase entry. Specifically mediates...",
+        "score": 12.482488632202148
       },
       {
-        "accession": "O14929",
-        "description": "Histone acetyltransferase that plays a role in different biological processes including cell cycle progression, glucose metabolism, histone production or DNA damage repair (PubMed:20953179, PubMed:23653357, PubMed:31278053, PubMed:32081014). Coordinates histone production and acetylation via H4 promoter binding...",
-        "score": 14.048027038574219
+        "accession": "P99025",
+        "description": "Mediates tetrahydrobiopterin inhibition of GTP cyclohydrolase 1. This inhibition is reversed by L-phenylalanine (By similarity)..",
+        "score": 12.323049545288086
       },
       {
-        "accession": "A0A2K5TU92",
-        "description": "NAD-dependent protein deacetylase, deacylase and mono-ADP-ribosyltransferase that plays an essential role in DNA damage repair, telomere maintenance, metabolic homeostasis, inflammation, tumorigenesis and aging (PubMed:30135584). Displays protein-lysine deacetylase or defatty-acylase (demyristoylase and...",
-        "score": 13.518059730529785
+        "accession": "Q08050",
+        "description": "Transcription factor regulating the expression of cell cycle genes essential for DNA replication and mitosis (PubMed:19160488, PubMed:20360045). Plays a role in the control of cell proliferation (PubMed:19160488). Also plays a role in DNA break repair, participating in the DNA damage checkpoint response...",
+        "score": 12.24853801727295
       },
       {
-        "accession": "O15151",
-        "description": "Contributes to p53/TP53 regulation (PubMed:32300648). Inhibits p53/TP53- and p73/TP73-mediated cell cycle arrest and apoptosis by binding their transcriptional activation domains. Inhibits degradation of MDM2. Can reverse MDM2-targeted degradation of TP53 while maintaining suppression of TP53 transactivation and...",
-        "score": 13.452120780944824
+        "accession": "Q9H147",
+        "description": "Increases DNTT terminal deoxynucleotidyltransferase activity (in vitro) (PubMed:11473582). Also acts as a transcriptional regulator, binding to the consensus sequence 5'-GNTGCATG-3' following an AT-tract. Associates with RAB20 promoter and positively regulates its transcription. Binds DNA and nucleosomes",
+        "score": 11.994486808776855
       },
       {
-        "accession": "G5EFF5",
-        "description": "Nuclear receptor which binds directly to response elements in target gene promoters (PubMed:10859169, PubMed:15314028, PubMed:15383841, PubMed:15489294, PubMed:15611047, PubMed:16626392, PubMed:19828440, PubMed:21814518, PubMed:9477318). Activity is modulated by binding of steroid hormone ligands that include...",
-        "score": 13.27243709564209
+        "accession": "P45974",
+        "description": "Deubiquitinating enzyme that participates in a wide range of cellular processes by specifically cleaving isopeptide bonds between ubiquitin and substrate proteins or ubiquitin itself. Affects thereby important cellular signaling pathways such as NF-kappa-B, Wnt/beta-catenin, and cytokine production by regulating...",
+        "score": 11.856127738952637
       },
       {
-        "accession": "O02718",
-        "description": "Suppresses apoptosis in a variety of cell systems including factor-dependent lymphohematopoietic and neural cells. Regulates cell death by controlling the mitochondrial membrane permeability. Appears to function in a feedback loop system with caspases. Inhibits caspase activity either by preventing the release of...",
-        "score": 13.206930160522461
+        "accession": "Q96676",
+        "description": "Plays a role in viral genome replication by driving entry of quiescent cells into the cell cycle. Stimulation of progression from G1 to S phase allows the virus to efficiently use the cellular DNA replicating machinery to achieve viral genome replication. E1A protein has both transforming and trans-activating...",
+        "score": 11.642256736755371
       },
       {
-        "accession": "O14737",
-        "description": "In response to DNA damage, associates with TP53/p53 to prevent MDM2-mediated degradation of TP53 and promote TP53-mediated signaling (PubMed:19616514, PubMed:22914926, PubMed:28051100). Also protects KAT5/TIP60 from degradation, which further promotes TP53/p53-mediated signaling (PubMed:19308289)..",
-        "score": 13.109078407287598
+        "accession": "Q969S2",
+        "description": "Involved in base excision repair of DNA damaged by oxidation or by mutagenic agents. Has DNA glycosylase activity towards 5-hydroxyuracil and other oxidized derivatives of cytosine with a preference for mismatched double-stranded DNA (DNA bubbles). Has low or no DNA glycosylase activity towards thymine glycol,...",
+        "score": 11.49798583984375
       },
       {
-        "accession": "A0A250YGJ5",
-        "description": "NAD-dependent protein deacetylase, deacylase and mono-ADP-ribosyltransferase that plays an essential role in DNA damage repair, telomere maintenance, metabolic homeostasis, inflammation, tumorigenesis and aging (By similarity). Displays protein-lysine deacetylase or defatty-acylase (demyristoylase and depalmitoylase)...",
-        "score": 13.083442687988281
+        "accession": "Q9R0P9",
+        "description": "Deubiquitinase that plays a role in the regulation of several processes such as maintenance of synaptic function, cardiac function, inflammatory response or osteoclastogenesis (PubMed:31492742, PubMed:32494592, PubMed:37215988). Abrogates the ubiquitination of multiple proteins including WWTR1/TAZ, EGFR, HIF1A and...",
+        "score": 11.317558288574219
       },
       {
-        "accession": "A0A0J9UVG7",
-        "description": "NAD-dependent protein-lysine deacylase that decrotonylates the PDC (pyruvate dehydrogenase complex) subunit LAT1 at 'Lys-148' to inhibit PDC activity and consequently ATP production (PubMed:34927582). Also decrotonylates histone H3 crotonylated at 'Lys-18' (H3K18cr), to repress the expression of genes involved in...",
-        "score": 13.07836627960205
+        "accession": "P85118",
+        "description": "Probable acetyltransferase (Probable). Has no detectable histone acetyltransferase activity towards histone H3 or H4..",
+        "score": 11.240726470947266
       }
     ],
     "candidate_pool_size": 5000,
@@ -60,29 +60,29 @@
     "device": "mps"
   },
   "source_ids": [
-    "O15350",
-    "O02703",
-    "O14929",
-    "A0A2K5TU92",
-    "O15151",
-    "G5EFF5",
-    "O02718",
-    "O14737",
-    "A0A250YGJ5",
-    "A0A0J9UVG7"
+    "O35147",
+    "Q8C0R0",
+    "P99025",
+    "Q08050",
+    "Q9H147",
+    "P45974",
+    "Q96676",
+    "Q969S2",
+    "Q9R0P9",
+    "P85118"
   ],
   "source_urls": [
-    "https://www.uniprot.org/uniprotkb/O15350",
-    "https://www.uniprot.org/uniprotkb/O02703",
-    "https://www.uniprot.org/uniprotkb/O14929",
-    "https://www.uniprot.org/uniprotkb/A0A2K5TU92",
-    "https://www.uniprot.org/uniprotkb/O15151",
-    "https://www.uniprot.org/uniprotkb/G5EFF5",
-    "https://www.uniprot.org/uniprotkb/O02718",
-    "https://www.uniprot.org/uniprotkb/O14737",
-    "https://www.uniprot.org/uniprotkb/A0A250YGJ5",
-    "https://www.uniprot.org/uniprotkb/A0A0J9UVG7"
+    "https://www.uniprot.org/uniprotkb/O35147",
+    "https://www.uniprot.org/uniprotkb/Q8C0R0",
+    "https://www.uniprot.org/uniprotkb/P99025",
+    "https://www.uniprot.org/uniprotkb/Q08050",
+    "https://www.uniprot.org/uniprotkb/Q9H147",
+    "https://www.uniprot.org/uniprotkb/P45974",
+    "https://www.uniprot.org/uniprotkb/Q96676",
+    "https://www.uniprot.org/uniprotkb/Q969S2",
+    "https://www.uniprot.org/uniprotkb/Q9R0P9",
+    "https://www.uniprot.org/uniprotkb/P85118"
   ],
-  "runtime_s": 8.591,
+  "runtime_s": 9.173,
   "error": null
 }

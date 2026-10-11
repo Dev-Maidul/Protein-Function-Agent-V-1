@@ -1,111 +1,112 @@
 {
   "tool": "esm2_knn",
   "query": "MEEPQSDPSVEPPLSQETFSDLWKLLPENN...",
-  "result_summary": "10 nearest neighbour(s) in Swiss-Prot subset; top=O09185 (cos_sim=0.995) -- 2 flagged as hub(s), treat with caution",
+  "result_summary": "10 nearest neighbour(s) in Swiss-Prot subset; top=Q99PI4 (cos_sim=0.984) -- 5 flagged as hub(s), treat with caution",
   "raw_scores": {
     "neighbour_count": 10,
     "neighbours": [
       {
-        "accession": "O09185",
-        "description": "Cellular tumor antigen p53 (Tumor suppressor p53)",
-        "cosine_similarity": 0.9952160120010376,
-        "k_occurrence": 18,
-        "is_hub": false
-      },
-      {
-        "accession": "D4A4K3",
-        "description": "Beclin 1-associated autophagy-related key regulator (Barkor) (Autophagy-related protein 14-like protein) (Atg14L)",
-        "cosine_similarity": 0.9836220741271973,
-        "k_occurrence": 55,
+        "accession": "Q99PI4",
+        "description": "Phosphatidate phosphatase LPIN3 (EC 3.1.3.4) (Lipin-3)",
+        "cosine_similarity": 0.9843165874481201,
+        "k_occurrence": 40,
         "is_hub": true
       },
       {
-        "accession": "O08856",
-        "description": "RNA polymerase II elongation factor ELL (Eleven-nineteen lysine-rich leukemia protein)",
-        "cosine_similarity": 0.9820247888565063,
-        "k_occurrence": 9,
+        "accession": "Q08DD6",
+        "description": "Interferon regulatory factor 6 (IRF-6)",
+        "cosine_similarity": 0.9804446697235107,
+        "k_occurrence": 11,
         "is_hub": false
       },
       {
-        "accession": "E7FBF7",
-        "description": "F-BAR domain only protein 1",
-        "cosine_similarity": 0.9818642139434814,
-        "k_occurrence": 34,
+        "accession": "Q9H147",
+        "description": "Deoxynucleotidyltransferase terminal-interacting protein 1 (Terminal deoxynucleotidyltransferase-interacting factor 1) (TdIF1) (TdT-interacting factor 1)",
+        "cosine_similarity": 0.9803484678268433,
+        "k_occurrence": 37,
+        "is_hub": true
+      },
+      {
+        "accession": "Q64448",
+        "description": "Gap junction alpha-3 protein (Connexin-46) (Cx46)",
+        "cosine_similarity": 0.9800546169281006,
+        "k_occurrence": 26,
         "is_hub": false
       },
       {
-        "accession": "O15178",
-        "description": "T-box transcription factor T (Brachyury protein) (Protein T)",
-        "cosine_similarity": 0.9814781546592712,
-        "k_occurrence": 17,
+        "accession": "P22021",
+        "description": "Mating-type locus allele B7 protein",
+        "cosine_similarity": 0.978061318397522,
+        "k_occurrence": 67,
+        "is_hub": true
+      },
+      {
+        "accession": "Q66HC7",
+        "description": "Transcription factor SPT20 homolog",
+        "cosine_similarity": 0.9775711297988892,
+        "k_occurrence": 30,
         "is_hub": false
       },
       {
-        "accession": "A0A0R4IKJ1",
-        "description": "mRNA (2'-O-methyladenosine-N(6)-)-methyltransferase (EC 2.1.1.62) (Cap-specific adenosine methyltransferase) (CAPAM) (zCAPAM) (Phosphorylated CTD-interacting factor 1)",
-        "cosine_similarity": 0.9814156293869019,
+        "accession": "Q3KQ71",
+        "description": "Sodium channel modifier 1",
+        "cosine_similarity": 0.9771004915237427,
         "k_occurrence": 47,
         "is_hub": true
       },
       {
-        "accession": "O15198",
-        "description": "SMAD family member 9 (SMAD 9) (Madh6) (Mothers against decapentaplegic homolog 9) (MAD homolog 9) (Mothers against DPP homolog 9)",
-        "cosine_similarity": 0.9810108542442322,
+        "accession": "Q3UNW5",
+        "description": "Transcription factor CP2-like protein 1 (CP2-related transcriptional repressor 1) (CRTR-1)",
+        "cosine_similarity": 0.9764583706855774,
+        "k_occurrence": 33,
+        "is_hub": false
+      },
+      {
+        "accession": "Q13568",
+        "description": "Interferon regulatory factor 5 (IRF-5)",
+        "cosine_similarity": 0.9764230251312256,
         "k_occurrence": 16,
         "is_hub": false
       },
       {
-        "accession": "O14896",
-        "description": "Interferon regulatory factor 6 (IRF-6)",
-        "cosine_similarity": 0.9809812307357788,
-        "k_occurrence": 4,
-        "is_hub": false
-      },
-      {
-        "accession": "F5HF68",
-        "description": "VIRF-1",
-        "cosine_similarity": 0.9808386564254761,
-        "k_occurrence": 17,
-        "is_hub": false
-      },
-      {
-        "accession": "A2ALS5",
-        "description": "Rap1 GTPase-activating protein 1 (Rap1GAP) (Rap1GAP1) (ARPP-90)",
-        "cosine_similarity": 0.9804832339286804,
-        "k_occurrence": 16,
-        "is_hub": false
+        "accession": "Q9H6S3",
+        "description": "Epidermal growth factor receptor kinase substrate 8-like protein 2 (EPS8-like protein 2) (Epidermal growth factor receptor pathway substrate 8-related protein 2) (EPS8-related protein 2)",
+        "cosine_similarity": 0.9761989116668701,
+        "k_occurrence": 43,
+        "is_hub": true
       }
     ],
-    "hub_count": 2,
+    "hub_count": 5,
+    "excluded_count": 0,
     "index_size": 5000,
     "hubness_mean": 10.0,
-    "hubness_std": 8.704228857285406,
-    "hub_threshold": 36.112686571856216
+    "hubness_std": 8.376944550371572,
+    "hub_threshold": 35.13083365111471
   },
   "source_ids": [
-    "O09185",
-    "D4A4K3",
-    "O08856",
-    "E7FBF7",
-    "O15178",
-    "A0A0R4IKJ1",
-    "O15198",
-    "O14896",
-    "F5HF68",
-    "A2ALS5"
+    "Q99PI4",
+    "Q08DD6",
+    "Q9H147",
+    "Q64448",
+    "P22021",
+    "Q66HC7",
+    "Q3KQ71",
+    "Q3UNW5",
+    "Q13568",
+    "Q9H6S3"
   ],
   "source_urls": [
-    "https://www.uniprot.org/uniprotkb/O09185",
-    "https://www.uniprot.org/uniprotkb/D4A4K3",
-    "https://www.uniprot.org/uniprotkb/O08856",
-    "https://www.uniprot.org/uniprotkb/E7FBF7",
-    "https://www.uniprot.org/uniprotkb/O15178",
-    "https://www.uniprot.org/uniprotkb/A0A0R4IKJ1",
-    "https://www.uniprot.org/uniprotkb/O15198",
-    "https://www.uniprot.org/uniprotkb/O14896",
-    "https://www.uniprot.org/uniprotkb/F5HF68",
-    "https://www.uniprot.org/uniprotkb/A2ALS5"
+    "https://www.uniprot.org/uniprotkb/Q99PI4",
+    "https://www.uniprot.org/uniprotkb/Q08DD6",
+    "https://www.uniprot.org/uniprotkb/Q9H147",
+    "https://www.uniprot.org/uniprotkb/Q64448",
+    "https://www.uniprot.org/uniprotkb/P22021",
+    "https://www.uniprot.org/uniprotkb/Q66HC7",
+    "https://www.uniprot.org/uniprotkb/Q3KQ71",
+    "https://www.uniprot.org/uniprotkb/Q3UNW5",
+    "https://www.uniprot.org/uniprotkb/Q13568",
+    "https://www.uniprot.org/uniprotkb/Q9H6S3"
   ],
-  "runtime_s": 8.195,
+  "runtime_s": 7.63,
   "error": null
 }

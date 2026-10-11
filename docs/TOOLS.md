@@ -103,27 +103,33 @@ ESM-2-এর জন্য ৮০০টা random sequence ব্যবহার 
 বানানো হয়েছে, যাতে result-গুলো তুলনীয় থাকে ও subset-selection একবারই document
 করতে হয়:
 
-- **Source:** UniProt REST stream API (`GET https://rest.uniprot.org/uniprotkb/stream`),
-  `query=reviewed:true`, fields = accession/protein_name/organism_name/
-  cc_function/sequence/length — একই tool #1-এর API, শুধু bulk/stream mode-এ।
-- **Selection method (deterministic, random না — honestly document করা হচ্ছে):**
-  UniProt-এর default stream order-এ (accession ascending) প্রথম থেকে entry
-  পড়ে, যেগুলোর (ক) non-empty "Function [CC]" annotation আছে এবং (খ) sequence
-  length ২০-১০০০ aa-র মধ্যে, সেগুলো রাখা হয়েছে — ৫,০০০টা এমন entry পাওয়ার পর
-  থেমে গেছে। এটা truly random sample না (reproducible, কিন্তু accession-এর
-  alphabetical ক্রম অনুযায়ী বায়াসড — মূলত "A0A0..." প্রিফিক্সের entry বেশি)।
-  Phase 3-এ আরও ভালো (stratified/random) sampling নিয়ে ভাবা হবে।
+- **⚠️ Selection method ঠিক করা হয়েছে (ব্যবহারকারী ধরে ফেলেছিলেন, সৎভাবে
+  রিপোর্ট করা হচ্ছে):** প্রথম ভার্সন **accession-ascending** order-এ প্রথম
+  ৫,০০০টা qualifying entry নিত — এটা deterministic কিন্তু **random sample
+  না** (alphabetically বায়াসড, মূলত "A0A0..." প্রিফিক্স বেশি, "P0xxxx"
+  পর্যন্তও পৌঁছাত না)। এখন **true seeded random sample**-এ ঠিক করা হয়েছে:
+  1. লাইটওয়েট pass — `query=reviewed:true AND cc_function:* AND length:[20 TO 1000]`
+     (server-side filter) দিয়ে শুধু `accession` field stream করে পুরো
+     qualifying universe-এর list আনা হয় (**৪,৫৫,৬৪৪টা entry, মাত্র ~3.2MB** —
+     ভারী field বাদ দেওয়ায় ছোট)।
+  2. `random.Random(seed=42).sample(all_accessions, 5000)` — পুরো universe
+     থেকে truly uniform random 5,000টা accession বাছা হয়।
+  3. সেই 5,000টার জন্যই full field (function text, sequence ইত্যাদি) batch
+     করে আনা হয় (`accession:(A OR B OR ...)` queries, batch size 50 —
+     200-এ UniProt 400 error দেয়, URL-length limit, লাইভ টেস্টে ধরা পড়েছে)।
+  এই approach **আগেরটার চেয়েও কম data download করে** (universe list + শুধু
+  sampled 5000-এর detail ≈ ~8MB মোট) এবং genuinely uniform random sample দেয়।
+- **Source:** UniProt REST stream API, একই tool #1-এর API bulk/stream mode-এ।
 - **Function text cleaning:** multi-chain polyprotein-এ একাধিক "FUNCTION: [Chain
   name]: ..." segment থাকে (`;`-separated) — প্রথমটা নেওয়া হয়, `{ECO:...}`
   evidence code ও `[Chain name]:` label বাদ দেওয়া হয়, ৩২০ character-এ truncate
   করা হয় (word boundary-তে)।
-- **ফলাফল:** `data/shared_subset.tsv`-এ ৫,০০০টা row (~5MB) — build time
-  **~25 সেকেন্ড** (pure network stream, কোনো heavy compute না)। Sequence
-  length min/max/avg: 21/1000/464.6 aa। Function text length min/max/avg:
-  7/322/271.5 chars। **p53 (P04637) এই subset-এ নেই** (alphabetically subset
-  শেষ হয়েছে "O3xxxx"-এ, "P0xxxx" পর্যন্ত পৌঁছায়নি) — তাই নিচের p53 test-গুলোতে
-  কোনো self-leakage নেই, এটা genuinely zero-shot retrieval।
-- **Reproduce করতে:** `python -m tools.build_shared_subset --n 5000 --max-len 1000`
+- **ফলাফল (নতুন random sample, seed=42):** `data/shared_subset.tsv`-এ ৫,০০০টা
+  row। Accession-গুলো এখন A থেকে W পর্যন্ত পুরো alphabet-এ ছড়িয়ে আছে (আগের
+  মতো শুধু A0A0.../O3xxx না — verified)। Sequence length min/max/avg:
+  21/998/332.4 aa। **p53 (P04637) ও beta-actin (P60709) এই subset-এ নেই** —
+  তাই নিচের test-গুলোতে কোনো self-leakage নেই।
+- **Reproduce করতে:** `python -m tools.build_shared_subset --n 5000 --max-len 1000 --seed 42`
   (git-এ `data/` রাখা হয়নি)।
 
 ## 6. ProTrek_35M (`tools/protrek.py`, cache built by `tools/build_protrek_cache.py`)
@@ -145,27 +151,30 @@ ESM-2-এর জন্য ৮০০টা random sequence ব্যবহার 
 - **Evaluation mode:** caller `exclude_accessions` দিলে সেই accession-গুলো
   candidate pool থেকে বাদ পড়ে (query-র নিজের accession বা DIAMOND দিয়ে পাওয়া
   close homolog — threshold Phase 3-এ ঠিক হবে)।
-- **Verify করা হয়েছে (নতুন, real 5,000-candidate pool দিয়ে, mock না):** human
-  p53-এর পূর্ণ sequence দিয়ে top-10 retrieve করা হয়েছে real wrapper code দিয়ে —
-  সময় **~8.6 সেকেন্ড** (MPS)। **এবার ফলাফল নাটকীয়ভাবে ভালো এবং সবই biologically
-  relevant:**
+- **Verify করা হয়েছে (true random subset-এর উপর, mock না, re-verified after
+  the sampling fix):** human p53-এর পূর্ণ sequence দিয়ে top-10 retrieve করা
+  হয়েছে — সময় **~9.2 সেকেন্ড** (MPS)।
   ```
-  +17.569  O15350  Participates in the apoptotic response to DNA damage ... (ASPP2/TP53BP2)
-  +14.176  O02703  Plays a role in the mitochondrial apoptotic process (BAX-family)
-  +14.048  O14929  Histone acetyltransferase ... cell cycle (p300/CBP family)
-  +13.518  A0A2K5TU92  NAD-dependent protein deacetylase (sirtuin family)
-  +13.452  O15151  Contributes to p53/TP53 regulation; inhibits p53-mediated apoptosis (MDM4/MDMX)
-  +13.272  G5EFF5  Nuclear receptor binding target gene promoters
-  +13.207  O02718  Suppresses apoptosis (IAP-family)
-  +13.109  O14737  In response to DNA damage, associates with TP53 to prevent MDM2-mediated degradation
-  +13.083  A0A250YGJ5  NAD-dependent protein deacetylase (sirtuin family)
-  +13.078  A0A0J9UVG7  NAD-dependent protein-lysine deacylase
+  +13.409  O35147  Promotes cell death; competes for binding to Bcl-X(L)/Bcl-2/Bcl-W (BH3-only, apoptosis)
+  +12.482  Q8C0R0  Deubiquitinase -- cell cycle regulation, DNA damage response
+  +12.323  P99025  Mediates tetrahydrobiopterin inhibition of GTP cyclohydrolase 1
+  +12.249  Q08050  Transcription factor regulating cell-cycle genes for DNA replication (FOXM1-like)
+  +11.994  Q9H147  Increases DNTT terminal deoxynucleotidyltransferase activity
+  +11.856  P45974  Deubiquitinating enzyme, wide range of cellular processes
+  +11.642  Q96676  Viral genome replication, drives quiescent cells into cell cycle
+  +11.498  Q969S2  Base excision repair of oxidatively/mutagen-damaged DNA
+  +11.318  Q9R0P9  Deubiquitinase, cell-cycle/DNA-repair-adjacent regulation
+  +11.241  P85118  Probable acetyltransferase (no detectable HAT activity)
   ```
-  এই ১০টার প্রায় সবই সরাসরি p53/apoptosis/DNA-damage pathway-র সাথে সম্পর্কিত
-  (বিশেষভাবে O15350 ASPP2 আর O14737 — এরা literally TP53-এর সাথে interact
-  করে)। ছোট ৫-candidate test-এর (আগের) ভুল top-1 ফলাফলের তুলনায় এটা স্পষ্ট
-  প্রমাণ করে — ছোট candidate pool দিয়ে পরীক্ষা করাটাই সমস্যা ছিল, model নিজে
-  ভুল ছিল না। Fixture: `tests/fixtures/protrek_top10_p53.json`।
+  এবারের candidate pool (random subset-এর ৫,০০০টা) আগের accession-ascending
+  subset-এর থেকে ভিন্ন, তাই top score একটু কম (13.4 বনাম আগে 17.6) — কিন্তু
+  thematically এখনো clearly apoptosis/cell-cycle/DNA-damage-repair ঘিরে আছে
+  (BH3-only apoptosis regulator, deubiquitinases cell-cycle-related, FOXM1-like
+  TF, base excision repair) — p53-এর pathway-এর সাথে সামঞ্জস্যপূর্ণ, যদিও
+  **direct p53-interactor (যেমন ASPP2/MDM4) এবার pool-এ নেই** (truly random
+  sample-এ pড়েনি)। এটাই ProTrek-কে "weak evidence" ধরার কারণ — pathway-level
+  থিম ধরে, কিন্তু নির্দিষ্ট interactor খুঁজে পাওয়া pool-এর উপর নির্ভরশীল।
+  Fixture: `tests/fixtures/protrek_top10_p53.json`।
 
 ## 7. ESM-2 embedding + kNN + hubness diagnostic (`tools/esm2_knn.py`, index built by `tools/build_esm2_index.py`)
 - **কী করে:** ESM-2 (35M) দিয়ে একটা protein sequence-এর embedding বানায়, তারপর
@@ -198,36 +207,47 @@ ESM-2-এর জন্য ৮০০টা random sequence ব্যবহার 
   as-is load করা হয়, slice না করে), একটা regression test লেখা হয়েছে
   (`tests/test_build_esm2_index.py`), এবং পুরো index **from scratch rebuild**
   করা হয়েছে — নিচের সব সংখ্যা সেই পরিষ্কার rebuild থেকে।
-- **Real build time (clean rebuild, ৫,০০০ sequence, batch=16, CPU):
-  ৫৩৮ সেকেন্ড (~৯ মিনিট)।** Zero-norm/NaN row: 0/5000 (verified)।
-- **Hubness distribution (k=10, n=5,000):** mean N_k = 10.00 (প্রত্যাশিত —
-  গড়ে প্রতিটা point ঠিক k বারই কারো top-k-এ আসার কথা), **std = 8.70, max = 90,
-  skewness = 2.20** — mean-এর ৯ গুণ বেশি একটা single point (hub_threshold =
-  mean + 3×std = 36.11)। Positive skew (2.20) নিশ্চিত করে real hubness
-  phenomenon আছে এই subset-এও, যদিও আগের corrupted রানের (std=59.80, max=1542,
-  skew=22.47) তুলনায় অনেক বেশি বিশ্বাসযোগ্য মাত্রার।
-- **Top-5 hub protein (সবচেয়ে বেশি k-occurrence):**
+- **Re-built after the sampling fix (true random subset, seed=42). Real
+  build time: ৩৭৩.৫ সেকেন্ড (~৬.২ মিনিট), batch=16, CPU।** Zero-norm/NaN row:
+  0/5000 (verified)।
+- **Hubness distribution (k=10, n=5,000, true random subset):** mean N_k =
+  10.00 (প্রত্যাশিত), **std = 8.38, max = 94, skewness = 2.09**
+  (hub_threshold = mean + 3×std = 35.13)। আগের (accession-ascending) subset-এর
+  সংখ্যার (std=8.70, max=90, skew=2.20) খুব কাছাকাছি — মানে hubness
+  phenomenon-টা subset-selection method-এর উপর নির্ভরশীল না, বরং ESM-2
+  embedding space-এর নিজের একটা বৈশিষ্ট্য, যেটাই এই diagnostic দিয়ে ধরতে
+  চাওয়া হচ্ছিল।
+- **Top-5 hub protein (true random subset):**
   ```
-  N_k=90  C6KIE6      Extra-large guanine nucleotide-binding protein 2
-  N_k=86  A0A061AE05  Bifunctional PAPS synthase pps-1
-  N_k=78  A2A8Z1      Oxysterol-binding protein-related protein 9
-  N_k=69  H2KZH5      Target of ERK kinase mpk-1
-  N_k=69  O18017      RecQ-like DNA helicase blm-1
+  N_k=94  P0A2D7  HTH-type transcriptional regulatory protein TyrR
+  N_k=77  Q5U5R9  Probable E3 ubiquitin-protein ligase HECTD2
+  N_k=70  Q6BLS3  GMP synthase [glutamine-hydrolyzing]
+  N_k=67  P22021  Mating-type locus allele B7 protein
+  N_k=64  P53137  RQC trigger complex subunit CUE3
   ```
   (সম্পূর্ণ top-20 `data/esm2_hubness.json`-এ)।
-- **p53 (P04637, index-এ নেই) দিয়ে real kNN query, top-10 honestly:**
+- **p53 (P04637, index-এ নেই) দিয়ে real kNN query, top-10 honestly (true
+  random subset):**
   ```
-  0.995  hub=No   ko=18  O09185      Cellular tumor antigen p53 (mouse p53!)
-  0.984  hub=YES  ko=55  D4A4K3      Beclin-1-associated autophagy regulator
-  0.982  hub=No   ko= 9  O08856      RNA pol II elongation factor ELL
-  0.982  hub=No   ko=34  E7FBF7      F-BAR domain only protein 1
-  0.981  hub=No   ko=17  O15178      Brachyury (T-box transcription factor T)
-  0.981  hub=YES  ko=47  A0A0R4IKJ1  mRNA cap methyltransferase
-  0.981  hub=No   ko=16  O15198      SMAD9
-  0.981  hub=No   ko= 4  O14896      Interferon regulatory factor 6
-  0.981  hub=No   ko=17  F5HF68      VIRF-1
-  0.980  hub=No   ko=16  A2ALS5      Rap1GAP1
+  0.984  hub=YES ko=40  Q99PI4  Phosphatidate phosphatase LPIN3 (Lipin-3)
+  0.980  hub=No  ko=11  Q08DD6  Interferon regulatory factor 6 (IRF-6)
+  0.980  hub=YES ko=37  Q9H147  Deoxynucleotidyltransferase terminal-interacting protein 1
+  0.980  hub=No  ko=26  Q64448  Gap junction alpha-3 protein (Connexin-46)
+  0.978  hub=YES ko=67  P22021  Mating-type locus allele B7 protein
+  0.978  hub=No  ko=30  Q66HC7  Transcription factor SPT20 homolog
+  0.977  hub=YES ko=47  Q3KQ71  Sodium channel modifier 1
+  0.976  hub=No  ko=33  Q3UNW5  Transcription factor CP2-like protein 1
+  0.976  hub=No  ko=16  Q13568  Interferon regulatory factor 5 (IRF-5)
+  0.976  hub=YES ko=43  Q9H6S3  EPS8-like protein 2
   ```
+  **সৎভাবে বলতে হচ্ছে:** এই true-random 5,000-subset-এ p53-এর কোনো সরাসরি
+  ortholog/homolog নেই (আগের accession-ascending subset-এ ভুলবশত mouse p53
+  ছিল, cos_sim 0.995 — সেটা এখন চলে গেছে)। এবারের neighbour-গুলো p53-এর
+  সাথে biologically স্পষ্টভাবে সম্পর্কিত না (IRF-6, connexin, ion channel
+  ইত্যাদি random মিশ্রণ) — **১০টার মধ্যে ৫টাই hub-flagged**, যা precisely
+  এই tool-এর নিজের সতর্কবার্তা প্রমাণ করে: ছোট subset-এ, hub-heavy
+  neighbour-কে বিশ্বাস না করে down-weight করা উচিত, exactly যেমন agent-এর
+  system prompt-এ rule আছে।
   **সময়: ~8.2 সেকেন্ড।** Top hit **O09185 "Cellular tumor antigen p53"** —
   এটা আসলে mouse p53, মানে query (human p53)-এর খুব কাছের homolog, cos_sim
   0.995 — এটাই সবচেয়ে ভালো sanity check, bug-fix-এর পর ঠিক এই ধরনের ফলাফল

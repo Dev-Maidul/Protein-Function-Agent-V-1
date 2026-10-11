@@ -63,11 +63,23 @@ def _embed_query(sequence: str) -> np.ndarray:
     return out.last_hidden_state[0, 1:-1].mean(dim=0).numpy()
 
 
-def _knn_search(query_emb: np.ndarray, index: dict, hubness: dict, top_k: int) -> list[dict]:
+def _knn_search(
+    query_emb: np.ndarray,
+    index: dict,
+    hubness: dict,
+    top_k: int,
+    exclude_accessions: set[str] | None = None,
+) -> tuple[list[dict], int]:
     embeddings = index["embeddings"]
     norm_index = embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
     norm_query = query_emb / np.linalg.norm(query_emb)
     sims = norm_index @ norm_query
+
+    excluded_count = 0
+    if exclude_accessions:
+        excluded_mask = np.isin(index["accessions"], list(exclude_accessions))
+        excluded_count = int(excluded_mask.sum())
+        sims = np.where(excluded_mask, -np.inf, sims)
 
     top_idx = np.argsort(-sims)[:top_k]
     k_occurrence = hubness["k_occurrence"]
@@ -84,10 +96,16 @@ def _knn_search(query_emb: np.ndarray, index: dict, hubness: dict, top_k: int) -
                 "is_hub": k_occurrence[i] > hub_threshold,
             }
         )
-    return hits
+    return hits, excluded_count
 
 
-def _run_pipeline(sequence: str, top_k: int, index_path: Path, hubness_path: Path) -> dict:
+def _run_pipeline(
+    sequence: str,
+    top_k: int,
+    index_path: Path,
+    hubness_path: Path,
+    exclude_accessions: set[str] | None,
+) -> dict:
     if not index_path.exists() or not hubness_path.exists():
         raise RuntimeError(
             f"ESM-2 index not found at {index_path} -- run "
@@ -97,7 +115,7 @@ def _run_pipeline(sequence: str, top_k: int, index_path: Path, hubness_path: Pat
     index = _load_index(str(index_path))
     hubness = _load_hubness(str(hubness_path))
     query_emb = _embed_query(sequence)
-    hits = _knn_search(query_emb, index, hubness, top_k)
+    hits, excluded_count = _knn_search(query_emb, index, hubness, top_k, exclude_accessions)
 
     hub_count = sum(1 for h in hits if h["is_hub"])
     top = hits[0] if hits else None
@@ -114,6 +132,7 @@ def _run_pipeline(sequence: str, top_k: int, index_path: Path, hubness_path: Pat
             "neighbour_count": len(hits),
             "neighbours": hits,
             "hub_count": hub_count,
+            "excluded_count": excluded_count,
             "index_size": len(index["accessions"]),
             "hubness_mean": hubness["mean"],
             "hubness_std": hubness["std"],
@@ -129,7 +148,10 @@ def run(
     top_k: int = 10,
     index_path: Path | None = None,
     hubness_path: Path | None = None,
+    exclude_accessions: set[str] | None = None,
 ) -> Evidence:
     index_path = index_path or INDEX_PATH
     hubness_path = hubness_path or HUBNESS_PATH
-    return timed_call("esm2_knn", sequence[:30] + "...", _run_pipeline, sequence, top_k, index_path, hubness_path)
+    return timed_call(
+        "esm2_knn", sequence[:30] + "...", _run_pipeline, sequence, top_k, index_path, hubness_path, exclude_accessions
+    )
