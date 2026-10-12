@@ -9,15 +9,13 @@ No auth, no rate-limit key required for light use.
 """
 from __future__ import annotations
 
-import requests
-
-from tools.evidence import Evidence, timed_call
+from tools.evidence import Evidence, get_with_retry, timed_call
 
 BASE_URL = "https://rest.uniprot.org/uniprotkb"
 
 
 def _fetch(accession: str) -> dict:
-    resp = requests.get(f"{BASE_URL}/{accession}.json", timeout=20)
+    resp = get_with_retry(f"{BASE_URL}/{accession}.json", timeout=20)
     resp.raise_for_status()
     data = resp.json()
 

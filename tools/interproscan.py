@@ -15,6 +15,7 @@ import time
 
 import requests
 
+from tools import interpro2go
 from tools.evidence import Evidence, timed_call
 
 BASE_URL = "https://www.ebi.ac.uk/Tools/services/rest/iprscan5"
@@ -67,6 +68,12 @@ def _parse(result: dict) -> dict:
         if not entry.get("accession"):
             continue
         loc = m["locations"][0] if m.get("locations") else {}
+        entry_go_ids = {go["id"] for go in entry.get("goXRefs", [])}
+        # The live InterProScan response's goXRefs is the primary source, but
+        # it doesn't always come back populated for every entry -- fall back
+        # to EBI's own interpro2go mapping file as a second, independent path
+        # to the same curated mapping (see tools/interpro2go.py).
+        from_mapping = set(interpro2go.get_go_terms(entry["accession"])) - entry_go_ids
         domains.append(
             {
                 "interpro_id": entry["accession"],
@@ -76,10 +83,11 @@ def _parse(result: dict) -> dict:
                 "end": loc.get("end"),
                 "evalue": loc.get("evalue"),
                 "signature_db": m.get("signature", {}).get("signatureLibraryRelease", {}).get("library"),
+                "go_ids": sorted(entry_go_ids | from_mapping),
+                "go_ids_from_interpro2go_fallback": sorted(from_mapping),
             }
         )
-        for go in entry.get("goXRefs", []):
-            go_terms.add(go["id"])
+        go_terms |= entry_go_ids | from_mapping
 
     top_names = ", ".join(d["name"] for d in domains[:3] if d.get("name"))
     result_summary = (

@@ -1,73 +1,107 @@
-"""The agent loop: LLM decides which tool to call, we validate the call's
-JSON arguments against that tool's schema, dispatch it, feed the result
-back, and repeat until the model calls `submit_final_answer` or a budget
-(MAX_STEPS / MAX_TOKENS_PER_RUN) is hit. Every tool result is logged to an
-evidence ledger (E1, E2, ...) that the final report cites by ID.
+"""The agent: gathers evidence deterministically (agent/evidence_pipeline.py,
+every tool called exactly once, not left to the LLM's discretion), scores
+candidate GO terms deterministically (agent/aggregator.py), then asks the LLM
+to review those candidates ONCE (accept/reject/re-weight, write the summary
+and uncertainty section) and submit a structured final answer.
 
-An invalid tool call (bad JSON, or JSON that fails its schema) is never
-silently dropped -- the error is both returned to the model (as a tool-role
-message, so it can retry) and recorded in the trace (CLAUDE.md: never hide
-failures).
+This replaces the earlier free-form "LLM picks which of 8 tools to call, in
+which order, for up to MAX_STEPS turns" design. Phase 3's first eval run
+showed two problems with that design: (1) the model wrote its final answer
+as plain text instead of calling submit_final_answer on ~30% of proteins,
+burning steps; (2) the agent was gathering strictly LESS evidence than the
+diamond_transfer baseline, because nothing ever fetched a homolog's own GO
+terms. Both are fixed structurally here: evidence gathering no longer
+depends on the LLM reliably choosing to call the right tools, and every
+evidence source a baseline uses is now also gathered for the agent.
+
+The LLM still gets exactly one chance to fail at tool-calling (writing plain
+text instead of calling submit_final_answer) before a second, sharper
+attempt; if that also fails, GO IDs and evidence-ID citations are parsed
+out of its free text with a documented, honest heuristic and the run is
+marked `recovered_from_text` -- never silently treated as equivalent to a
+real structured answer, and never used to fabricate evidence it didn't cite.
 """
 from __future__ import annotations
 
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import jsonschema
-
-from agent.dispatch import AgentContext, dispatch
+from agent.aggregator import aggregate
+from agent.context import AgentContext
+from agent.evidence_pipeline import gather_evidence
 from agent.llm_client import LLMClient
 from agent.report import build_report, render_markdown
-from agent.tool_schemas import ALL_SCHEMAS, build_tools_list
+from agent.tool_schemas import SUBMIT_FINAL_ANSWER_SCHEMA
 
 PROJECT_ROOT = Path(__file__).parent.parent
 RUNS_DIR = PROJECT_ROOT / "runs"
 
-SYSTEM_PROMPT = """You are a protein function annotation agent. Given a protein, you must decide \
-which bioinformatics tools to call to gather evidence, then give a final answer with GO term \
-predictions. You have a limited number of steps -- use them efficiently.
+REVIEW_SYSTEM_PROMPT = """You are a protein function annotation agent. All evidence has already been \
+gathered for you (homology search, domain scan, structural search, retrieval search) and candidate GO \
+terms have already been scored by a deterministic rule-based aggregator -- you do not call any tools \
+yourself. Your job is to REVIEW the evidence and candidates, then call submit_final_answer exactly once.
 
-Evidence strength rules (follow strictly):
-- Homology (diamond_blast_search) and domain matches (interproscan_scan) are STRONG evidence.
-- ProTrek (protrek_retrieve) is WEAK evidence only: a high-scoring match may be a pathway member \
-or interaction partner of the query protein, not the query's own function. Never state a ProTrek \
-result as the query's function without corroboration from homology or domain evidence.
-- ESM-2 (esm2_knn_search) cosine-similarity values are a RANKING ONLY, never an absolute confidence \
-or probability. If a neighbour has is_hub=true, down-weight it and say so explicitly in your final \
-disagreements_or_uncertainty field.
-- Validate every GO ID you plan to report with quickgo_validate before submitting it.
-- ONLY report a GO ID that actually appeared in a tool's output (e.g. one of interproscan_scan's \
-domain GO cross-references, or uniprot_lookup's annotated terms). NEVER report a GO ID purely from \
-your own background knowledge about this protein family, even if you are confident it is correct -- \
-if no tool surfaced it, you have no evidence trail for it and it will be flagged as ungrounded. \
-A real example of this going wrong: for human beta-actin, a model reported GO:0005576 \
-"extracellular region" and GO:0006973 "intracellular accumulation of glycerol" with 0.95 confidence \
--- both valid GO IDs, but neither came from any tool call, and both are wrong for a cytoplasmic protein.
-- Every claim in function_summary must cite an evidence ID (E1, E2, ...) in parentheses.
-- When you have enough evidence, call submit_final_answer. Do not keep calling tools indefinitely.
-
-CRITICAL: you must ALWAYS respond with a function/tool call. NEVER write your final answer as plain \
-text in the message content -- that answer will be discarded and the run will fail. Once you decide \
-you are ready to answer, your very next response must be a call to submit_final_answer with the \
-function_summary/go_terms/disagreements_or_uncertainty arguments filled in -- not a text message \
-describing what you would answer.
+Rules:
+- You may accept a candidate as-is, reject it, or adjust its confidence -- but every GO term you report \
+must cite at least one real evidence ID (E1, E2, ...) from the evidence below. Do not add a GO term that \
+has no evidence ID behind it, even if you are confident it is correct from your own training knowledge.
+- The aggregator already down-weights ProTrek-sourced and hub-flagged ESM-2-sourced terms (weak evidence); \
+you may lower them further but should not treat a low-scored weak-evidence term as strong proof.
+- Validate GO IDs for plausibility -- do not invent a GO ID that isn't in the candidate list or evidence below.
+- Write function_summary citing evidence IDs in parentheses, and use disagreements_or_uncertainty to flag \
+anything where evidence conflicted or was thin.
+- You MUST respond by calling submit_final_answer. Never write your answer as plain text content -- it \
+will not be scored.
 """
 
+GO_ID_RE = re.compile(r"GO:\d{7}")
+EVIDENCE_REF_RE = re.compile(r"\bE\d+\b")
+CONFIDENCE_RE = re.compile(r"\b(0\.\d+|1\.0+)\b")
 
-def _user_prompt(ctx: AgentContext) -> str:
-    parts = [f"Protein sequence ({len(ctx.query_sequence)} aa):\n{ctx.query_sequence}"]
-    if ctx.query_accession:
-        parts.append(f"\n(Its UniProt accession is {ctx.query_accession} -- do not assume you already know its function; verify with tools.)")
-    if ctx.eval_mode:
-        parts.append(
-            "\nEVALUATION MODE: uniprot_lookup is unavailable. The query's own accession and any "
-            "close homolog have already been excluded from protrek_retrieve/esm2_knn_search results."
-        )
-    return "\n".join(parts)
+
+def _format_evidence_for_prompt(ledger: list[dict]) -> str:
+    lines = []
+    for entry in ledger:
+        ev = entry["evidence"]
+        if ev.get("error"):
+            lines.append(f"{entry['id']} ({entry['tool']}): ERROR -- {ev['error']}")
+        else:
+            lines.append(f"{entry['id']} ({entry['tool']}): {ev['result_summary']}")
+    return "\n".join(lines)
+
+
+def _format_candidates_for_prompt(candidates: list[dict]) -> str:
+    if not candidates:
+        return "(the aggregator found no candidate GO terms grounded in any evidence)"
+    lines = []
+    for c in candidates[:30]:
+        reasons = "; ".join(c["explanations"][:3])
+        lines.append(f"- {c['go_id']} (aggregator confidence {c['confidence']:.2f}, evidence {','.join(c['evidence_ids'])}): {reasons}")
+    return "\n".join(lines)
+
+
+def _parse_go_terms_from_text(text: str) -> list[dict]:
+    """Heuristic, honest recovery when the model fails to call the tool
+    twice: scan line by line, collect GO IDs plus any evidence-ID references
+    and confidence-looking numbers on the SAME line. A GO ID with no
+    evidence-ID reference on its line gets an empty evidence_ids list, which
+    means it will be dropped by agent/report.py's grounding check just like
+    any other ungrounded claim -- this parser does not get a free pass."""
+    terms = []
+    for line in (text or "").splitlines():
+        go_ids = GO_ID_RE.findall(line)
+        if not go_ids:
+            continue
+        evidence_ids = EVIDENCE_REF_RE.findall(line)
+        conf_match = CONFIDENCE_RE.search(line)
+        confidence = float(conf_match.group(1)) if conf_match else 0.5
+        for go_id in go_ids:
+            terms.append({"go_id": go_id, "confidence": confidence, "evidence_ids": evidence_ids})
+    return terms
 
 
 class AgentRun:
@@ -76,39 +110,56 @@ class AgentRun:
         query_sequence: str,
         query_accession: str | None,
         eval_mode: bool,
-        max_steps: int | None = None,
+        max_steps: int | None = None,  # kept for CLI/eval compatibility; unused by the new 2-attempt review design
         client=None,
+        ctx: AgentContext | None = None,
+        ledger: list[dict] | None = None,
+        aggregator_candidates: list[dict] | None = None,
     ):
-        self.ctx = AgentContext(query_sequence=query_sequence, query_accession=query_accession, eval_mode=eval_mode)
+        # ctx/ledger/aggregator_candidates let a caller (eval/run_eval.py) reuse
+        # one evidence-gathering pass for both aggregator_only and full_agent,
+        # instead of paying for InterProScan/DIAMOND/etc. twice per protein.
+        self.ctx = ctx or AgentContext(query_sequence=query_sequence, query_accession=query_accession, eval_mode=eval_mode)
         self.client = client or LLMClient()
-        self.max_steps = max_steps or int(os.environ.get("MAX_STEPS", "10"))
-        self.ledger: list[dict] = []
+        self.ledger: list[dict] = ledger or []
+        self.aggregator_candidates: list[dict] = aggregator_candidates or []
+        self._evidence_already_gathered = ledger is not None
         self.trace: list[dict] = []
         self.final_answer: dict | None = None
+        self.recovered_from_text = False
         self.stop_reason = "unknown"
-
-    def _next_evidence_id(self) -> str:
-        return f"E{len(self.ledger) + 1}"
 
     def _log(self, entry: dict) -> None:
         entry["t"] = time.monotonic()
         self.trace.append(entry)
 
     def run(self) -> dict:
-        setup_evidence = self.ctx.build_exclusions()
-        if setup_evidence is not None:
-            self._log({"type": "setup_exclusion", "evidence": setup_evidence.to_dict(), "excluded": sorted(self.ctx.exclude_accessions)})
+        if self._evidence_already_gathered:
+            self._log({"type": "evidence_reused", "n_entries": len(self.ledger)})
+        else:
+            if not self.ctx.exclude_accessions and self.ctx.eval_mode:
+                setup_evidence = self.ctx.build_exclusions()
+                if setup_evidence is not None:
+                    self._log({"type": "setup_exclusion", "evidence": setup_evidence.to_dict(), "excluded": sorted(self.ctx.exclude_accessions)})
 
-        messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": _user_prompt(self.ctx)},
-        ]
-        tools = build_tools_list(self.ctx.eval_mode)
+            email = os.environ.get("EBI_CONTACT_EMAIL")
+            self.ledger = gather_evidence(self.ctx, email)
+            self.aggregator_candidates = aggregate(self.ledger)
 
-        step = 0
-        consecutive_no_tool_call = 0
-        last_text_content = None
-        for step in range(1, self.max_steps + 1):
+        for entry in self.ledger:
+            self._log({"type": "tool_result", "id": entry["id"], "tool": entry["tool"], "evidence": entry["evidence"]})
+        self._log({"type": "aggregator_candidates", "candidates": self.aggregator_candidates})
+
+        user_prompt = (
+            f"Protein sequence ({len(self.ctx.query_sequence)} aa):\n{self.ctx.query_sequence}\n\n"
+            f"Evidence gathered:\n{_format_evidence_for_prompt(self.ledger)}\n\n"
+            f"Aggregator-scored candidate GO terms:\n{_format_candidates_for_prompt(self.aggregator_candidates)}\n\n"
+            "Review the above and call submit_final_answer now."
+        )
+        messages = [{"role": "system", "content": REVIEW_SYSTEM_PROMPT}, {"role": "user", "content": user_prompt}]
+        tools = [SUBMIT_FINAL_ANSWER_SCHEMA]
+
+        for attempt in (1, 2):
             if self.client.budget_exceeded():
                 self.stop_reason = f"MAX_TOKENS_PER_RUN ({self.client.max_tokens_per_run}) exceeded"
                 self._log({"type": "stop", "reason": self.stop_reason})
@@ -116,105 +167,64 @@ class AgentRun:
 
             assistant_msg = self.client.chat(messages, tools)
             messages.append({"role": "assistant", "content": assistant_msg["content"], "tool_calls": assistant_msg["tool_calls"] or None})
-            self._log({"type": "assistant", "step": step, "message": assistant_msg})
+            self._log({"type": "assistant", "attempt": attempt, "message": assistant_msg})
 
-            if not assistant_msg["tool_calls"]:
-                # A known failure mode of small local models (documented by the user up front):
-                # the model writes its final answer as plain text instead of actually calling
-                # submit_final_answer, even with tool_choice="required" (verified live: Ollama/
-                # qwen3:8b still ignored it). One nudge is given; if it fails again, the run stops
-                # here instead of silently burning the rest of MAX_STEPS -- the failure is recorded
-                # in the trace/report, never hidden, and the free text is kept as an UNVALIDATED
-                # fallback summary (no GO terms -- those must come from a real submit_final_answer).
-                last_text_content = assistant_msg["content"]
-                consecutive_no_tool_call += 1
-                self._log({"type": "no_tool_call", "step": step, "consecutive": consecutive_no_tool_call, "content": last_text_content})
-                if consecutive_no_tool_call >= 2:
-                    self.stop_reason = (
-                        "model did not use tool-calling for its final answer after 2 attempts "
-                        "(wrote plain text instead of calling submit_final_answer) -- stopped early "
-                        "rather than burning the remaining step budget"
-                    )
-                    self._log({"type": "stop", "reason": self.stop_reason})
+            if assistant_msg["tool_calls"]:
+                tc = assistant_msg["tool_calls"][0]
+                try:
+                    args = json.loads(tc["function"]["arguments"])
+                except json.JSONDecodeError as exc:
+                    self._log({"type": "tool_call_error", "attempt": attempt, "error": f"Invalid JSON: {exc}"})
+                    if attempt == 1:
+                        messages.append({"role": "user", "content": f"Your submit_final_answer call had invalid JSON arguments: {exc}. Please retry with valid JSON."})
+                        continue
+                else:
+                    self.final_answer = args
+                    self.stop_reason = "submitted final answer"
                     break
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": (
-                            "You did not call a tool. You MUST respond with a function/tool call, never "
-                            "plain text. If you are ready to answer, call submit_final_answer (not write "
-                            "the answer as text)."
-                        ),
-                    }
-                )
-                continue
+            else:
+                self._log({"type": "no_tool_call", "attempt": attempt, "content": assistant_msg["content"]})
+                if attempt == 1:
+                    messages.append(
+                        {
+                            "role": "user",
+                            "content": (
+                                "You did not call submit_final_answer. Your previous response was:\n"
+                                f"{assistant_msg['content']}\n"
+                                "Call submit_final_answer now with that same information as structured arguments."
+                            ),
+                        }
+                    )
+                    continue
+                # second failure: recover a best-effort answer from the free text
+                parsed_terms = _parse_go_terms_from_text(assistant_msg["content"])
+                self.final_answer = {
+                    "function_summary": (assistant_msg["content"] or "")[:2000],
+                    "go_terms": parsed_terms,
+                    "disagreements_or_uncertainty": (
+                        "Recovered from free text after the model failed to call submit_final_answer twice; "
+                        "GO-ID/evidence-ID extraction is heuristic (regex-based), not a structured answer."
+                    ),
+                }
+                self.recovered_from_text = True
+                self.stop_reason = "recovered_from_text"
+                self._log({"type": "recovered_from_text", "parsed_terms": parsed_terms})
 
-            consecutive_no_tool_call = 0
-            for tc in assistant_msg["tool_calls"]:
-                tool_msg = self._handle_tool_call(tc, step)
-                messages.append(tool_msg)
+        if self.stop_reason == "unknown":
+            self.stop_reason = "failed to produce a final answer"
 
-            if self.final_answer is not None:
-                self.stop_reason = "submitted final answer"
-                break
-        else:
-            self.stop_reason = f"MAX_STEPS ({self.max_steps}) reached"
-            self._log({"type": "stop", "reason": self.stop_reason})
+        return self._finish()
 
-        if self.final_answer is None and self.stop_reason == "unknown":
-            self.stop_reason = f"MAX_STEPS ({self.max_steps}) reached"
-
-        return self._finish(step, last_text_content)
-
-    def _handle_tool_call(self, tc: dict, step: int) -> dict:
-        name = tc["function"]["name"]
-        raw_args = tc["function"]["arguments"]
-
-        try:
-            args = json.loads(raw_args) if isinstance(raw_args, str) else raw_args
-        except json.JSONDecodeError as exc:
-            error = f"Invalid JSON in tool-call arguments: {exc}"
-            self._log({"type": "tool_call_error", "step": step, "tool": name, "error": error, "raw_arguments": raw_args})
-            return {"role": "tool", "tool_call_id": tc["id"], "content": json.dumps({"error": error})}
-
-        schema = ALL_SCHEMAS.get(name)
-        if schema is None:
-            error = f"Unknown tool name: {name}"
-            self._log({"type": "tool_call_error", "step": step, "tool": name, "error": error})
-            return {"role": "tool", "tool_call_id": tc["id"], "content": json.dumps({"error": error})}
-
-        try:
-            jsonschema.validate(args, schema["function"]["parameters"])
-        except jsonschema.ValidationError as exc:
-            error = f"Arguments for {name} failed schema validation: {exc.message}"
-            self._log({"type": "tool_call_error", "step": step, "tool": name, "error": error, "arguments": args})
-            return {"role": "tool", "tool_call_id": tc["id"], "content": json.dumps({"error": error})}
-
-        if name == "submit_final_answer":
-            self.final_answer = args
-            self._log({"type": "final_answer", "step": step, "args": args})
-            return {"role": "tool", "tool_call_id": tc["id"], "content": json.dumps({"status": "received"})}
-
-        evidence = dispatch(name, args, self.ctx)
-        eid = self._next_evidence_id()
-        self.ledger.append({"id": eid, "tool": name, "args": args, "evidence": evidence.to_dict()})
-        self._log({"type": "tool_result", "step": step, "id": eid, "tool": name, "evidence": evidence.to_dict()})
-
-        if evidence.error:
-            content = {"evidence_id": eid, "error": evidence.error}
-        else:
-            content = {"evidence_id": eid, "summary": evidence.result_summary, "raw_scores": evidence.raw_scores}
-        return {"role": "tool", "tool_call_id": tc["id"], "content": json.dumps(content, default=str)[:8000]}
-
-    def _finish(self, steps_used: int, fallback_text: str | None = None) -> dict:
+    def _finish(self) -> dict:
         token_usage = {
             "input": self.client.usage.input_tokens,
             "output": self.client.usage.output_tokens,
             "total": self.client.usage.total,
         }
         label = self.ctx.query_accession or "query"
-        report = build_report(label, self.ctx.eval_mode, self.final_answer, self.ledger, token_usage, self.stop_reason, fallback_text)
-        report["steps_used"] = steps_used
+        report = build_report(label, self.ctx.eval_mode, self.final_answer, self.ledger, token_usage, self.stop_reason)
+        report["recovered_from_text"] = self.recovered_from_text
+        report["aggregator_candidates"] = self.aggregator_candidates
 
         run_dir = RUNS_DIR / label / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         run_dir.mkdir(parents=True, exist_ok=True)

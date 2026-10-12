@@ -1,0 +1,1435 @@
+[
+  {
+    "accession": "A0A072VG05",
+    "protein_name": "GDSL esterase/lipase ENOD8 (EC 3.1.1.-) (Early nodule-specific protein 8)",
+    "organism": "Medicago truncatula (Barrel medic) (Medicago tribuloides)",
+    "sequence": "MKFMAKIELSRHIPLVTLIVLVLCITPPIFATKNCDFPAIFSFGASNVDTGGLAAAFRAPPSPYGETYFHRSTGRFSDGRIILDFIARSFRLPYLSPYLNSLGSNFTHGANFASGGSTINIPKSILPNGKLSPFSLQIQYIQFKEFISKTKLIRDQGGVFATLIPKEDYFSKALYIFDIGQNDLTIGFFGNKTIQQVNATVPDIVNNYIENIKNIYNLGARSFWIHGTGPKGCAPVILANFPSAIKDSYGCAKQYNEVSQYFNFKLKEALAELRSNLSSAAITYVDIYTPKYSLFTNPEKYGFELPFVACCGYGGEYNIGVGCGASININGTKIVAGSCKNPSTRIIWDGVHYTEAANEIVFSQILTGVFNDPPISLDRACYRK",
+    "length": 384,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0043659",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0043659",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0F8XYN9",
+    "protein_name": "Transcription termination factor FttA (EC 3.1.-.-) (Ribonuclease aCPSF1)",
+    "organism": "Lokiarchaeum sp. (strain GC14_75)",
+    "sequence": "MSFELELKRIRDEIVQNLPPEITVTKIEFEGPEIAVYSESEDVAAIETSSTLKDLAKVMRKRVVFRWNVDKRKDPAETKDYIMNLISKDAEIGEITFDHTRGEVIIESGKPGLVIGKKGINLKEIRTNTFWQPKTIRTPPLPSRTIQLIRGMLKKERQTQKDILLEIGKRIHRPALFNNLNIRMNALGGFREVGRSCILMQTRDSNVLLDVGLNVGNPNDRFPYFFVPQFSIRDLDAVIISHSHLDHCGVVPFLYKYGYRGPIYCTLPTRNLSTMLQLDFIQICDKEGTPSPYSKRDVKNAVLHTIPLSWGKVTDIAPDIKLTLHNSGHILGSSMIHLHFGKGDYNFVYTGDFKYQKTRLLEKATVKFPRVEGLLIEATYGGPQDRIPSRQESEKELKQILNSTLKRGGKVLIPVLAVGRAQELLIVLEEYISSGFIDKVPVYIDGLISEATAIHTANPDFLSSDLREKILHQGKNPFLSDFFETVSSQDERADIIGGGPCIILATSGMLIGGPSVHYLKALAEDSKNTLIFVSYQVSGTLGSRIIRGFREFNYIDWKGRTQLVKIGLKVFTLEGFSGHSSRSQISQFLRRIQPRPKVVIVNHGEESKCVSLSTMIHKKLRKSTKSPKNLEVVLLK",
+    "length": 636,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0006353",
+        "aspect": "biological_process",
+        "evidence": "IGI"
+      },
+      {
+        "go_id": "GO:0006353",
+        "aspect": "biological_process",
+        "evidence": "IGI"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PPT5",
+    "protein_name": "Large ribosomal subunit protein uL14 (60S ribosomal protein L23-A)",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MSGSGASGNKFRMSLALPVGAVMNCADNSGARNLYVLAVKGTGARLNRLPAAAAGDMVMATVKKGKPELRKKVMPAIVIRQSKPWRRRDGVYLYFEDNAGVIVNPKGEMKGSAITGPVAKECADLWPRIASNSGVVV",
+    "length": 137,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0030446",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A178U9Y5",
+    "protein_name": "Bifunctional dolabella-3,7-dien-18-ol synthase/dolathalia-3,7,11-triene synthase TPS20, chloroplastic (EC 4.2.3.167) (EC 4.2.3.168) (Terpenoid synthase 20) (AtTPS20)",
+    "organism": "Arabidopsis thaliana (Mouse-ear cress)",
+    "sequence": "MEAITKNGSLSQTLVHCGPKSLSSFIPVRCLRFSKNPFPKKLVVTRARTSINSDHEAANRPLFQFPPSLLDDRFLSISANQSEIDSLGRDIEALKAKVSEKLVCMDVKERIHLIHLLVSLGVAYHFEKQIEEFLKVDFENVEDMNLGEEDMYSISVIFRVFRLYRHKLSSDVFNRFKEENGDFKKCLLDDVRGMLSFYEASYFGTNTEEILDEAMGFTRKHLELFVGGSNEEHLSGHIKNVLYLSQQENAEVVMSREYIQFYEQETHHDETLLKFAKINFKFMQLHYVQELQTIVKWWKELDLESKIPNYYRVRAVECLYWAMAVYMEPQYSVARIILSKSLVLWTIIDDLYDAYCTLPEAIAFTENMERWETDAKDMPDHMKVLMRSFIDLHEDFKREVILEGRLYSVEYGIDECKRLFREDLKLSKWARTGYIPNYDEYMEVGIVTAGIDMTVAFAFIGMGEAGKEAFDWIRSRPKFIQTLDIKGRLRDDVATYKDEMARGEIATGINCYMKQYKVTEEEAFLEFHRRIKHTSKLVNEEYFKTTVPLKLVRIAFNVGRAIDTNYKHGDGLTYGGIVEGQITSLFLDLITI",
+    "length": 592,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0010333",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016114",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0009507",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0B5AC95",
+    "protein_name": "Con-Ins G1a (Insulin 1) [Cleaved into: Con-Ins G1 B chain; Con-Ins G1a A chain]",
+    "organism": "Conus geographus (Geography cone) (Nubecula geographus)",
+    "sequence": "MTTSSYFLLMALGLLLYVCQSSFGNQHTRTFDTPKHRCGSEITNSYMDLCYRKRNDAGEKRGRASPLWQRRGSLSKLKARAKRNGAFHLPRDGRGVVEHCCHRPCSNAEFKKYCG",
+    "length": 115,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PMB1",
+    "protein_name": "Amino-acid permease GAP5",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MSKKYSEENTSSIPLTDLTSPSTGETSSQQQRQRASQQQPPQQPESNTATGSRWSNFVDSFKPAIENEKLAMRYRDANADVEEDAGGYYNSTDQLTEIQRININSSKSNLKRKLKNRHLQMIAIASSIGSGLLIGTGGALATGGPGGILIAWILSGISILCTIQAMAELAVTFPVSGGFNVLFSRFIDPSVGFSVAWNYVLQYLVLLPLELVAASMTIQYWNTDINPDVWVIIFYVTVTSINFFGVRLYGEVEFILSSLKVIAVVGFIILSIVLAAGGAPNGVHHGTKYWHDPGAFANGFKGVSSTFITAAFSFAGTELTGLTSAEAENPRKALPKACKQVFWRILLFYVVSIILITFLVPYDNPRLLGASDVSASPFVIAIQDGGISGLASVMNSVILISVISVGSSSVYATSRTLVSLAEQNLAPKICGYVDRAGRPLVAILITNVFGLLSFIAASGKEDEVFTWLLSISGLSSIFTWLCICISHIRFRRALHVQGRNTDELTFVSQTGVIGSWFGILLNVLVLVAEFWLAIFPLGEKSNAKSFFETYLGFVILIIFYFGHKLWRNNWILFIRSRDIDIDSGRRETDLEALKRELQEEREVLRNKPFWYRAYHFWC",
+    "length": 618,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0015171",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0003333",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2H1VE33",
+    "protein_name": "tRNA (cytosine(38)-C(5))-methyltransferase (EC 2.1.1.204) (DNA (cytosine-5)-methyltransferase-like protein 2) (Dnmt2) (EC 2.1.1.37)",
+    "organism": "Spodoptera frugiperda (Fall armyworm)",
+    "sequence": "MSHKILELYSGIGGMHCAWKESGLDGEIVAAVDINTVANSVYKHNFPETNLLNRNIQQLTPQVIKKWNVDTILMSPPCQPFTRNGKYLDDNDPRTNSFLYIIGILDQLDNVDYILMENVKGFENSTVRNLFIDKLKECNFIYQEFLLCPSTVGVPNSRLRYYCTARRNNLTWPFKRGDEIITRLPKDFGVPHSLESIIEEDVDEKFLVPDKILRCAKVFDICYKTSKRSCCFTKAYTHYADGTGSIFTDKPREVVQKCYEEANQNEIGSEKFVELFKELKLRYFTPKEVLMIMCFPKSYNLPTNISMKQCYRLLGNSVNVKVISELLKILFE",
+    "length": 332,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0003886",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005634",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1L8GR68",
+    "protein_name": "PWWP domain-containing protein 2A",
+    "organism": "Xenopus laevis (African clawed frog)",
+    "sequence": "MAAVAAAPGPGEAGESEQDSKTTPGEWRLGELQCEPIVAVLDSERQSLIRCEMDSDTLEKAGPVVEQLGGSGTDQVYGIDKNSDFESVSVMDYKPPYRGINQERIAGENKKARHEQLPRHTFLQKEPTPMILSEVRDSGVHTEMCLEEATLSSNNDGSETSLNDPDCDIGSMGTSEGSVVTSGIGSLIPGSEVQVTLDHIIQDALVVSFCHGNRIFSGVLMDLSKRFGPHGIPVTVHPRREYKNKPVESIQEESKSFHEETLLKSEENVTPPEDVTPIQQSESCEIQNLWTTKPPPLFHEGAPYPPPLFIRDTYNQSIPQPPPRKIKRPKKKIYREEPTSIINAIKLRPRQVLCDKCKNNVVADKKEIRKVATDSYKTEEGKRRRHETITTVNKKLKTDHKVNGKGQHESQKRAGVTKVPNLAHGRGKVVKVPSQTSAAKTQLHTKKVLQNKNMDHVKAREVLKMAKEKAQKKQKVTTSSKNAHSKVHFTRRLQNSNSGTLPPRLRIKPQRYRNEENDSSLKPGLETLRSSKMGIKPQTRYSATRSAGEAPSEIQSPSNGPEEVSSEIQDTNVCVPPEEQDLQQTLGKRGSKSNITVYMAINQKKANSSSASVCSSDSTDDMKSSHSECSSTENFDFPPGSMHTPSSSSASSKEEKKLSNSLKIKMFSKNVSKCVTPDGRTICVGDIVWAKIYGFPWWPARILAITISRKDNGLLIRQEARISWFGSPTTSFLALSQLAPFLENFQSRFNKKRKGLYRKAITEAAKAAKQLTPEVRALLTQFET",
+    "length": 784,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0001654",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0001755",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0014033",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0060322",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2I1BSW0",
+    "protein_name": "Asnovolin J 5',6'-dehydrogenase nvfM (EC 1.3.99.-) (Novofumigatonin biosynthesis cluster protein M)",
+    "organism": "Aspergillus novofumigatus (strain IBT 16806)",
+    "sequence": "MAITDTINVAIVGASGVTGGSIVNGLLALTGLTVKITALTRPESLNKPANIQLKERGVQVVAANLRGPLEKLVDLLSSIDVVISAIYWGSLDDEIPLANAAKAAGVKRFVQSAYNIPAAARGVTHLRDKKEVILSHIQQLRLPYTYIDVGWWYHVVLPRVASGRTEHALPFGMPDLPIALDGNIPSGLTHIRDIGRYIARIILDPRTVNKKVFVYNELYTQNQLCDLVERLTGEMPQRRYISEKCVQSWLQEALDELERNPSSDIALGVVSLREVFLASNVHGTNTPEYAKYLGYLDGKELYPDFTFLTYEDYVEEVLDGMHSQTVA",
+    "length": 327,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0140782",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016491",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016491",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A060KY90",
+    "protein_name": "Transcription factor MYC1 (SlMYC1)",
+    "organism": "Solanum lycopersicum (Tomato) (Lycopersicon esculentum)",
+    "sequence": "MTDYRLWSNTNTTNTCDDTMMMDSFLSSDPSSFWPASTPNRPTPVNGVGETMPFFNQESLQQRLQALIDGARESWAYAIFWQSSVVDFASQTVLGWGDGYYKGEEDKNKRRGSSSSAANFVAEQEHRKKVLRELNSLISGVQASAGNGTDDAVDEEVTDTEWFFLISMTQSFVNGNGLPGLAMYSSSPIWVTGTEKLAASQCERARQAQGFGLQTIVCIPSANGVVELGSTELIFQSSDLMNKVKYLFNFNIDMGSVTGSGSGSGSCAVHPEPDPSALWLTDPSSSVVEPKDSLIHSSSRDVQLVYGNENSENQQQHCQGFFTKELNFSGYGFDGSSNRNKTGISCKPESREILNFGDSSKRFSGQSQLGPGPGLMEENKNKNKNKKRSLGSRGNNEEGMLSFVSGVILPTSTMGKSGDSDHSDLEASVVKEAVVEPEKKPRKRGRKPANGREEPLNHVEAERQRREKLNQRFYALRAVVPNVSKMDKASLLGDAIAYINELKSKVQNSDLDKEELRSQIECLRKELTNKGSSNYSASPPLNQDVKIVDMDIDVKVIGWDAMIRIQCSKKNHPAARLMAALKDLDLDVHHASVSVVNDLMIQQATVKMGSRLYAQEQLRIALTSKIAESR",
+    "length": 630,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0043565",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0010090",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0045893",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0045893",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1P8AW69",
+    "protein_name": "Katanin p80 WD40 repeat-containing subunit B1 homolog KTN80.1",
+    "organism": "Arabidopsis thaliana (Mouse-ear cress)",
+    "sequence": "MAKRGYKLQEFVAHSGNVNCLSIGKKTSRLLLTGGDDYKVNLWSIGKTTSPMSLCGHTSPVDSVAFNSEEVLVLAGASSGVIKLWDLEESKMVRAFTGHRSNCSAVEFHPFGEFLASGSSDTNLRVWDTRKKGCIQTYKGHTRGISTIEFSPDGRWVVSGGLDNVVKVWDLTAGKLLHEFKCHEGPIRSLDFHPLEFLLATGSADRTVKFWDLETFELIGTTRPEATGVRAIAFHPDGQTLFCGLDDGLKVYSWEPVICRDGVDMGWSTLGDFCINEGKFIGCSYYRNSVGIWVSDISELEPYGAVSEDKNECMVKRFSVLNDQSERMGSGPRGSVSPDYETREIKNIYVDCGNLNVAQNPGSLKATLPLESGKVATMVSEKQNAAYFGPAGDKYSSTSRDSDSGEESSYSERESIPFSRTKSGMLLRPAHVRKTLAKFEESKQSAVVQSATRKKSGLAVEEEPQTQNAFLSEQNASKPFDAEDSIIKGITNKFEKALSSEPPTDEANRMFLKPPRIHRSSNSKYNDTRRAMSADPATFGKGGMENSGDVEDIPSKTERVLSREKPGDEQKNTEYPSGSRELNPVKIVEGVNVVSGRTRSLVEKFERGEKTTHTEGASTTIEQNNNAVQEDPRKTSRQTGETPVISTRRARSTPARVMPIVLNRDSNVTSDEPPLTQPARTSSFPVMPVILNQASNVTYDEPSVALTQESRTSHARILPVTFNQATNITSEEASVTLRRQRRNSAARVRPVLLSQATSHECPVTSVRPLRTSPARVMPTKLNQSVNMTSDTSHIASMHRVSPTQMLATPTVIDQVADMTLDETHATQIQPACDNMPQKEEPNISDREDDSDITENLMLTHNEFLSTLQSRLTKLQIVRHFWERSDVKGAIGALRKLTDQSVQADVISILTEKIEILTLDMFSQLVPVLTSLLGSRTERPVNVSLDMLLKLVAVFGTVIRSTVSAPRIVGVDLHANERLEICQICSAGLHKIQRILPVLARRGGLITRKAQELNLVLQEP",
+    "length": 1019,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0051013",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0051510",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0015630",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PES5",
+    "protein_name": "Hydroxyurea-responsive negative regulator of virulence",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MKIRKTSEFIHLITMILSIFISISSCSSSSHSNSHSHSTSMSISSSASTLPIIHIKDNIDELTYFDLTSITTNTVYKINNDQALVYENNQWIHVQTTSTPIIHSKFIPISHCLNQKWGDGGAIDFQTTTIYTMINTFDLALTLSIIFYYEKLTHSWEFSKVLTLRDIYYCSVAPGEIGQIWIDLQYHEFKSIKYRILENFPKFTIHNREESNNNKVISSKNRKKKFLSKKKLKFGKWKEISKMFLLNGKKSPIISCITTNDNKDKQLDCEGKSLLKLKEFKMF",
+    "length": 283,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0034599",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0050709",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A224AM54",
+    "protein_name": "UDP-glycosyltransferase 708G1 (EC 2.4.1.360) (2-hydroxyflavanone C-glucosyltransferase) (FcCGT)",
+    "organism": "Citrus japonica (Kumquat) (Fortunella crassifolia)",
+    "sequence": "MSDSGGFDSHPHVALIPSAGMGHLTPFLRLAASLVQHHCRVTLITTYPTVSLAETQHVSHFLSAYPQVTEKRFHLLPFDPNSANATDPFFLRWEAIRRSAHLLAPLLSPPLSALITDVTLISAVLPVTINLHLPNYVLFTASARMFSLTASFPAIVASKSTSSGSVEFDDDFIEIPGLPPIPLSSVPPAVMDSKSLFATSFLENGNSFVKSNGVLINSFDALEADTLVALNGRRVVAGLPPVYAVGPLLPCEFEKRDDPSTSLILKWLDDQPEGSVVYVSFGSRLALSMEQTKELGNGLLSSGCRFLWVVKGKTVDKEDEESLKNVLGHELMEKIKDQGLVVKNWVDQDKVLSHRAVGGFVSHGGWNSLVEAARHGVPVLVWPQFGDQKINAEAVESAGLGMWVRSWGWGTELRAKGDEIGLKIKDLMANDFLREQAKRIEEEARKAIGVGGSSERTFKELIDKWKCNNNTH",
+    "length": 472,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0035251",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0120514",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A179UL48",
+    "protein_name": "Aspartate-semialdehyde dehydrogenase (EC 1.2.1.11)",
+    "organism": "Blastomyces gilchristii (strain SLH14081) (Blastomyces dermatitidis)",
+    "sequence": "MSTPSKKRCGVLGATGAVGTRFILLLEQSPLLELVAVGASERSAGKKYRDAVRWKQASPMPASVADLTVRRCAPSEFSDCDIIFSGLDPVAAGDIEMAFLKANFAVFSNAKNYRLDPIVPLVVPLVNAGHIDVIPAQRKHYGLDKGLIVCNSNCAVVGLVIPAKALIQKFGPIESVSMVTMQAVSGAGYPGVSSMDIFDNIVPFIPGEEGKIATESRKILGNLNPDLAGFSDQQPLQVSVACNRVPVLDGHTVCASLRFVNRPAPTASQVRDALREYKSEVQLLGCPSAPRQAIHVLDDVDRPQPRLDRDTEAGYACSVGRIREDDSGVFDIQFVALSHNTVLGASGSSILNAESAILKGYI",
+    "length": 362,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0004073",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0004073",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0009090",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2K1X4I9",
+    "protein_name": "Xyloglucan O-acetyltransferase 4 (PtrXGOAT4) (EC 2.3.1.-)",
+    "organism": "Populus trichocarpa (Western balsam poplar) (Populus balsamifera subsp. trichocarpa)",
+    "sequence": "MTMHEKMKLPSCSCSAFKCGKKDRWLNMERPIPFLLIGLTTILSVFILYTLNPLKFVIEHNIDQKLLLIKPHKEEDKCDLFNGNWVPDFEGSIYTNSSCATIPTSKNCFRNGRKDQDFLNWRWKPERCDLPRFDATAYLDIVRGKTLAFIGDSVARNHIESLLCLLSQKEVPVDAYLDSEDRNRIWHFPVHNFTLKMLWTKFLVHGEERVINGSSSGIFDLYLDKVDENWARDLHSLDYVVISDAHWFFRQVYLHRGSNVVACVYCNEANVTDRGVAFALRMAFRAAFSQINHCNKCKGIVTLLRTFSPSHFENGFWNTGGSCNRTSPYNDQKINFGAYEWEIRSMQVEEIERAEKRGKKGKSFGVLDVTMAMLMRPDGHPGAFWGNQWMKGYNDCVHWCLPGPIDVWNDLLLAVLRRLD",
+    "length": 420,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:1990538",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1V0E492",
+    "protein_name": "Terpene synthase 1 (PnTPS1) (Alpha-humulene synthase) (EC 4.2.3.104) (Beta-caryophyllene synthase) (PnCPS) (EC 4.2.3.57)",
+    "organism": "Piper nigrum (Black pepper)",
+    "sequence": "MACVSDLVAFTQPLIIGAKPLEIVRRSAAFHPNVWGDYFLKLSQDEKKLESMRERAKVLKEKVLKKLSTIEGGERLELIDTLYHLGVAYNFEKEIEEALEKIYKAYDEDATQDNLCTLALRFRLLRQHGWNASSDVFNKFKETKNGNFKESVASDVLGMLSLYEASYVGTKEDKILEEAISFTTRNLSAALPNMEPLLAERVAHSLELPLHKRLQRLEARYFITMYEKNNAHDEMLLEYAKLDYNLLQALHQNEMKELTKWWTKIDLVGKMKFPRDRVTECYFWPLGAFFEPQHSRGRIFATKITQLTSIIDDLYDVYGTQEELQLFTDVIQRWDMNAKKSLPDYIKPLYEALLSTLKDFEEELSLEGNAYRASFMQQAMKNICMAYFDEAKWYNRGTTPKVEEYLNSAEISCGYPVVATACFTGAGEITTKKLLEWIQSQPKYMKDTCRLCRIVDDIKTYKFEEERGHVASVVACYMEEHKCNEDEALEKLNEDVMNTWKDINKACMRPTPFPMVVMNIIRNLSRVMEILYQFGDGYTFADTVTKERLNLLLKDPIPV",
+    "length": 559,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0010333",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0080016",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0080017",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0010597",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0051762",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:1901937",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PFG4",
+    "protein_name": "Large ribosomal subunit protein eL27 (60S ribosomal protein L27-A)",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MAKFIKSGKVAIVVRGRYAGKKVVIVKPHDEGTKSHPFPHAIVAGIERAPLKVTKKMDAKKVTKRTKVKPFVKLVNYNHLMPTRYSLDVESFKSAVTSEALEEPSQREEAKKVVKKAFEEKHQAGKNKWFFQKLHF",
+    "length": 136,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0032040",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1B1PF34",
+    "protein_name": "L-glutamate oxidase precursor (LGox) (EC 1.4.3.11) [Cleaved into: L-glutamate oxidase alpha chain; L-glutamate oxidase gamma chain; L-glutamate oxidase beta chain]",
+    "organism": "Streptomyces diastatochromogenes",
+    "sequence": "MTETPRDNSATRARWQTCLKLARELLLVGPDDKDLKLSYLHTLIDTGRLGPTHHPRKKILVIGAGITGLVAGRLLKDAGYDVTIIEANESRVGGRIKTFRATKHHQPFDDAAQYAEAGAMRLPDFHPLVLALVDKLGLGRRQFYNVDVGPSTGSGPEVPVPPVTYTSFTGQTWTNGDDSPDFREPDKRGNSWIRANRVQVRRADYTASPERINEGFHLTGDEVRAPVVKMVDDALESVRDYYSDVVDGKRVNKPFDEWVEGWARVIRDFDGYSMGGFLRDHAGLSDEAIEAVGTLENTSSRLHLSFFHSFLSRSDINPTVRYWEIPGGSWRLPHALHEGLRDEVRLGHRMIRLEYHDPSRDADPEGTAVGPDGWGVTVETVAENDPQAPPRRWTADLAIVTIPFSALRFVEIVPSMSYKKRRAIVETHYDSATKVLLEFSHRWWEFTEDDWREELERIAPGVYEYYRLGPEAAGEPARMPTLAEADAGLLGAAVKDSGVTEEMRQIGSTMPLRGPALRPATHSFGGGSATDNPNRFMYYPSHRVEGSTGGVVLASYSWSDDAARWDSMRSAERYVYALRNLQALHGRRIEVFFTGRGATKSWARDPYAFGEAAIYTAHQMTSFHLDASRPEGPVHFAGEHTSLKHAWIEGALEVHTA",
+    "length": 657,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0050025",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2XJL0",
+    "protein_name": "Carboxylesterase FphH (EC 3.1.1.1) (Fluorophosphonate-binding serine hydrolase H) (FphH) (Lipase FphH) (EC 3.1.1.-)",
+    "organism": "Staphylococcus aureus (strain USA300)",
+    "sequence": "MQIKLPKPFFFEEGKRAVLLLHGFTGNSSDVRQLGRFLQKKGYTSYAPQYEGHAAPPDEILKSSPFVWFKDALDGYDYLVEQGYDEIVVAGLSLGGDFALKLSLNRDVKGIVTMCAPMGGKTEGAIYEGFLEYARNFKKYEGKDQETIDNEMDHFKPTETLKELSEALDTIKEQVDEVLDPILVIQAENDNMIDPQSANYIYDHVDSDDKNIKWYSESGHVITIDKEKEQVFEDIYQFLESLDWSE",
+    "length": 246,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0008236",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016298",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0034338",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0034338",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0034338",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0019626",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0019626",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0019626",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0046677",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005829",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A087WT01",
+    "protein_name": "T cell receptor alpha variable 27",
+    "organism": "Homo sapiens (Human)",
+    "sequence": "MVLKFSVSILWIQLAWVSTQLLEQSPQFLSIQEGENLTVYCNSSSVFSSLQWYRQEPGEGPVLLVTVVTGGEVKKLKRLTFQFGDARKDSSLHITAAQTGDTGLYLCAG",
+    "length": 109,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0006955",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      },
+      {
+        "go_id": "GO:0050830",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      },
+      {
+        "go_id": "GO:0042105",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0C9QKT6",
+    "protein_name": "Hyaluronidase TbHYAL2 (EC 3.2.1.35) (Hyaluronoglucosaminidase) (Venom spreading factor)",
+    "organism": "Tityus bahiensis (Brazilian scorpion)",
+    "sequence": "FTQVLTSHKVLVNQGESFNGDKIVMFYENQLGKYPYIDSNNVEINGGILQVADFSEHLKVAKDNITKLVPNPNFTGIGVIDWESWLPTWDFNWDKMKVYWKKSIELVKSKHPEWPSHRLERVAKDEWQESAKEWMIKTLKLAQEMRPNAVWCYYSFPHCYNSSRKDQRRRISCDTLVQMENDRISWLWKQSTAICPSIYIQESHITKYNMSQRVWWIDARLREALRVSIYRRYTPIYPYINYILPGTNQIVPAMDFK",
+    "length": 257,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0033906",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0D3MJQ5",
+    "protein_name": "Arsenite methyltransferase (EC 2.1.1.137)",
+    "organism": "Clostridium sp",
+    "sequence": "MDNIREGVRQKYAFAIANRGQGCCGSPGCCSDGLSDAADPITGNLYDESDLQGLDPELIANSFGCGNPTALMNLNLGEVVLDLGSGSGLDVLLSAKRVGPTGKAYGLDMTDEMLAVAKENQRKSGIENAEFLKGHIEEIPLAAKSIDVIISNCVINLSGDKDKVLKEAYRVLKPQGRFAVSDIVIKRPLPEKIRDNILAWAGCIAGAMTEEEYRGKLSRAGFENISLQVTREYNLEDPSLRGMLEDLTDGEIKEFQGAMVSCFIRAAKPA",
+    "length": 270,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0030791",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0030791",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0030791",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A182BSS4",
+    "protein_name": "Secreted RxLR effector protein 61",
+    "organism": "Plasmopara viticola (Downy mildew of grapevine) (Botrytis viticola)",
+    "sequence": "MAFQLRIVQHLLHITFLRLPLAYPSQIHQRENERMFLLRIHRQDVQHLSHRRLRQLNEHRSLLPKGFPFKLLRPLPQLQRLLSQVCRGSVRIDACCCIPSCH",
+    "length": 102,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0030430",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0042025",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0042025",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0G2KIZ8",
+    "protein_name": "Dynein axonemal intermediate chain 3 (WD repeat domain 63)",
+    "organism": "Danio rerio (Zebrafish) (Brachydanio rerio)",
+    "sequence": "MKDTSSKRPKSKEANKKKTKDKSNADNLPKPEEAAASEPGHPEYIFPLVLTSVSQELFGCRADEDVTAENPHKLLKKQDIIQDLRHRAAVCDFSPVKQAVLDYPEDELLLVFDRDFIYGQSFYLVLTVQAKESILKPPAEGADEQMEDEEQQEEEEEMMTKTPEPQPWVSLGSERLVYTPSAVLSSVICVRQLRYSVCPLGRRSGTRVRFSDRNALDWKEELVECSSYEDKSFSITRMERDSSTQTCRDNTHTCTQTLWKKPKNMWSQYEPREFSSEEKQHQLQSENLKNFITSVARRFEIYLQQNLIADVFCDDWTALCEDDASLMGKTETQLKEYQSFMDLHFSKEKTISHVQWHPSISGVIVVSMMERLSLEERIDSSTKLLLNPSHILFWSFSDPINPQLQLECPDDVLCFQFSPSDHNIIAGGCMNGQVVLWDISAHVDRLQDTRSGGKNILNKLGKSDATPVVRYCAVSGIENGHKAPITDIQWLPETFEVNKLGTPVENQSRTSVQLVTCAPDCCVLFWDLRAPRVMVHSLTDIKQKQEEKPLENPHGVPNTFTHLNLTWKPFIRVSLPKISSSGEYSPLRFSMRENTVDYNTGDKSVSGADSRVFAQLRMQSAKQQKPLQNISTKLYIATEDGELVYTDWKVEKDNDSGRMLSAKPLDVFLLQDTLLHTVSRSPFFRDIILTVGRFSFSIWREGLTCGPLLMSVYSKSMFSAGHWSRSRPAVLFMGREDGDVEVWDLLQNSRQPSHTQNISTAAISCIRTQTSSGNTHPYTETLHTHTHTQPPSAAYAHRPAPVTHTHTHKHCTHTHTHTHTHTHTHSRHQLHTHTDQLRVLEERVREAKQNLLAVSDRLGTLHILQIPGSLRRSSSSERQNVEKYFEKEEERLQYFEKRQSDHQKKKKETEAEQQKKKTELVTPPKQEEEVNAETLKEYQQFLTLEKLILKDMNIQNETQQTCNTINTP",
+    "length": 968,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0003341",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0B5AC19",
+    "protein_name": "Non-structural protein NS-S (NSs)",
+    "organism": "SFTS phlebovirus (isolate SFTSV/Human/China/HB29/2010) (Severe fever with thrombocytopenia virus)",
+    "sequence": "MSLSKCSNVDLKSVAMNANTVRLEPSLGEYPTLRRDLVECSCSVLTLSMVKRMGKMTNTVWLFGNPKNPLHQLEPGLEQLLDMYYKDMRCYSQRELSALRWPSGKPSVWFLQAAHMFFSIKNSWAMETGRENWRGLFHRITKGQKYLFEGDMILDSLEAIEKRRLRLGLPEILITGLSPILDVALLQIESLARLRGMSLNHHLFTSPSLRKPLLDCWDFFIPVRKKKTDGSYSVLDEDDEPGVLHGYPHLMAHYLNRCPFHNLIRFDEELRTAALNTIWGRDWPAIGDLPKEV",
+    "length": 293,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0030430",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0044161",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0044161",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0044161",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2UMY0",
+    "protein_name": "Carbohydrate ABC transporter substrate-binding protein (Carbohydrate substrate-binding protein SP0092) (Carbohydrate SBP SP0092)",
+    "organism": "Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)",
+    "sequence": "MKNWKKYAFASASVVALAAGLAACGNLTGNSKKAADSGDKPVIKMYQIGDKPDNLDELLANANKIIEEKVGAKLDIQYLGWGDYGKKMSVITSSGENYDIAFADNYIVNAQKGAYADLTELYKKEGKDLYKALDPAYIKGNTVNGKIYAVPVAANVASSQNFAFNGTLLAKYGIDISGVTSYETLEPVLKQIKEKAPDVVPFAIGKVFIPSDNFDYPVANGLPFVIDLEGDTTKVVNRYEVPRFKEHLKTLHKFYEAGYIPKDVATSDTSFDLQQDTWFVREETVGPADYGNSLLSRVANKDIQIKPITNFIKKNQTTQVANFVISNNSKNKEKSMEILNLLNTNPELLNGLVYGPEGKNWEKIEGKENRVRVLDGYKGNTHMGGWNTGNNWILYINENVTDQQIENSKKELAEAKESPALGFIFNTDNVKSEISAIANTMQQFDTAINTGTVDPDKAIPELMEKLKSEGAYEKVLNEMQKQYDEFLKNKK",
+    "length": 491,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0008270",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0008270",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0042803",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0042803",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0051289",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0051289",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0070207",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0070207",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1P8AS03",
+    "protein_name": "YTH domain-containing protein ECT4 (Protein EVOLUTIONARILY CONSERVED C-TERMINAL REGION 4)",
+    "organism": "Arabidopsis thaliana (Mouse-ear cress)",
+    "sequence": "MSTVAPPADQAADVLKKLSLDSKSRTLEIPEPTKKTGVYQYGAMDSNGQVPSFDRSLSPMLPSDALDPSVFYVPNVYQQPYYYGYGSDYTGYTNSESVDMTSGAYGENASLVYPQGYGYAAFPYSPATSPAPQLGGDGQLYGAQQYQYPFPLTASSGPFASSVPASTQSKLSTNKAANSASAGIPKGMNGSAPVKPLNQSALYGNSALGGGLAAGYQDPRYSYDGFYTPVSWHDGSNFSDVQRSVSGSGVASSYSKANNNVPATRNQNSSSNSHYTSMYQPASMTGYAAQGYYDRVSPNKSYGQYGSTVRSGMGYGSSGYGSRTNERGWLNTDNKYRSRGRGNSYFYGNENIDGLNELNRGPRAKGTKATEEVSSEEVKKQTFDESNTEETVTCVLPDREECNRDDFPVEYKDAKFFIIKSYSEDDVHKSIKYNVWASTPNGNKKLDAAYQEAQQKSSGCPVFLFFSVNASGQFIGLAEMKGPVDFNKNIEYWQQDKWTGSFPLKWHILKDVPNSLLKHITLEYNENKPVTNSRDTQEVKLEQGLKVVKIFKEHNSKTCILDDFSFYEARQKTILEKKAKQQQSQKQVWEGKTNDEKPGTVDSTM",
+    "length": 605,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0003729",
+        "aspect": "molecular_function",
+        "evidence": "ECO:0007005"
+      },
+      {
+        "go_id": "GO:0003729",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0048255",
+        "aspect": "biological_process",
+        "evidence": "IGI"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1L8FDW4",
+    "protein_name": "Peroxisomal targeting signal 1 receptor (PTS1 receptor) (PTS1R) (PTS1-BP) (Peroxin-5)",
+    "organism": "Xenopus laevis (African clawed frog)",
+    "sequence": "MAMRGLIEAECGGSNPLMKLTNHFTQDKALREEGLQHVSWPPGATVVSKPLGEATEDELVSEFLHTRAPSLQSRAPHTFKMDGLLAEMQEIEQSSFRPEPLRAPGVADLALSEQWSAEFLGVEVDPVEEEDWSREFTEQADPHASPSRWAEEYLQQSEEKLWLGESEGAMAEKWTEEYQPEDDLQREAKSLVSQVTDPKLANTQFLQFVKRIGDGELSFSHAPSTPSQTVSQAEQWSEQFVHEQAEQWVDQFAPLEKDFEKAKAAVESDVDFWDKLQEEWEEMAKRDAEAHPWLSDFQDLSSKSIDKGYMFEDNNPFSEVSLPFEEGLKHLREGDLPSAVRLFEVAVKRDPQHMEAWQYLGTTQAENEQELAAISALRRCIDLKPDNLSALMALAVSYTNECLQQQACHTLREWLRHNPKYSHLVKEESSSNASRARSFGTLLSDSVFSDVRELFLSAVNSDPSQVDPDVQCGLGVLFNLSGEYQKAVDCFTAALGQRPDDYLLWNKLGATLANGNDSEAAVEAYRRALQLQPGFIRSRYNLGIACINLGAHREAIEHFLEALSMQQQSGGCESAMSDNIWSTLRMALSMIGQSDLYSSADARDLATLQAAFPPHSAAQ",
+    "length": 619,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0000268",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0140597",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016561",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016562",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0044721",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005782",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005829",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0D8BWP6",
+    "protein_name": "Homoserine O-acetyltransferase (HAT) (EC 2.3.1.31) (Homoserine transacetylase) (HTA)",
+    "organism": "Geobacillus kaustophilus",
+    "sequence": "MPINIPKDLPAKEILEQENIFVMDEERAYSQDIRPLNIIILNLMPEKEKAETQLLRLLGNSPLQVNVTFLRPATHEPKTTSKHHLEQFYTIFPHIRHRKFDGMIITGAPVEQLPFEEVTYWDELTDIMEWTKTNVTSTLHICWGAQAGLYYHYGIPKYPLPEKCFGVFNHTVEAKNVKLLRGFDDVFRMPHSRHTDVKREDIEKVPDLTILSMSDKAGVCLVASNDGRRIFLTGHPEYDATTLKEEYERDLAKGLPIHIPESYFPNDDPSQPPLNTWRSHANLLFVNWLNYYVYQETPYEWE",
+    "length": 302,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0004414",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1B0GSN8",
+    "protein_name": "Serine-rich and transmembrane domain-containing protein 2",
+    "organism": "Mus musculus (Mouse)",
+    "sequence": "MTEVLFKYHGNLTGRAHFPTLATEADTTSDKYSNLYMYVGLFLSLLAILLILLFTMLLRLKHVISPITESTESVPQFTDVEMQSRIPTP",
+    "length": 89,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0021520",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0060075",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2H1A5W4",
+    "protein_name": "Cell wall integrity transcriptional regulator CAS5 (Caspofungin sensitivity protein 5)",
+    "organism": "Candidozyma auris (Yeast) (Candida auris)",
+    "sequence": "MENYLMSSPSQHHHPHQQPHQQHNPYANSDTLTNLPNLENDLDFSDSEVVPPSKDYQGSPNVYDGLDFSTDMATDFVYDSTLEFDLDDHKHMPDPAEMGHSKHFSVDRPLSAPFYLSQNSRTNFNHSRNISLDDTAYKRSFHKHSASLVSNAAEPPSGTFAHSHSSNTLQSSSDSMPQLSSSVSNPSLLDSPHSAMQTATPGRRHKSSSVSSHTNLYTTPLRGGTHVSPLTHTKVGKTPIGKTHRRNRSRASLEPSSAHLLATVANMKGTSNASNLALSSAQTPSGHLTASTSQHFHGINLSEANPFHNEFVSPGVGSGHLSDHDATPLNTPAGRDHSSMASQFFTPISHNRSFGGSLLESSSSAMGSAASAFPSNLSSNDLSVASSSNSSARPGMAPLRRNDTLDSITIEDQEDDACKQLRKAKSFTSFAEQRMSQLMKQRAGKSSKDLGNVFTDSTPDASSSGRSPRKDSSSGNSYSKSASVDLLSASLVVPDHNDSYLKSYPASMDLASITNASSGNHASPSPPKTSSRLMPPIESQEPSSSRSRGSSTSKPRQTLASAAAKKLNKKVPQTYPTASQIQKAATTEDIAKFAESILQSENKRPIFVKKQEEEVYDPKKKHKCPLCLARFQRPEHVKRHLKSHSSEKPFQCEEPNCGRRFNRKDNLKAHLKKIHHKNL",
+    "length": 679,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0031505",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005634",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0P0XXR9",
+    "protein_name": "Xylan O-acetyltransferase 4 (EC 2.3.1.-) (Protein trichome birefringence-like 10) (OsTBL10)",
+    "organism": "Oryza sativa subsp. japonica (Rice)",
+    "sequence": "MTKPQQQSPPSTTATTTTSPPPPPPSTPPPASSSSSSLAKLPLRLHSLASSSRSLLSALRRSPVTTLVAAFFLLALFMYGEDVRTLAELSIDDYLYPDADFYNVSALPPLLLPPPTCDLSRGRWVFDNTSLPAYREKECTFLTKQVSCLANGRPDDLWQYWRWQPNNCSLPTFDARRFMEKMRGKRMMFVGDSLNRNQWESLVCLVQPILSKGRKKIVKRGSFNIFYAKEYRATLEFYWAPFLVESNSDNPNFHHIDQRIISPERIESHANNWKDVDYLIFNTYIWWMNNEDIKVRRPNSTSWSDHDEVPRIETYGRVFKTWSTWLEQNVDPARTSVFFMTISPLHNSPAQWGNPNGIKCVKETLPVLNYTKPLDLNHDMRMYDLVAKVAKNMKNVPVSLIDITRMSDYRKDAHTSLYSIRQGKLLTPEQKADPQKYADCIHWCLPGVPDVWNQILYTRILSKSSPPSPHPPLPPQ",
+    "length": 476,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:1990538",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0045492",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A221J5P3",
+    "protein_name": "(S)-8-oxocitronellyl enol synthase (EC 1.3.1.122) (7-epi-iridoid synthase) (EC 1.3.1.123) (Iridoid synthase) (AmISY)",
+    "organism": "Antirrhinum majus (Garden snapdragon)",
+    "sequence": "MSWWYRRSIGETEQKRIEINGVSPTYQSVALIVGVTGIAGSGLAETLSFSDTPGGPWKVYGVARRPCPKWLAKLNVNYVQCDIANTDETYSKVAPLTDITHIFYVSWTGSEDVALNTLMFKNILDSVIPNAPNLKHVSLQTGIKYYWGNMAEMDSTNQPHECPFYENMPRLKQDNFYYNLEDLVYDSAVRKNGLSWSIHRPALIFGFSPCSMMNTVSTLCVYAAICKHENKPLVYTGTETSWTCLWDAVDSDLLAEHFLWAATVPNAKNQAFNINNGDVFKWKHMWKVLAKEFDIEAIGYEGKEPVLLEDLMKDKDSVWDEIVKKHDLVPTKLRDIAAFWLADVVFRNKETLCSMNKNKEFGFMGFRDTTKSFVSSINKMRDFKFIP",
+    "length": 387,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0016628",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0006721",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2ZM82",
+    "protein_name": "Cell division ATP-binding protein FtsE",
+    "organism": "Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)",
+    "sequence": "MSIIEMRDVVKKYDNGTTALRGVSVSVQPGEFAYIVGPSGAGKSTFIRSLYREVKIDKGSLSVAGFNLVKIKKKDVPLLRRSVGVVFQDYKLLPKKTVYENIAYAMEVIGENRRNIKRRVMEVLDLVGLKHKVRSFPNELSGGEQQRIAIARAIVNNPKVLIADEPTGNLDPDNSWEIMNLLERINLQGTTILMATHNSQIVNTLRHRVIAIENGRVVRDESKGEYGYDD",
+    "length": 230,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0016887",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0016887",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005737",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A090XBL6",
+    "protein_name": "Evasin P1080",
+    "organism": "Ixodes ricinus (Common tick) (Acarus ricinus)",
+    "sequence": "FFQLAVFVVILFNINLLSASAGSKGSSAPQSSGDSVVAEFCDTNCTMKKDGKWTECNGDCFCVHVGNETVGRCMRLDGDYDYTSSKTTRRNKKTRNGLCRLDRNRTTVDYPERNTREP",
+    "length": 118,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0019958",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A075TRB3",
+    "protein_name": "Isoepoxydon dehydrogenase patN (IDH) (EC 1.1.1.-) (Patulin biosynthesis cluster protein N)",
+    "organism": "Penicillium expansum (Blue mold rot fungus)",
+    "sequence": "MVLTTGLKGAHVLITGGTRGMGEAMVHKFLQEEANVSYCARTVTNTEYDDFYSTLAEGNTARAVGTAFDVASKDSLVKWVESSAERLGRIDVIIANASPMHMEGETEHWESSFAIDVMGFVELVKAATPYLEKSPQASIIVQSSFMGREFYRSPPAAYGPCKAAQLQHVQELSHFLGPKGIRVNAISPGPVLCKGGPWELYSKINPEWVEEQRLKIPLKRLGGPTEVANVAVFLASPLASFVSGTNMLVDGGIHVGTQF",
+    "length": 259,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0140723",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0016491",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005829",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A261GRE4",
+    "protein_name": "Tyrosinase HcTyr1 (EC 1.14.18.1)",
+    "organism": "Hahella sp. (strain CCB-MM4)",
+    "sequence": "MKTRQNVYELKDDTLSWYSRAVEEMKSRDINDPTSWWYQGAIHGYATYPSALTYWHDATGYPPSQQTVNSGFWNRCQHGTWYFLPWHRMYLFYFEEIVAKAIRDMGGPADWTLPYWNYCEAYNTSASPSNQQQALQIPPEFGSSQGPNADFASLWIKNRRNYVLNKNNVNPWPAMNEAEFTNSGGDISFGGGVTGFAHSGGQTGQLESLPHNVVHTDINGAMGNPDTAALDPIFWLHHANIDRLWQVWLAQAGRSNPVVNAWKDFRFKFHDANGQPVEIAVKDVETTQLLGYVYTPAFPLSSTTPARRSVPAMDVVGATSASFSVGDHMAPLDLTMVPQPARGARLLAARGGDEKRTILRISNVKGKGATSPIDLFITNRDNEEGNEENFVGCIGLFGLENASTPSVESDGSGLNFAIDISDTINKLRQRDDWDEDNIRVQLIPQSKQDSDVEINVGRVSLHSEID",
+    "length": 466,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0004503",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A088SG62",
+    "protein_name": "U-myrmicitoxin(01)-Tb2a (MYRTX(01)-Tb2) (U-MYRTX(01)-Tb2a) (Ant peptide P17) (U1-myrmicitoxin-Tb2a) (U1-MYRTX-Tb2a)",
+    "organism": "Tetramorium bicarinatum (Tramp ant)",
+    "sequence": "MKLSFLSLALATIFVMAIIYAPQMEARASSDADADAAASADADADALAEASALFKEILEKIKAKLGKK",
+    "length": 68,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2ZQT7",
+    "protein_name": "Exodeoxyribonuclease WalJ (EC 3.1.11.-)",
+    "organism": "Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)",
+    "sequence": "MSEIGFKYSILASGSSGNSFYLETSKKKLLVDAGLSGKKITSLLAEINRKPEDLDAILITHEHSDHIHGVGVLARKYGMDLYANEKTWQAMENSKYLGKVDSSQKHIFEMGKTKTFGDIDIESFGVSHDAVAPQFYRFMKDDKSFVLLTDTGYVSDRMAGIVENADGYLIEANHDVEILRSGSYAWRLKQRILSDLGHLSNEDGAEAMIRTLGNRTKKIYLGHLSKENNIKELAHMTMVNQLAQADLGVGVDFKVYDTSPDTATPLTEI",
+    "length": 269,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005886",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2USG1",
+    "protein_name": "E3 ubiquitin-protein ligase IpaH1.4 (EC 2.3.2.27) (Invasion plasmid antigen 1.4)",
+    "organism": "Shigella flexneri",
+    "sequence": "MIKSTNIQAIGSGIMHQINNVYSLTPLSLPMELTPSCNEFYLKTWSEWEKNGTPGEQRNIAFNRLKICLQNQEAELNLSELDLKTLPDLPPQITTLEIRKNLLTHLPDLPPMLKVIHAQFNQLESLPALPETLEELNAGDNKIKELPFLPENLTHLRVHNNRLHILPLLPPELKLLVVSGNRLDSIPPFPDKLEGLALANNFIEQLPELPFSMNRAVLMNNNLTTLPESVLRLAQNAFVNVAGNPLSGHTMRTLQQITTGPDYSGPQIFFSMGNSATISAPEHSLADAVTAWFPENKQSDVSQIWHAFEHEEHANTFSAFLDRLSDTVSARNTSGFREQVAAWLEKLSASAELRQQSFAVAADATESCEDRVALTWNNLRKTLLVHQASEGLFDNDTGALLSLGREMFRLEILEDIARDKVRTLHFVDEIEVYLAFQTMLAEKLQLSTAVKEMRFYGVSGVTANDLRTAEAMVRSREENEFTDWFSLWGPWHAVLKRTEADRWAQAEEQKYEMLENEYSQRVADRLKASGLSGDADAEREAGAQVMRETEQQIYRQLTDEVLALRLSENGSNHIA",
+    "length": 575,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0061630",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0061630",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0061630",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0061630",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0090729",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0090729",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0090729",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0085034",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0R6Y3I5",
+    "protein_name": "Glutamate 5-kinase (LdG5K) (EC 2.7.2.11) (Gamma-glutamyl kinase)",
+    "organism": "Leishmania donovani",
+    "sequence": "MADILKSVKRIVVKVGSSILVDNQEIAAHRIEALCQFIADLQTKYEVILVTSGAVAAGYTKKEMDKSYVPNKQALASMGQPLLMHMYYTELQKHGILCAQMLLAAYDLDSRKRTINAHNTIEVLISHKVIPIINENDATALEELVFGDNDRLSALVAHHFKANLLVILSDIDGYYTENPRTSTNATIRSVVHELSPDDLVAEATPNNRFATGGIVTKLQAAQFLLERGGKMYLSSGFHLEKARQFLLGGSHEIGTLFYSRVSS",
+    "length": 263,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0004349",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0042802",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0055129",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0P1AK67",
+    "protein_name": "Secreted RxLR effector protein RXLR-C22",
+    "organism": "Plasmopara halstedii (Downy mildew of sunflower)",
+    "sequence": "MRSLVWAVIATLIVLTPFSEATSSIASNNEEFKQNVRVASSSLEQKGTIEDSVITRKLQSDSVKKGDSTGLEERGGLHVPTIHDNKIVQGFYKVMRYLRQKLGIDFLLTRLRYGKNGSHQPNMGYSRVDHYH",
+    "length": 132,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0044177",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0A1GNF2",
+    "protein_name": "Bisanhydrobacterioruberin hydratase (EC 4.2.1.161)",
+    "organism": "Haloarcula japonica (strain ATCC 49778 / DSM 6131 / JCM 7785 / NBRC 101032 / NCIMB 13157 / TR-1)",
+    "sequence": "MGSGKDRTLAGWTLPETKTDATAQFDRFVTENRFTIAVVFPLVGAVTLLASAEGLLPDPLAFNPYFVLFGTFVMRLPLVAGIFPLVDRRAGLALVALTLYSYGIELVGVRTGWPYGEFTYGVDLGPMLLGDVPFGLPVFFFPLVLNAYLLVLLLLGNRAASTTVRLLSTLATVMLVDLVLDPGAVAIGFWIYEMPQFYGVPWQNYAGWLLSGSVAVLLFDFGFDRAGLRRRLRDCPFMLDDLVSFVLLWGGINLFYTNWVPFGLAALLGAGLLWTDRFDFDLSETRLGRAVWR",
+    "length": 293,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0016836",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0016117",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1R3RGJ7",
+    "protein_name": "Cytochrome P450 monooxygenase otaC (EC 1.14.14.-) (Ochratoxin A biosynthesis cluster protein C)",
+    "organism": "Aspergillus carbonarius (strain ITEM 5010)",
+    "sequence": "MNMDSIASFSHPFLWTAFAVGVVYCCTRMVSELFLSPLSHIPGPKLAACTRLYEFFYDVICHGRYTFKIAELHEKYGPIVRISPTEIHINDPEFYETLYSTSAPRNKDPWFTTNFDVAESAFSTLDYRLHRPRRALIAPYFAKARVDRIQPLIQGKITKLMRQLDEYARAGKPLKVDVAYNCFTADVITGYTSYRPLGYLDTPDMVPIWSETVRNLVEIGMIARHLPGFFPLLASTGARCIQMVYPKLLSVIAFRVKCIQEVNFMWTHPETATKDAAQAECSEPALFPELVSRASTTPDITEERVLHEFITIVAAGTETTAHTMTVCTFHILNNKDILRRLRAELNDKFPGDATMDLQTLEQLPYLTGIIYEGLRLSYGLSHRLQRISPTDPLKYKDVVIPPNTPVGMSSALIHHDETIFPQSHAFIPDRWTDINERRRLNKYMVAFSKGSRQCIGMNLAFAELYMAVAALFRKYDMELQDTTVDDVKLHSDMMLPHAKKGSKGVRVILKPAQGGE",
+    "length": 516,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:1900818",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0016491",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:1900818",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2K1JJ00",
+    "protein_name": "Protein SOSEKI 1 (PpSOK1)",
+    "organism": "Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)",
+    "sequence": "MAFEENFLSAQVLYQLSWNGKLEHPHIIDVEYASDQGGLRLRDVKERLTRLRGHGINDSFSWSYKRTYSKTFIWNDLSDDDVIHPLCGSGEYVLRASELIDTNERKSCDVHSRHSNKSMQSSPTMLLDNVTSKQDTIIGDVHFGALESGENRRIGDKLNCLVRNSGANLEEVKSLRGVSAVISQSLPTLYADQEIMDVEKSDFCLSSSDTEISPRPKMTVDSIKPVKDVNLVVMTKSSTVHGVHTPPSPSLKSSTELPFSPGGTKRLWEKEIRKSLFRTRNSSNVNSVSTEDFTAVHMELPPNTHSTHEDNSFWRDSRSKSPSPSSLNELKEVQIDKEEVEQSTSQLIRLLWARWTGGSSKGKRIPYNTCEGASTKIPESKHNSPYRTKSPYKEIRSTHVEGSHQETRQSLAVQSKARVSLEIKEILPPEECMHYPSPMTVQNVTEVASPHAQTDGGGDVCTIKTIVSEQASQPYPEPRDLRTDQGILSEKTPGLHIAVLEGLTSDAPSGPAEAEVDTPLPAVARAKTGNTLSKLKTIASSKPLPPGFHKGTNDTKPVQITPRRTPRNSIPLASPPLVRSFSRDAVRGFSSLAAISLCPDKDSVACTPSPEKTIVKKRINYSAREEMPLVPGLTTLDWEKALQEATTDCLPPPNFSDILQECSICRRTFKPDSLQVHMRGCHPPQYARAFSARASPHVVRC",
+    "length": 701,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0051258",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0C3VJP4",
+    "protein_name": "Serine carboxypeptidase 1 (EC 3.4.16.-)",
+    "organism": "Medicago truncatula (Barrel medic) (Medicago tribuloides)",
+    "sequence": "MEKVSLYACLILNLSLLVIFPYSKASQADKLNEFILSRKSQNPPKTLSWEEGDALKTLFSSAAYVAPPQEELRLADKIVTLPGQPYGVNFDQYSGYVTVDPETGRELFYYFVESPCNSSTKPLVLWLNGGPGCSSLGYGAFQELGPFRVNSDGKTLYRNPYAWNEVANVLFLESPAGIGFSYSNTTSDYDKSGDKSTAKDSYVFLINWLERFPQYKTRDFYISGESYAGHYVPQLASTILHNNKLYKNTIINLKGISLGNAWIDDATSLKGLYDNLWTHALNSDQTHELIEKYCDFTKQNYSAICTNAMNMSMIEKGKIDSFNIYAPLCHDSTLKNGSTGYVSNDLDPCSDYYGTAYLNRPEVQKALHAKPTNWSHCSDSINLNWKDSPITILPTIKYLIDNGIKLWIYSGDTDAVGVTISRYPINTLKLPIDSTWRPWYSGKEIGGYVVGYKGLTFVTVRGAGHLVPSWQPERALTLISSFLYGILPASVSPSN",
+    "length": 495,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0005515",
+        "aspect": "molecular_function",
+        "evidence": "IPI"
+      },
+      {
+        "go_id": "GO:0009610",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      },
+      {
+        "go_id": "GO:0009610",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      },
+      {
+        "go_id": "GO:0036377",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0048046",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A287B8J2",
+    "protein_name": "Dynactin subunit 1 (150 kDa dynein-associated polypeptide) (p150-glued)",
+    "organism": "Sus scrofa (Pig)",
+    "sequence": "MAQSKRHVYSRTPSGSRMSAEASARPLRVGSRVEVIGKGHRGTVAYVGATLFATGKWVGVILDEAKGKNDGTVQGRKYFTCDEGHGIFVRQSQIQVFEDGADTTSPETPDSSASKVLRREGTDSNAKTSKLRGPKPKKAPTARKTTTRRPKPTRPASTGVAGASSSLGPSGSASAGELSSSEPSTPAQTPLAAPIIPTPALTSPGAAPPLPSPSKEEEGLRAQVRDLEEKLETLRLKRAEDKAKLKELEKHKIQLEQVQEWKSKMQEQQADLQRRLKEARKEAKEALEAKERYMEEMADTADAIEMATLDKEMAEERAESLQQEVEALKERVDELTTDLEILKAEIEEKGSDGAASSYQLKQLEEQNARLKDALVRMRDLSSSEKQEHVKLQKLMEKKNQELEVVRQQRERLQEELSQAESTIDELKEQVDAALGAEEMVEMLTDRNLNLEEKVRELRETVGDLEAMNEMNDELQENARETELELREQLDMAGARVREAQKRVEAAQETVADYQQTIKKYRQLTAHLQDVNRELTNQQEASVERQQQPPPETFDFKIKFAETKAHAKAIEMELRQMEVAQANRHMSLLTAFMPDSFLRPGGDHDCVLVLLLMPRLICKAELIRKQAQEKFDLSENCSERPGLRGAAGEQLSFAAGLVYSLSLLQATLHRYEHALSQCSVDVYKKVGSLYPEMSAHERSLDFLIELLHKDQLDETVNVEPLTKAIKYYQHLYSIHLAEQPEDSTMQLADHIKFTQSALDCMSVEVGRLRAFLQGGQEASDIALLLRDLETSCSDIRQFCKKIRRRMPGTDAPGIPAALAFGAQVSDTLLDCRKHLTWVVAVLQEVAAAAAQLIAPLAENEGLPVAALEELAFKASEQIYGTPSSSPYECLRQSCNILISTMNKLATAMQEGEYDAERPPSKPPPVELRAAALRAEITDAEGLGLKLEDRETVIKELKKSLKIKGEELSEANVRLSLLEKKLDSAAKDADERIEKVQTRLEETQALLRKKEKEFEETMDALQADIDQLEAEKAELKQRLNSQSKRTIEGIRGPPPSGIATLVSGIAGEEQQRGGAPGQAPGIVPGPGLVKDSPLLLQQISAMRLHISQLQHENSVLKGAQMKASLAALPPLHVAKLSLPPHEGPGSELAAGALYRKTNQLLETLNQLSTHTHVVDITRSSPAAKSPSAQLLEQVTQLKSLSDTIEKLKDEVLKETVSQRPGATVPTDFATFPSSAFLRAKEEQQDDTVYMGKVTFSCAAGLGQRHRLVLTQEQLHQLHDRLIS",
+    "length": 1281,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0030989",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005869",
+        "aspect": "cellular_component",
+        "evidence": "IPI"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0B4ZTQ2",
+    "protein_name": "2-acyl-4-prenylphloroglucinol 6-prenyltransferase, chloroplastic (EC 2.5.1.137) (Aromatic prenyltransferase PT2) (Humulus lupulus prenyltransferase-2) (HlPT2)",
+    "organism": "Humulus lupulus (European hop)",
+    "sequence": "MELSSACNLSLKPNYYYYPTSLFPSNNSYNNLKASSYYQTQRPIKCCSYSPSKYCSTKKLQTTHLLGLYAKHKCLKPFSIGHLPRPNSLTAWSHQSEFPSTIVTKGSNFGHASWKFVRPIPFVAVSIICTSLFGAELLKNPNLFSWQLMFDAFQGLVVILLYHIYINGLNQIYDLESDRINKPDLPLAAEEMSVKSAWFLTIFSAVASLLLMIKLKCGLFLTCMYCCYLVIGAMYSVPPFRWKMNTFTSTLWNFSEIGIGINFLINYASRATLGLPFQWRPPFTFIIGFVSTLSIILSILKDVPDVEGDKKVGMSTLPVIFGARTIVLVGSGFFLLNYVAAIGVAIMWPQAFKGYIMIPAHAIFASALIFKTWLLDKANYAKEASDSYYHFLWFLMIAEYILYPFIST",
+    "length": 408,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0009536",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2K1J5A5",
+    "protein_name": "Protein SOSEKI 3 (PpSOK3)",
+    "organism": "Physcomitrium patens (Spreading-leaved earth moss) (Physcomitrella patens)",
+    "sequence": "MARGEDSSSVQVLYQLSWDGKLEHPHMIEVHYPPNQGGLRLRDVKKRLTTLRGHGINDSFSWSSKRNYKNEFIWNDLCDDDVIQPLRGSGEYVLRASELFDTFTNKPWEHPSKHSNERMQSSRTMSVDNVTLQQGLINVKLHSGALAREDDQPSGEKLCCSGRRSCINLEDCSSKGVAIDIPKNLQNLSVDQETIDVEKSDFCLSSSDNEVSPRLKTAADCITPVKDVGLVVMTRSTTVHGLHTPAPRSLTSPTEPPFSPGSAKRMWKKEIRKSLFRTSRNSSNVNPVLSGENAALDVDVPPITLSTQEDVSFWRDGRSKSASPSSLNELREVQNEKEKEAEQSTSQLIRLLWARWTGGSSKGKRTPQSTCEDPLPKSPEAKQMPRSRTKTPCKEIRSTNHIAGSLPVTCPSPAVDNKAHSSLDRQEIPPQEECKNRPSPMTLQSCEEITSPVTEIEQDVEIGDIKAIVEEQASNKFPEPEFQQNLRTEQIVLSVQIPDLHIDALDSPTSDTQGSPAEADIPKSATARVKTSNSLPRVKTTTSPKPLPPGFHKGTNDTKPVQIITPRRTPRTSIPLASPPPLVRTFNRVSVRSLSSIAAITLSPENDSAASNLSPENPIVKKRINFRERDEMPLIPGLTTLDWEKALQEAVTDCLPPPNFREILQECSTCGRTFKPDSLQVHMRGCHPPQYARAFSARASPHVVRSRAS",
+    "length": 709,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0051258",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PN96",
+    "protein_name": "Transcription factor TAC1 (Transcriptional activator of CDR genes 1) (Zn(2)-Cys(6) DNA-binding domains containing protein 2)",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MDTSSSSGTHPSTFNNLTKQQELTGNDPNDTNRKRIRVACDSCRRKKIKCNGSYPCGNCIQAKNTSNCHFTERPVRKKLKPTKQDNKSTANSNGVSKRKYNDTFSGNSINIKTEKQENTTFGINDNKSSDLESRLSRIENSMSRMMHTLENFSQNFMTQAIRNNHSNSSMFNNNSLSPTPSEDFNKSAFDSEEQQTSHSYKNLKDRVKDANELLKLRNWDEFVGTHSITCIFSRESLDWMEKTLGSYGEEYLTPIRNLPLVFHSELKPYIMKWIDPPVVDKLQRKKLLESPFPTDSKLISKLIDLYYEETSMINILVDESRVRSLFAAYYNNFAEPIATKRRRFKLSELLLMTSILLISLSCLTEDDFSEERITTPASSTSSNYSAASANLLGDYNKNRLIALQNSLENSAIFYYHRISVISEGLETVEALLMFIIYVESNWLTSFFNYTIITVTIRFAQEIGLHRAETYNNLDLEEATKRRKIWWFCYFFDIEFSFKSGKPPVINTNDVTTNSDEDLLRVITQLKQYGPLSPKDRMYSPVCHTISTSLLDLSGSDSICLDILKIIQSGDILDDPFYFQFCALLQSRIRSNSYHDLFIASAEKRDFSSISNTLEKLNADMFELAMYLADEAKPRFYNDPKFTSVQASTGTSIRRDTILAMKLTFFSHLMIINRYPLMIATEDSKFDDRVIKFRNLSLDSARTILMLIKGWHRESASALFYNWAIYFPVAAYLVLVAAIINHPQLPESGTNLNLLIETSLSFFKSSKQWNSSNDSQDKQQNSTICVNKIVAIELIVRLMLRVVIKVYELHNNVEILANNPALQNHLQEAEEKFPDIFQNHAEFTSKMIALVGASPFGGCGSRNTSSCNLRDNSTNHGQNNMNPSPTITNNTYNSNINTGSNSTGEPQVCYAQSPSYNASLSNIINNESTGRSPATSTSINQSMMNENYDLFNDYLIDNSAVNLPFSQFNNLPNFFFDNNLGI",
+    "length": 981,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0000978",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0000981",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0000981",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0001216",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0003677",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0003713",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0006357",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0030447",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0034599",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0036180",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0071383",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      },
+      {
+        "go_id": "GO:0071466",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0071466",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0071466",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:1900445",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:2001038",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0005634",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0005634",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      },
+      {
+        "go_id": "GO:0005667",
+        "aspect": "cellular_component",
+        "evidence": "IDA"
+      }
+    ]
+  },
+  {
+    "accession": "A0A2R6W0K6",
+    "protein_name": "Phosphoglucomutase 1, chloroplastic (MpPGM1) (EC 5.4.2.2) (Glucose phosphomutase)",
+    "organism": "Marchantia polymorpha (Common liverwort) (Marchantia aquatica)",
+    "sequence": "MAFSAAASASTNLVPAVASGRGGAAASASQHGETARLARFGVSSSACANALSLSSSRSCASMGEVLWANGGAVRLAARRTLRVRAAGAGTIVQPEGFQITSVPTTPIDGQKTGTSGLRKKVKEFQSPNYLANWIQALFDSLPAEDVKGSTLVLGGDGRYFNKEASQIIIKIAAGNGVGKILVGREGIASTPAVSAIIRARKANGGFVMSASHNPGGPKYDWGIKFNYSSGQPAPESITDKIYGNTLSIKEIKQADIPDVNLSELGVHKFGDFSVEVIDPVADYLNLLEEVFDFDLLKGLLTSKDFRFKFDAMHAVTGAYAKPIFVDRLGAPEDSIFNGVPLEDFGGGHPDPNLTYAEELVKIMYGTDAPDFGAASDGDGDRNMILGNHFFITPSDSVAMIAANADAIPYFKTGLKGLARSMPTSGALDRVAKELGLPFFETPTGWKFFGNLMDAGKCSVCGEESFGTGSDHVREKDGIWAVLAWISIVAYKNRDRKVGEKLVTVADIAKEHWAKYGRNFFSRYDYEECESAGANKMVEHLRDIIAKSKKGDKYGNYELELADDFAYTDPIDGSVATKQGIRFIFSDGSRIIFRLSGTGSAGATIRIYVEQYEQDTTKHDLDAQDALKPLIDIALSVSKLQEFTGRTKPTVIT",
+    "length": 652,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005986",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A125S9F0",
+    "protein_name": "Conotoxin Im016 (Conopeptide im016)",
+    "organism": "Conus imperialis (Imperial cone)",
+    "sequence": "MSTLGMMLLILLLLVPLATFADDGPTMRGHRSAKLLAHTTRDSCPSGTNCPSKICCNGNCCSKSSCRCETNQATKERVCVC",
+    "length": 81,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A125S9E6",
+    "protein_name": "Conotoxin Im3.1 (Conopeptide im012)",
+    "organism": "Conus imperialis (Imperial cone)",
+    "sequence": "MMSTLVVLLTICLLMLPLTARQLDADQLADQLAERMEDISADQNRWFDPVKRCCMRPICMCPCCVNG",
+    "length": 67,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005576",
+        "aspect": "cellular_component",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1S3YTK9",
+    "protein_name": "Berberine bridge enzyme-like D-1 (NtBBLd) (EC 1.1.1.-)",
+    "organism": "Nicotiana tabacum (Common tobacco)",
+    "sequence": "MKRNISMFLQLLLIILMMISFLFTSLLVPSVSATTLNTISTCLINYKVSNFSVYPTRNHAGNSYYNLLDFSIQNLRFAACSKPKPTVIIVPESKEQLVSSVLCCRQGSYEIRVRCGGHSYEGTSSVSFDGSPFVVIDLMKLDGVSVDVDSETAWVQGGATLGQTYYAISRASNVHGFSAGSCPTVGVGGHISGGGYGFLSRKYGLAADNVVDALLVDAEGRLLDRKAMGEEIFWAIRGGGGGIWGIIYAWKIRLLKVPKTVTSFIIPRPGSKRYVSQLVHKWQLVAPKLEDEFYLSISMSSPSKGNIPIEINAQFSGFYLGTKTEAISILNEAFSELGVLEGDCKEMSWIESTLFFSELDDVANSSDVSRLKERYFENKSYFKAKSDYVKTPISVGGIMTALNVLEKEPNGHVILDPYGGAMQRISEEAIAFPHRKGNLFGIQYLVVWKEKDNNNIVKSNIGYIEWIREFYNTMAPHVSSSPRAAYVNYMDLDLGVMDDYLLPCTSTTASANHAVERARVWGEKYFLNNYDRLVKAKTKIDPLNVFRHQQGIPPLFASMQEYTYSSK",
+    "length": 567,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0009753",
+        "aspect": "biological_process",
+        "evidence": "IEP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A1D8PH98",
+    "protein_name": "Myo-inositol transporter 1",
+    "organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)",
+    "sequence": "MGSSTNNTQSKATPSVLENEVNSSKSSVVSSTSSAKGLLRETTNHGTMETSSVQISESESRPSKMVLVLTLASSISGFMFGYDTGYISSALVQIGTDLSNKILTSGEKEFITSATSLGALLGAVVGGVLANLIGRRRVLLGSNIIFVVGTIIQLAARTVWTMIAGRFVLGWGVGIASLIAPLMISELAPAKYRGRLIVTNVIFITGGQLIAYFINWGLTRVSHGWRVSVGLCMVPPVLQFVLFWFLPDTPRFYVMNGNFEKARQVLRKVHVDPSDEFVNATIDEMIASDSTVPGNGPLQKAWKSIKIIHTTPGNFRALILACGLQGIQQFTGFNSLMYFSATIFETIGFHNATAVSIIIAATNFVFTGIAICIIDKVGRRRILLVGMPCMCISLIVCAVAFHYLNVDFSTGTVVSRGINGWGIVVIIGMILYVASYAIGIGNAAWVGVELFSDVNVRSIGAMYAACTNWAGSLVIASTFLTMLENITPTGTFSFFAGLCFIAFFFVYFLLPDTAGLELEETTDFLSNGFNVKQAAQLSKERKKHSKFAKSKPTV",
+    "length": 554,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0005365",
+        "aspect": "molecular_function",
+        "evidence": "IMP"
+      },
+      {
+        "go_id": "GO:0015798",
+        "aspect": "biological_process",
+        "evidence": "IMP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0H2V760",
+    "protein_name": "Iron(III) enterobactin esterase (EC 3.1.1.108) (Fe-Ent esterase)",
+    "organism": "Escherichia coli O6:H1 (strain CFT073 / ATCC 700928 / UPEC)",
+    "sequence": "MTALKVGSESWWQSKHGPEWQRLNDEMFEVTFWWRDPQGSEEYSTIKRVWVYITGVTDHHQNSQPRSMQRIAGTDVWQWTTQLNANWRGSYCFIPTERDDIFSAPSPDRLELREGWRKLLPQAIADPLNPQSWKGGRGHAVSALEMPQAPLQPGWDCPQAPETPAKEIIWKSERLKNSRRVWIFTTGDATAEERPLAVLLDGEFWAQSMPVWPALTSLTHRRQLPPAVYVLIDAIDTTHRAHELPCNADFWLAVQQELLPQVKAIAPFSDRADRTVVAGQSFGGLSALYAGLHWPERFGCVLSQSGSYWWPHRGGHQEGMLLEQLNTGEVSAEGLRIVLEAGVREPMIMQANQALYAQLHPLKESIFWRQVDGGHDALCWRGGLMQGLIDLWQPLFHDRS",
+    "length": 400,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0008849",
+        "aspect": "molecular_function",
+        "evidence": "EXP"
+      }
+    ]
+  },
+  {
+    "accession": "A0A0D3QS98",
+    "protein_name": "Palmitoleoyl-protein carboxylesterase notum1' (EC 3.1.1.98)",
+    "organism": "Xenopus laevis (African clawed frog)",
+    "sequence": "MAGTLCVTLLLLLSTIAVGGRKTWRRRSQQIVPSSWERSEGGGESFPLDFTAVEGNMDNFMNQIKSLAQSLYPCSAQRLDDEMKLHSLHNKSVTCNDGSPAGYYLKESKGSRRWLVFLEGGWYCISRENCDIRYDTMRSLMSSRAWPPSKTASGILSTQPEENPHWWNANIVFIPYCSSDVWSGVSPKTEKSGYAFMGSLIIQEVVKELLGKGLDTAKLLLLAGSSAGGTGVLLNVDMVANLLEELGYPGIEVRGLSDSGWFLNNKQYWRTDCTDIITCAPTEAIQRGIRYWNSMVPERCKQQFKEGEEWNCFFGYKIYPTLRSPVFVVQWLFDEAQLTVDNVHLSRQPVQESQWLYIQNLGRELRNTLKDVGASFAPACLAHEVITRSHWTEIQVRGTSLPRALHCWDRSLQEPNKNSKVQLKGCPFHLMDSCPWPQCNPTCPSIRDHFTGQEMSVVQFLMHLGFDVQKMASQQGMEPGKLLGVLSS",
+    "length": 488,
+    "experimental_go_terms": [
+      {
+        "go_id": "GO:0140776",
+        "aspect": "molecular_function",
+        "evidence": "IDA"
+      },
+      {
+        "go_id": "GO:0030178",
+        "aspect": "biological_process",
+        "evidence": "IDA"
+      }
+    ]
+  }
+]

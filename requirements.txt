@@ -19,3 +19,6 @@ pytorch-lightning==2.6.6
 # the newer torch/transformers already installed in this project's base env
 # (torch 2.11.0, transformers 5.5.4), no version pinning/monkeypatches needed.
 numpy==2.3.5
+
+# eval/stats.py -- Fisher exact test for the hubness diagnostic's significance check.
+scipy==1.16.3

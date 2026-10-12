@@ -6,7 +6,7 @@ from tools import uniprot
 
 def test_uniprot_p53_fixture():
     fixture = load_fixture_json("uniprot_P04637.json")
-    with patch("tools.uniprot.requests.get", return_value=fake_response(json_body=fixture)):
+    with patch("tools.evidence.requests.get", return_value=fake_response(json_body=fixture)):
         ev = uniprot.run("P04637")
 
     assert ev.tool == "uniprot"
@@ -18,7 +18,7 @@ def test_uniprot_p53_fixture():
 
 
 def test_uniprot_error_becomes_evidence_not_exception():
-    with patch("tools.uniprot.requests.get", side_effect=ConnectionError("boom")):
+    with patch("tools.evidence.requests.get", side_effect=ConnectionError("boom")):
         ev = uniprot.run("P04637")
 
     assert ev.error is not None

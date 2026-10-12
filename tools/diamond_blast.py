@@ -52,7 +52,9 @@ def _parse_tsv(tsv_text: str) -> list[dict]:
     return hits
 
 
-def _run_diamond(sequence: str, query_id: str, db_path: Path, top_n: int) -> dict:
+def _run_diamond(
+    sequence: str, query_id: str, db_path: Path, top_n: int, exclude_accessions: set[str] | None
+) -> dict:
     if not shutil.which("diamond"):
         raise RuntimeError("the `diamond` binary is not on PATH (brew install diamond)")
     if not db_path.exists():
@@ -63,6 +65,9 @@ def _run_diamond(sequence: str, query_id: str, db_path: Path, top_n: int) -> dic
         out_path = Path(tmp) / "hits.tsv"
         query_path.write_text(f">{query_id}\n{sequence}\n")
 
+        # Ask DIAMOND for extra hits beyond top_n when we're about to exclude some,
+        # so leakage control doesn't just silently shrink the useful result count.
+        fetch_n = top_n + len(exclude_accessions) if exclude_accessions else top_n
         subprocess.run(
             [
                 "diamond", "blastp",
@@ -70,7 +75,7 @@ def _run_diamond(sequence: str, query_id: str, db_path: Path, top_n: int) -> dic
                 "-d", str(db_path),
                 "-o", str(out_path),
                 "--outfmt", "6", *OUTFMT_FIELDS,
-                "--max-target-seqs", str(top_n),
+                "--max-target-seqs", str(fetch_n),
                 "--quiet",
             ],
             check=True,
@@ -79,6 +84,11 @@ def _run_diamond(sequence: str, query_id: str, db_path: Path, top_n: int) -> dic
         tsv_text = out_path.read_text() if out_path.exists() else ""
 
     hits = _parse_tsv(tsv_text)
+    excluded_count = 0
+    if exclude_accessions:
+        kept = [h for h in hits if h["uniprot_accession"] not in exclude_accessions]
+        excluded_count = len(hits) - len(kept)
+        hits = kept[:top_n]
     top = hits[0] if hits else None
     result_summary = (
         f"{len(hits)} Swiss-Prot homolog(s); top hit={top['uniprot_accession']} "
@@ -88,12 +98,18 @@ def _run_diamond(sequence: str, query_id: str, db_path: Path, top_n: int) -> dic
     )
     return {
         "result_summary": result_summary,
-        "raw_scores": {"hit_count": len(hits), "hits": hits},
+        "raw_scores": {"hit_count": len(hits), "hits": hits, "excluded_count": excluded_count},
         "source_ids": [h["uniprot_accession"] for h in hits],
         "source_urls": [f"https://www.uniprot.org/uniprotkb/{h['uniprot_accession']}" for h in hits],
     }
 
 
-def run(sequence: str, query_id: str = "query", db_path: Path | None = None, top_n: int = 10) -> Evidence:
+def run(
+    sequence: str,
+    query_id: str = "query",
+    db_path: Path | None = None,
+    top_n: int = 10,
+    exclude_accessions: set[str] | None = None,
+) -> Evidence:
     db_path = db_path or DB_PATH
-    return timed_call("diamond_blast", query_id, _run_diamond, sequence, query_id, db_path, top_n)
+    return timed_call("diamond_blast", query_id, _run_diamond, sequence, query_id, db_path, top_n, exclude_accessions)

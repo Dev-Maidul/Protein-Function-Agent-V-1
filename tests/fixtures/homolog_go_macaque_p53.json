@@ -1,0 +1,856 @@
+{
+  "tool": "homolog_go",
+  "query": "P56423,P61260",
+  "result_summary": "94 distinct GO term(s) from 2 homolog(s)",
+  "raw_scores": {
+    "go_terms": [
+      {
+        "go_id": "GO:0005813",
+        "term": "C:centrosome",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0000785",
+        "term": "C:chromatin",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005737",
+        "term": "C:cytoplasm",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005829",
+        "term": "C:cytosol",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005783",
+        "term": "C:endoplasmic reticulum",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005759",
+        "term": "C:mitochondrial matrix",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005739",
+        "term": "C:mitochondrion",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0016363",
+        "term": "C:nuclear matrix",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005730",
+        "term": "C:nucleolus",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005634",
+        "term": "C:nucleus",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0016605",
+        "term": "C:PML body",
+        "evidence_code": "IEA:UniProtKB-SubCell",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005657",
+        "term": "C:replication fork",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0035861",
+        "term": "C:site of double-strand break",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0017053",
+        "term": "C:transcription repressor complex",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0036310",
+        "term": "F:ATP-dependent DNA/DNA annealing activity",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005507",
+        "term": "F:copper ion binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0001046",
+        "term": "F:core promoter sequence-specific DNA binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0097718",
+        "term": "F:disordered domain specific binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0003677",
+        "term": "F:DNA binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0001228",
+        "term": "F:DNA-binding transcription activator activity, RNA polymerase II-specific",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0000981",
+        "term": "F:DNA-binding transcription factor activity, RNA polymerase II-specific",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0001227",
+        "term": "F:DNA-binding transcription repressor activity, RNA polymerase II-specific",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0042826",
+        "term": "F:histone deacetylase binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0035033",
+        "term": "F:histone deacetylase regulator activity",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0042802",
+        "term": "F:identical protein binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0097371",
+        "term": "F:MDM2/MDM4 family protein binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0140693",
+        "term": "F:molecular condensate scaffold activity",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0140677",
+        "term": "F:molecular function activator activity",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0003730",
+        "term": "F:mRNA 3'-UTR binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0002039",
+        "term": "F:p53 binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:1990841",
+        "term": "F:promoter-specific chromatin binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0002020",
+        "term": "F:protease binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0046982",
+        "term": "F:protein heterodimerization activity",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0051721",
+        "term": "F:protein phosphatase 2A binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0051087",
+        "term": "F:protein-folding chaperone binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0030971",
+        "term": "F:receptor tyrosine kinase binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0000978",
+        "term": "F:RNA polymerase II cis-regulatory region sequence-specific DNA binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0061629",
+        "term": "F:RNA polymerase II-specific DNA-binding transcription factor binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0001094",
+        "term": "F:TFIID-class transcription factor complex binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0001223",
+        "term": "F:transcription coactivator binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0031625",
+        "term": "F:ubiquitin protein ligase binding",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0006914",
+        "term": "P:autophagy",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0048539",
+        "term": "P:bone marrow development",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0072717",
+        "term": "P:cellular response to actinomycin D",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0071480",
+        "term": "P:cellular response to gamma radiation",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0071456",
+        "term": "P:cellular response to hypoxia",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0034644",
+        "term": "P:cellular response to UV",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0071466",
+        "term": "P:cellular response to xenobiotic stimulus",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0090398",
+        "term": "P:cellular senescence",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0048512",
+        "term": "P:circadian behavior",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0008340",
+        "term": "P:determination of adult lifespan",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0006974",
+        "term": "P:DNA damage response",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0030330",
+        "term": "P:DNA damage response, signal transduction by p53 class mediator",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0043153",
+        "term": "P:entrainment of circadian clock by photoperiod",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0060218",
+        "term": "P:hematopoietic stem cell differentiation",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0008104",
+        "term": "P:intracellular protein localization",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0042771",
+        "term": "P:intrinsic apoptotic signaling pathway in response to DNA damage by p53 class mediator",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0070059",
+        "term": "P:intrinsic apoptotic signaling pathway in response to endoplasmic reticulum stress",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0031571",
+        "term": "P:mitotic G1 DNA damage checkpoint signaling",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0009299",
+        "term": "P:mRNA transcription",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0043066",
+        "term": "P:negative regulation of apoptotic process",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0030308",
+        "term": "P:negative regulation of cell growth",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0045892",
+        "term": "P:negative regulation of DNA-templated transcription",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0048147",
+        "term": "P:negative regulation of fibroblast proliferation",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:1903451",
+        "term": "P:negative regulation of G1 to G0 transition",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:1905856",
+        "term": "P:negative regulation of pentose-phosphate shunt",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0032211",
+        "term": "P:negative regulation of telomere maintenance via telomerase",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0006289",
+        "term": "P:nucleotide-excision repair",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0097252",
+        "term": "P:oligodendrocyte apoptotic process",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0090403",
+        "term": "P:oxidative stress-induced premature senescence",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0043065",
+        "term": "P:positive regulation of apoptotic process",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:2000774",
+        "term": "P:positive regulation of cellular senescence",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:1900119",
+        "term": "P:positive regulation of execution phase of apoptosis",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:2001244",
+        "term": "P:positive regulation of intrinsic apoptotic signaling pathway",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:1902895",
+        "term": "P:positive regulation of miRNA transcription",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0062100",
+        "term": "P:positive regulation of programmed necrotic cell death",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:2000379",
+        "term": "P:positive regulation of reactive oxygen species metabolic process",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0090200",
+        "term": "P:positive regulation of release of cytochrome c from mitochondria",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0045899",
+        "term": "P:positive regulation of RNA polymerase II transcription preinitiation complex assembly",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0070245",
+        "term": "P:positive regulation of thymocyte apoptotic process",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0045944",
+        "term": "P:positive regulation of transcription by RNA polymerase II",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0051262",
+        "term": "P:protein tetramerization",
+        "evidence_code": "IEA:InterPro",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0007265",
+        "term": "P:Ras protein signal transduction",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0090399",
+        "term": "P:replicative senescence",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0045815",
+        "term": "P:transcription initiation-coupled chromatin remodeling",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0033209",
+        "term": "P:tumor necrosis factor-mediated signaling pathway",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0060333",
+        "term": "P:type II interferon-mediated signaling pathway",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0016032",
+        "term": "P:viral process",
+        "evidence_code": "IEA:Ensembl",
+        "source_accession": "P56423"
+      },
+      {
+        "go_id": "GO:0005813",
+        "term": "C:centrosome",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005737",
+        "term": "C:cytoplasm",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005783",
+        "term": "C:endoplasmic reticulum",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005759",
+        "term": "C:mitochondrial matrix",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005739",
+        "term": "C:mitochondrion",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005730",
+        "term": "C:nucleolus",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005634",
+        "term": "C:nucleus",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0016605",
+        "term": "C:PML body",
+        "evidence_code": "IEA:UniProtKB-SubCell",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0036310",
+        "term": "F:ATP-dependent DNA/DNA annealing activity",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0005507",
+        "term": "F:copper ion binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0003677",
+        "term": "F:DNA binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0000981",
+        "term": "F:DNA-binding transcription factor activity, RNA polymerase II-specific",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0140693",
+        "term": "F:molecular condensate scaffold activity",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:1990841",
+        "term": "F:promoter-specific chromatin binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0000978",
+        "term": "F:RNA polymerase II cis-regulatory region sequence-specific DNA binding",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0031625",
+        "term": "F:ubiquitin protein ligase binding",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0097190",
+        "term": "P:apoptotic signaling pathway",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0071456",
+        "term": "P:cellular response to hypoxia",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0090398",
+        "term": "P:cellular senescence",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0048512",
+        "term": "P:circadian behavior",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0006974",
+        "term": "P:DNA damage response",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0043153",
+        "term": "P:entrainment of circadian clock by photoperiod",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0030308",
+        "term": "P:negative regulation of cell growth",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0051053",
+        "term": "P:negative regulation of DNA metabolic process",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0045892",
+        "term": "P:negative regulation of DNA-templated transcription",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0006289",
+        "term": "P:nucleotide-excision repair",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0097252",
+        "term": "P:oligodendrocyte apoptotic process",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0043065",
+        "term": "P:positive regulation of apoptotic process",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:2001244",
+        "term": "P:positive regulation of intrinsic apoptotic signaling pathway",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0045944",
+        "term": "P:positive regulation of transcription by RNA polymerase II",
+        "evidence_code": "ISS:UniProtKB",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0051262",
+        "term": "P:protein tetramerization",
+        "evidence_code": "IEA:InterPro",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0010212",
+        "term": "P:response to ionizing radiation",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0006979",
+        "term": "P:response to oxidative stress",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0009411",
+        "term": "P:response to UV",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      },
+      {
+        "go_id": "GO:0009410",
+        "term": "P:response to xenobiotic stimulus",
+        "evidence_code": "IEA:UniProtKB-ARBA",
+        "source_accession": "P61260"
+      }
+    ],
+    "queried_accessions": [
+      "P56423",
+      "P61260"
+    ],
+    "excluded_count": 0
+  },
+  "source_ids": [
+    "GO:0000785",
+    "GO:0000978",
+    "GO:0000981",
+    "GO:0001046",
+    "GO:0001094",
+    "GO:0001223",
+    "GO:0001227",
+    "GO:0001228",
+    "GO:0002020",
+    "GO:0002039",
+    "GO:0003677",
+    "GO:0003730",
+    "GO:0005507",
+    "GO:0005634",
+    "GO:0005657",
+    "GO:0005730",
+    "GO:0005737",
+    "GO:0005739",
+    "GO:0005759",
+    "GO:0005783",
+    "GO:0005813",
+    "GO:0005829",
+    "GO:0006289",
+    "GO:0006914",
+    "GO:0006974",
+    "GO:0006979",
+    "GO:0007265",
+    "GO:0008104",
+    "GO:0008340",
+    "GO:0009299",
+    "GO:0009410",
+    "GO:0009411",
+    "GO:0010212",
+    "GO:0016032",
+    "GO:0016363",
+    "GO:0016605",
+    "GO:0017053",
+    "GO:0030308",
+    "GO:0030330",
+    "GO:0030971",
+    "GO:0031571",
+    "GO:0031625",
+    "GO:0032211",
+    "GO:0033209",
+    "GO:0034644",
+    "GO:0035033",
+    "GO:0035861",
+    "GO:0036310",
+    "GO:0042771",
+    "GO:0042802",
+    "GO:0042826",
+    "GO:0043065",
+    "GO:0043066",
+    "GO:0043153",
+    "GO:0045815",
+    "GO:0045892",
+    "GO:0045899",
+    "GO:0045944",
+    "GO:0046982",
+    "GO:0048147",
+    "GO:0048512",
+    "GO:0048539",
+    "GO:0051053",
+    "GO:0051087",
+    "GO:0051262",
+    "GO:0051721",
+    "GO:0060218",
+    "GO:0060333",
+    "GO:0061629",
+    "GO:0062100",
+    "GO:0070059",
+    "GO:0070245",
+    "GO:0071456",
+    "GO:0071466",
+    "GO:0071480",
+    "GO:0072717",
+    "GO:0090200",
+    "GO:0090398",
+    "GO:0090399",
+    "GO:0090403",
+    "GO:0097190",
+    "GO:0097252",
+    "GO:0097371",
+    "GO:0097718",
+    "GO:0140677",
+    "GO:0140693",
+    "GO:1900119",
+    "GO:1902895",
+    "GO:1903451",
+    "GO:1905856",
+    "GO:1990841",
+    "GO:2000379",
+    "GO:2000774",
+    "GO:2001244",
+    "P56423",
+    "P61260"
+  ],
+  "source_urls": [
+    "https://www.uniprot.org/uniprotkb/P56423",
+    "https://www.uniprot.org/uniprotkb/P61260"
+  ],
+  "runtime_s": 3.467,
+  "error": null
+}

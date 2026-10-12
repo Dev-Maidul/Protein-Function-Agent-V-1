@@ -41,7 +41,7 @@ def main() -> None:
     print(f"Running agent on {accession or '(sequence only)'} (eval_mode={args.eval_mode}) ...")
     report = run.run()
 
-    print(f"\nStop reason: {report['stop_reason']} (steps_used={report['steps_used']})")
+    print(f"\nStop reason: {report['stop_reason']} (recovered_from_text={report['recovered_from_text']})")
     print(f"Token usage: input={report['token_usage']['input']} output={report['token_usage']['output']} total={report['token_usage']['total']}")
     print(f"Trace/report saved to: {report['run_dir']}")
     print("\n--- report.md ---\n")

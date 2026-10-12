@@ -1,7 +1,7 @@
 from unittest.mock import patch
 
-from agent.dispatch import AgentContext
-from eval.baselines import diamond_transfer, llm_no_tools, protrek_transfer
+from agent.context import AgentContext
+from eval.baselines import aggregator_only_from_candidates, diamond_transfer, full_agent, gather_once, llm_no_tools, protrek_transfer
 from tools.evidence import Evidence
 
 
@@ -82,3 +82,55 @@ def test_llm_no_tools_returns_empty_on_unparseable_content():
 
     result = llm_no_tools("MEEP", client=FakeClient())
     assert result == []
+
+
+def test_aggregator_only_from_candidates_strips_to_fmax_shape():
+    candidates = [{"go_id": "GO:0001", "confidence": 0.8, "raw_score": 0.8, "evidence_ids": ["E1"], "explanations": ["x"]}]
+    assert aggregator_only_from_candidates(candidates) == [{"go_id": "GO:0001", "confidence": 0.8}]
+
+
+def test_gather_once_and_full_agent_share_one_evidence_pass():
+    """Regression test: aggregator_only and full_agent used to each call
+    gather_evidence independently, meaning InterProScan/DIAMOND/etc. ran
+    twice per protein in eval/run_eval.py. gather_once() + passing its
+    result into full_agent(ledger=...) must avoid a second pipeline run."""
+    ctx = AgentContext(query_sequence="MEEP", query_accession="Q1", eval_mode=True)
+    fake_ledger = [{"id": "E1", "tool": "diamond_blast_search", "args": {}, "evidence": {"error": None, "result_summary": "x", "raw_scores": {"hits": []}, "source_ids": [], "source_urls": []}}]
+    fake_candidates = [{"go_id": "GO:0001", "confidence": 0.5, "raw_score": 0.5, "evidence_ids": ["E1"], "explanations": ["x"]}]
+
+    with patch("eval.baselines.gather_evidence", return_value=fake_ledger) as mock_gather, patch(
+        "eval.baselines.aggregate", return_value=fake_candidates
+    ):
+        ledger, candidates = gather_once(ctx)
+
+    mock_gather.assert_called_once()
+    assert ledger == fake_ledger
+    assert candidates == fake_candidates
+
+    import json as _json
+
+    class FakeTokenUsage:
+        input_tokens = 0
+        output_tokens = 0
+        total = 0
+
+    class FakeClient:
+        usage = FakeTokenUsage()
+        max_tokens_per_run = 100000
+
+        def chat(self, messages, tools):
+            args = {"function_summary": "x", "go_terms": [], "disagreements_or_uncertainty": "None"}
+            return {"role": "assistant", "content": None, "tool_calls": [{"id": "c1", "type": "function", "function": {"name": "submit_final_answer", "arguments": _json.dumps(args)}}]}
+
+        def budget_exceeded(self):
+            return False
+
+    with patch("agent.loop.gather_evidence") as mock_gather2:
+        terms, report = full_agent("MEEP", "Q1", ctx=ctx, ledger=ledger, aggregator_candidates=candidates, client=FakeClient())
+        _ = terms
+    mock_gather2.assert_not_called()
+    try:
+        import shutil
+        shutil.rmtree(report["run_dir"], ignore_errors=True)
+    except Exception:
+        pass

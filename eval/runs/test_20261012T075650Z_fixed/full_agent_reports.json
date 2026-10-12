@@ -1,0 +1,189 @@
+{
+  "A0A072VG05": {
+    "stop_reason": "recovered_from_text",
+    "recovered_from_text": true,
+    "token_usage": {
+      "input": 7764,
+      "output": 3083,
+      "total": 10847
+    },
+    "n_go_terms": 1,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0F8XYN9": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 3785,
+      "output": 2062,
+      "total": 5847
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A1D8PPT5": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 3291,
+      "output": 1451,
+      "total": 4742
+    },
+    "n_go_terms": 3,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A178U9Y5": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 5077,
+      "output": 1855,
+      "total": 6932
+    },
+    "n_go_terms": 9,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0B5AC95": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 3381,
+      "output": 1335,
+      "total": 4716
+    },
+    "n_go_terms": 2,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A1D8PMB1": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 2688,
+      "output": 1124,
+      "total": 3812
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 1
+  },
+  "A0A2H1VE33": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 4891,
+      "output": 7281,
+      "total": 12172
+    },
+    "n_go_terms": 21,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A060KY90": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 4252,
+      "output": 2480,
+      "total": 6732
+    },
+    "n_go_terms": 4,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A179UL48": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 5319,
+      "output": 3048,
+      "total": 8367
+    },
+    "n_go_terms": 7,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0C9QKT6": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 2688,
+      "output": 1282,
+      "total": 3970
+    },
+    "n_go_terms": 0,
+    "n_go_terms_ungrounded": 2
+  },
+  "A0A0G2KIZ8": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 3679,
+      "output": 2462,
+      "total": 6141
+    },
+    "n_go_terms": 3,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0H2UMY0": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 5196,
+      "output": 2237,
+      "total": 7433
+    },
+    "n_go_terms": 6,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A221J5P3": {
+    "stop_reason": "recovered_from_text",
+    "recovered_from_text": true,
+    "token_usage": {
+      "input": 7378,
+      "output": 1568,
+      "total": 8946
+    },
+    "n_go_terms": 5,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A090XBL6": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 5983,
+      "output": 2564,
+      "total": 8547
+    },
+    "n_go_terms": 2,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A088SG62": {
+    "stop_reason": "recovered_from_text",
+    "recovered_from_text": true,
+    "token_usage": {
+      "input": 4012,
+      "output": 5582,
+      "total": 9594
+    },
+    "n_go_terms": 1,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A0P1AK67": {
+    "stop_reason": "recovered_from_text",
+    "recovered_from_text": true,
+    "token_usage": {
+      "input": 6536,
+      "output": 2676,
+      "total": 9212
+    },
+    "n_go_terms": 2,
+    "n_go_terms_ungrounded": 0
+  },
+  "A0A125S9E6": {
+    "stop_reason": "submitted final answer",
+    "recovered_from_text": false,
+    "token_usage": {
+      "input": 2669,
+      "output": 1340,
+      "total": 4009
+    },
+    "n_go_terms": 2,
+    "n_go_terms_ungrounded": 0
+  }
+}

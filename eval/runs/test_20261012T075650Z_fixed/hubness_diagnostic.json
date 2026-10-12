@@ -1,0 +1,19 @@
+{
+  "hub_hit_rate": 0.1111111111111111,
+  "hub_hit_rate_95ci": [
+    0.04840400437825557,
+    0.23499375490890945
+  ],
+  "nonhub_hit_rate": 0.2742857142857143,
+  "nonhub_hit_rate_95ci": [
+    0.23786426819831463,
+    0.3139864182832329
+  ],
+  "odds_ratio": 0.3307291666666667,
+  "p_value": 0.020177123533309756,
+  "significant_at_0.05": true,
+  "n_hub": 45,
+  "n_nonhub": 525,
+  "total_neighbours_examined": 570,
+  "note": "hit = at least one of the neighbour's own GO terms overlaps the query's ground truth"
+}

@@ -6,15 +6,13 @@ No auth required.
 """
 from __future__ import annotations
 
-import requests
-
-from tools.evidence import Evidence, timed_call
+from tools.evidence import Evidence, get_with_retry, timed_call
 
 BASE_URL = "https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms"
 
 
 def _lookup(go_id: str) -> dict:
-    resp = requests.get(f"{BASE_URL}/{go_id}", headers={"Accept": "application/json"}, timeout=20)
+    resp = get_with_retry(f"{BASE_URL}/{go_id}", headers={"Accept": "application/json"}, timeout=20)
     resp.raise_for_status()
     data = resp.json()
 
@@ -31,7 +29,7 @@ def _lookup(go_id: str) -> dict:
 
     ancestors: list[str] = []
     if not is_obsolete:
-        anc_resp = requests.get(
+        anc_resp = get_with_retry(
             f"{BASE_URL}/{go_id}/ancestors",
             params={"relations": "is_a,part_of"},
             headers={"Accept": "application/json"},

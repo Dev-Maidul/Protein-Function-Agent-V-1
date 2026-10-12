@@ -12,6 +12,7 @@ header (observed live in this project), so one is always sent.
 """
 from __future__ import annotations
 
+import re
 import time
 
 import requests
@@ -24,6 +25,13 @@ FOLDSEEK_API = "https://search.foldseek.com/api"
 USER_AGENT = {"User-Agent": "protein-function-agent/0.1 (research prototype)"}
 POLL_INTERVAL_S = 5
 MAX_WAIT_S = 5 * 60
+_AFDB_TARGET_RE = re.compile(r"^AF-([A-Z0-9]+)-F\d+-model_v\d+")
+
+
+def _extract_accession(target: str) -> str | None:
+    """Foldseek's afdb-swissprot hit names look like 'AF-P04637-F1-model_v6 ...'"""
+    m = _AFDB_TARGET_RE.match(target)
+    return m.group(1) if m else None
 
 
 def fetch_alphafold_structure(accession: str) -> tuple[str, bytes]:
@@ -69,7 +77,7 @@ def _fetch_foldseek_result(ticket_id: str) -> dict:
     return resp.json()
 
 
-def _parse(af_url: str, foldseek_result: dict) -> dict:
+def _parse(af_url: str, foldseek_result: dict, exclude_accessions: set[str] | None) -> dict:
     hits = []
     for db_result in foldseek_result.get("results", []):
         for aln_group in db_result.get("alignments", []):
@@ -77,6 +85,7 @@ def _parse(af_url: str, foldseek_result: dict) -> dict:
                 hits.append(
                     {
                         "target": aln["target"],
+                        "accession": _extract_accession(aln["target"]),
                         "seq_identity_pct": aln.get("seqId"),
                         "e_value": aln.get("eval"),
                         "score": aln.get("score"),
@@ -85,6 +94,12 @@ def _parse(af_url: str, foldseek_result: dict) -> dict:
                     }
                 )
     hits.sort(key=lambda h: h.get("e_value", float("inf")))
+
+    excluded_count = 0
+    if exclude_accessions:
+        kept = [h for h in hits if h["accession"] not in exclude_accessions]
+        excluded_count = len(hits) - len(kept)
+        hits = kept
 
     top = hits[0] if hits else None
     result_summary = (
@@ -95,21 +110,21 @@ def _parse(af_url: str, foldseek_result: dict) -> dict:
     )
     return {
         "result_summary": result_summary,
-        "raw_scores": {"hit_count": len(hits), "hits": hits[:20]},
+        "raw_scores": {"hit_count": len(hits), "hits": hits[:20], "excluded_count": excluded_count},
         "source_ids": [h["target"] for h in hits[:20]],
         "source_urls": [af_url],
     }
 
 
-def _run_pipeline(accession: str, database: str) -> dict:
+def _run_pipeline(accession: str, database: str, exclude_accessions: set[str] | None) -> dict:
     af_url, pdb_bytes = fetch_alphafold_structure(accession)
     ticket_id = _submit_foldseek(pdb_bytes, database)
     status = _poll_foldseek(ticket_id)
     if status != "COMPLETE":
         raise RuntimeError(f"Foldseek search {ticket_id} ended with status={status}")
     result = _fetch_foldseek_result(ticket_id)
-    return _parse(af_url, result)
+    return _parse(af_url, result, exclude_accessions)
 
 
-def run(accession: str, database: str = "afdb-swissprot") -> Evidence:
-    return timed_call("alphafold_foldseek", accession, _run_pipeline, accession, database)
+def run(accession: str, database: str = "afdb-swissprot", exclude_accessions: set[str] | None = None) -> Evidence:
+    return timed_call("alphafold_foldseek", accession, _run_pipeline, accession, database, exclude_accessions)

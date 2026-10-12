@@ -2,7 +2,7 @@ import json
 import shutil
 from unittest.mock import patch
 
-from agent.loop import AgentRun
+from agent.loop import AgentRun, _parse_go_terms_from_text
 from tools.evidence import Evidence
 
 
@@ -17,9 +17,9 @@ class FakeTokenUsage:
 
 
 class FakeLLMClient:
-    """Scripted replacement for agent.llm_client.LLMClient -- returns a fixed
-    sequence of assistant messages, one per .chat() call, so the loop's
-    control flow can be tested without a live Ollama/DeepSeek/Qwen server."""
+    """Scripted replacement for agent.llm_client.LLMClient -- one scripted
+    message per .chat() call, so the review loop's control flow (retry-once,
+    then recover-from-text) can be tested without a live LLM server."""
 
     def __init__(self, scripted_messages, max_tokens_per_run=100000, budget_exceeded_from=None):
         self._scripted = list(scripted_messages)
@@ -41,202 +41,164 @@ class FakeLLMClient:
         return self._calls >= self._budget_exceeded_from
 
 
-def _tool_call_msg(name, args, call_id="call_1"):
-    return {"role": "assistant", "content": None, "tool_calls": [{"id": call_id, "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}]}
-
-
-def _final_answer_msg(call_id="call_2"):
-    args = {
+def _final_answer_msg(args=None, call_id="call_1"):
+    args = args or {
         "function_summary": "A test protein (E1).",
         "go_terms": [{"go_id": "GO:0006915", "confidence": 0.8, "evidence_ids": ["E1"]}],
         "disagreements_or_uncertainty": "None",
     }
-    return _tool_call_msg("submit_final_answer", args, call_id)
-
-
-def _run_dir_cleanup(report):
-    shutil.rmtree(report["run_dir"], ignore_errors=True)
-
-
-def test_happy_path_one_tool_call_then_final_answer():
-    fake_evidence = Evidence(tool="diamond_blast", query="q", result_summary="1 hit", raw_scores={"hits": []}, source_ids=["X1", "GO:0006915"], source_urls=[])
-    client = FakeLLMClient([
-        _tool_call_msg("diamond_blast_search", {"sequence": "MEEP"}),
-        _final_answer_msg(),
-    ])
-
-    with patch("agent.loop.dispatch", return_value=fake_evidence), patch(
-        "agent.dispatch.AgentContext.build_exclusions", return_value=None
-    ), patch("agent.report.quickgo.run") as mock_quickgo:
-        mock_quickgo.return_value = Evidence(tool="quickgo", query="GO:0006915", result_summary="ok", raw_scores={"valid": True, "name": "apoptotic process", "aspect": "biological_process"}, source_ids=[], source_urls=[])
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST1", eval_mode=False, max_steps=5, client=client)
-        report = run.run()
-
-    try:
-        assert report["stop_reason"] == "submitted final answer"
-        assert len(run.ledger) == 1
-        assert run.ledger[0]["id"] == "E1"
-        assert report["go_terms"][0]["go_id"] == "GO:0006915"
-        assert report["go_terms"][0]["name"] == "apoptotic process"
-        assert report["token_usage"]["total"] == 300  # 2 chat calls * 150
-    finally:
-        _run_dir_cleanup(report)
-
-
-def test_ungrounded_go_term_flagged_separately_not_fabricated_as_valid():
-    """Regression test for a real bug found on a live run: human beta-actin
-    (P60709) got GO:0005576 'extracellular region' and GO:0006973
-    'intracellular accumulation of glycerol' reported at 0.95 confidence --
-    both are valid, non-obsolete GO IDs (so QuickGO validity alone would
-    accept them), but neither ever appeared in any tool's raw output. The
-    fix in agent/report.py cross-checks every GO ID against the set of GO
-    IDs that actually appeared in the evidence ledger's tool outputs."""
-    fake_evidence = Evidence(
-        tool="interproscan",
-        query="q",
-        result_summary="actin domain",
-        raw_scores={},
-        source_ids=["IPR004000", "GO:0005737"],  # GO:0005737 = cytoplasm -- the grounded one
-        source_urls=[],
-    )
-    args = {
-        "function_summary": "Actin (E1).",
-        "go_terms": [
-            {"go_id": "GO:0005737", "confidence": 0.9, "evidence_ids": ["E1"]},  # grounded
-            {"go_id": "GO:0005576", "confidence": 0.95, "evidence_ids": ["E1"]},  # NOT grounded
-        ],
-        "disagreements_or_uncertainty": "None",
-    }
-    client = FakeLLMClient([
-        _tool_call_msg("interproscan_scan", {"sequence": "MEEP"}),
-        _tool_call_msg("submit_final_answer", args),
-    ])
-
-    with patch("agent.loop.dispatch", return_value=fake_evidence), patch(
-        "agent.dispatch.AgentContext.build_exclusions", return_value=None
-    ), patch("agent.report.quickgo.run") as mock_quickgo:
-        mock_quickgo.return_value = Evidence(
-            tool="quickgo", query="g", result_summary="ok",
-            raw_scores={"valid": True, "name": "n", "aspect": "a"}, source_ids=[], source_urls=[],
-        )
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST7", eval_mode=False, max_steps=5, client=client)
-        report = run.run()
-
-    try:
-        assert [t["go_id"] for t in report["go_terms"]] == ["GO:0005737"]
-        assert [t["go_id"] for t in report["go_terms_ungrounded"]] == ["GO:0005576"]
-        assert "not evidence-grounded" in report["go_terms_ungrounded"][0]["reason"]
-    finally:
-        _run_dir_cleanup(report)
-
-
-def test_invalid_json_arguments_fed_back_not_crashed():
-    client = FakeLLMClient([
-        {"role": "assistant", "content": None, "tool_calls": [{"id": "c1", "type": "function", "function": {"name": "diamond_blast_search", "arguments": "{not valid json"}}]},
-        _final_answer_msg(),
-    ])
-
-    with patch("agent.dispatch.AgentContext.build_exclusions", return_value=None), patch(
-        "agent.report.quickgo.run"
-    ) as mock_quickgo:
-        mock_quickgo.return_value = Evidence(tool="quickgo", query="g", result_summary="ok", raw_scores={"valid": True, "name": "n", "aspect": "a"}, source_ids=[], source_urls=[])
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST2", eval_mode=False, max_steps=5, client=client)
-        report = run.run()
-
-    try:
-        assert len(run.ledger) == 0  # the invalid call never produced evidence
-        error_events = [e for e in run.trace if e["type"] == "tool_call_error"]
-        assert len(error_events) == 1
-        assert "Invalid JSON" in error_events[0]["error"]
-    finally:
-        _run_dir_cleanup(report)
-
-
-def test_schema_violation_fed_back_not_crashed():
-    client = FakeLLMClient([
-        _tool_call_msg("diamond_blast_search", {"top_n": 5}),  # missing required "sequence"
-        _final_answer_msg(),
-    ])
-
-    with patch("agent.dispatch.AgentContext.build_exclusions", return_value=None), patch(
-        "agent.report.quickgo.run"
-    ) as mock_quickgo:
-        mock_quickgo.return_value = Evidence(tool="quickgo", query="g", result_summary="ok", raw_scores={"valid": True, "name": "n", "aspect": "a"}, source_ids=[], source_urls=[])
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST3", eval_mode=False, max_steps=5, client=client)
-        report = run.run()
-
-    try:
-        error_events = [e for e in run.trace if e["type"] == "tool_call_error"]
-        assert len(error_events) == 1
-        assert "schema validation" in error_events[0]["error"]
-    finally:
-        _run_dir_cleanup(report)
-
-
-def test_max_steps_reached_without_final_answer():
-    always_tool_call = _tool_call_msg("diamond_blast_search", {"sequence": "MEEP"})
-    fake_evidence = Evidence(tool="diamond_blast", query="q", result_summary="hit", raw_scores={}, source_ids=[], source_urls=[])
-    client = FakeLLMClient([always_tool_call] * 10)
-
-    with patch("agent.loop.dispatch", return_value=fake_evidence), patch(
-        "agent.dispatch.AgentContext.build_exclusions", return_value=None
-    ):
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST4", eval_mode=False, max_steps=3, client=client)
-        report = run.run()
-
-    try:
-        assert "MAX_STEPS" in report["stop_reason"]
-        assert report["go_terms"] == []
-        assert run.final_answer is None
-    finally:
-        _run_dir_cleanup(report)
+    return {"role": "assistant", "content": None, "tool_calls": [{"id": call_id, "type": "function", "function": {"name": "submit_final_answer", "arguments": json.dumps(args)}}]}
 
 
 def _text_only_msg(text):
     return {"role": "assistant", "content": text, "tool_calls": []}
 
 
-def test_plain_text_final_answer_stops_early_with_unvalidated_fallback():
-    """Regression test for a real bug found when running this agent against
-    qwen3:8b via Ollama: after one real tool call, the model kept writing its
-    final answer as plain text ('**submit_final_answer** ... Final Answer: ...')
-    instead of actually calling the submit_final_answer function -- even with
-    tool_choice='required' (verified live, Ollama still ignored it). Without
-    this fix the loop burned all 10 steps repeating the same text. The fix:
-    stop after 2 consecutive no-tool-call turns and surface the last text as
-    a clearly UNVALIDATED fallback, never silently burning the step budget
-    and never fabricating GO terms from unstructured text."""
-    client = FakeLLMClient([
-        _text_only_msg("Final Answer: this protein is a tumor suppressor."),
-        _text_only_msg("Final Answer: this protein is a tumor suppressor."),
-        _final_answer_msg(),  # would never be reached -- loop must stop at turn 2
-    ])
+FAKE_LEDGER = [
+    {
+        "id": "E1",
+        "tool": "diamond_blast_search",
+        "args": {},
+        "evidence": {
+            "error": None,
+            "result_summary": "hit",
+            "raw_scores": {"hits": [{"uniprot_accession": "A1", "pident": 90.0}]},
+            "source_ids": ["A1", "GO:0006915"],  # GO id present so the grounding check accepts it
+            "source_urls": [],
+        },
+    }
+]
+FAKE_CANDIDATES = [{"go_id": "GO:0006915", "confidence": 0.8, "raw_score": 0.8, "evidence_ids": ["E1"], "explanations": ["x"]}]
 
-    with patch("agent.dispatch.AgentContext.build_exclusions", return_value=None):
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST6", eval_mode=False, max_steps=10, client=client)
+
+def _run_dir_cleanup(report):
+    shutil.rmtree(report["run_dir"], ignore_errors=True)
+
+
+def _fake_quickgo_valid(go_id):
+    return Evidence(
+        tool="quickgo", query=go_id, result_summary="ok",
+        raw_scores={"valid": True, "name": "apoptotic process", "aspect": "biological_process"},
+        source_ids=[], source_urls=[],
+    )
+
+
+def _patched(client):
+    return (
+        patch("agent.loop.gather_evidence", return_value=FAKE_LEDGER),
+        patch("agent.loop.aggregate", return_value=FAKE_CANDIDATES),
+        patch("agent.context.AgentContext.build_exclusions", return_value=None),
+        patch("agent.report.quickgo.run", side_effect=_fake_quickgo_valid),
+    )
+
+
+def test_happy_path_submits_on_first_attempt():
+    client = FakeLLMClient([_final_answer_msg()])
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST1", eval_mode=False, client=client)
         report = run.run()
 
     try:
-        assert report["steps_used"] == 2  # stopped after 2 attempts, not all 10
-        assert "did not use tool-calling" in report["stop_reason"]
-        assert "[UNVALIDATED" in report["function_summary"]
-        assert "tumor suppressor" in report["function_summary"]
-        assert report["go_terms"] == []  # never fabricate GO terms from free text
-        no_tool_events = [e for e in run.trace if e["type"] == "no_tool_call"]
-        assert len(no_tool_events) == 2
+        assert report["stop_reason"] == "submitted final answer"
+        assert report["recovered_from_text"] is False
+        assert report["go_terms"][0]["go_id"] == "GO:0006915"
+        assert report["token_usage"]["total"] == 150  # 1 chat call * 150
     finally:
         _run_dir_cleanup(report)
 
 
-def test_token_budget_exceeded_stops_immediately():
-    client = FakeLLMClient([_final_answer_msg()], budget_exceeded_from=0)
+def test_plain_text_then_successful_retry():
+    client = FakeLLMClient([_text_only_msg("I think it's a kinase."), _final_answer_msg()])
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST2", eval_mode=False, client=client)
+        report = run.run()
 
-    with patch("agent.dispatch.AgentContext.build_exclusions", return_value=None):
-        run = AgentRun(query_sequence="MEEP", query_accession="TEST5", eval_mode=False, max_steps=5, client=client)
+    try:
+        assert report["stop_reason"] == "submitted final answer"
+        assert report["recovered_from_text"] is False
+        no_tool_events = [e for e in run.trace if e["type"] == "no_tool_call"]
+        assert len(no_tool_events) == 1
+    finally:
+        _run_dir_cleanup(report)
+
+
+def test_plain_text_twice_recovers_from_text():
+    client = FakeLLMClient([
+        _text_only_msg("I believe this protein has GO:0006915 (E1) with high confidence 0.9."),
+        _text_only_msg("Final answer: GO:0006915 (E1), confidence 0.9. Also GO:0005515 with no clear evidence."),
+    ])
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST3", eval_mode=False, client=client)
+        report = run.run()
+
+    try:
+        assert report["stop_reason"] == "recovered_from_text"
+        assert report["recovered_from_text"] is True
+        # GO:0006915 had "E1" on its line and is grounded (E1 is a real ledger id) -> kept
+        assert any(t["go_id"] == "GO:0006915" for t in report["go_terms"])
+        # GO:0005515 had no evidence id on its line -> ungrounded, dropped from go_terms
+        assert all(t["go_id"] != "GO:0005515" for t in report["go_terms"])
+    finally:
+        _run_dir_cleanup(report)
+
+
+def test_invalid_json_in_tool_call_retried_once():
+    bad_call = {"role": "assistant", "content": None, "tool_calls": [{"id": "c1", "type": "function", "function": {"name": "submit_final_answer", "arguments": "{not valid json"}}]}
+    client = FakeLLMClient([bad_call, _final_answer_msg()])
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST4", eval_mode=False, client=client)
+        report = run.run()
+
+    try:
+        assert report["stop_reason"] == "submitted final answer"
+        error_events = [e for e in run.trace if e["type"] == "tool_call_error"]
+        assert len(error_events) == 1
+    finally:
+        _run_dir_cleanup(report)
+
+
+def test_token_budget_exceeded_before_first_call():
+    client = FakeLLMClient([_final_answer_msg()], budget_exceeded_from=0)
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST5", eval_mode=False, client=client)
         report = run.run()
 
     try:
         assert "MAX_TOKENS_PER_RUN" in report["stop_reason"]
         assert run.final_answer is None
+        assert report["go_terms"] == []
     finally:
         _run_dir_cleanup(report)
+
+
+def test_aggregator_candidates_included_in_report():
+    client = FakeLLMClient([_final_answer_msg()])
+    p1, p2, p3, p4 = _patched(client)
+    with p1, p2, p3, p4:
+        run = AgentRun(query_sequence="MEEP", query_accession="TEST6", eval_mode=False, client=client)
+        report = run.run()
+
+    try:
+        assert report["aggregator_candidates"] == FAKE_CANDIDATES
+    finally:
+        _run_dir_cleanup(report)
+
+
+def test_parse_go_terms_from_text_extracts_evidence_and_confidence():
+    text = "This matches GO:0006915 (E1, E2) with confidence 0.85.\nAlso maybe GO:0005515 but unsure."
+    terms = _parse_go_terms_from_text(text)
+    by_id = {t["go_id"]: t for t in terms}
+    assert by_id["GO:0006915"]["evidence_ids"] == ["E1", "E2"]
+    assert by_id["GO:0006915"]["confidence"] == 0.85
+    assert by_id["GO:0005515"]["evidence_ids"] == []
+    assert by_id["GO:0005515"]["confidence"] == 0.5  # default when no number found
+
+
+def test_parse_go_terms_from_text_empty_text():
+    assert _parse_go_terms_from_text("") == []
+    assert _parse_go_terms_from_text(None) == []

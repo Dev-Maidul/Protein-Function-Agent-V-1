@@ -1,7 +1,7 @@
 """Four baselines compared in Phase 3, all under the same leakage control:
 the query's own accession and any DIAMOND homolog at >= HOMOLOG_IDENTITY_THRESHOLD
 identity are excluded from every search database / retrieval result (same
-exclusion set computed once per protein by agent.dispatch.AgentContext).
+exclusion set computed once per protein by agent.context.AgentContext).
 
 (a) diamond_transfer   -- classic BLAST-transfer baseline: take the top
     non-excluded homolog's own UniProt GO annotations as the prediction,
@@ -11,14 +11,20 @@ exclusion set computed once per protein by agent.dispatch.AgentContext).
     "vote", confidence = fraction of the top-k hits annotated with that term.
 (c) llm_no_tools        -- the LLM guesses GO terms from the sequence alone,
     no tool access at all (single chat call, not the agent loop).
-(d) full_agent          -- agent.loop.AgentRun in eval_mode=True.
+(d) aggregator_only     -- agent/evidence_pipeline.py + agent/aggregator.py,
+    deterministic, NO LLM at all. Reported to answer: does the LLM review
+    step add anything over the rule-based aggregator alone?
+(e) full_agent          -- agent.loop.AgentRun in eval_mode=True (pipeline +
+    aggregator + one LLM review call).
 """
 from __future__ import annotations
 
 import json
 import re
 
-from agent.dispatch import AgentContext
+from agent.aggregator import aggregate
+from agent.context import AgentContext
+from agent.evidence_pipeline import gather_evidence
 from agent.llm_client import LLMClient
 from agent.loop import AgentRun
 from tools import protrek, uniprot
@@ -89,8 +95,52 @@ def llm_no_tools(sequence: str, client: LLMClient | None = None) -> list[dict]:
     return [{"go_id": t["go_id"], "confidence": float(t.get("confidence", 0.5))} for t in terms if "go_id" in t]
 
 
-def full_agent(sequence: str, accession: str, max_steps: int | None = None) -> tuple[list[dict], dict]:
-    run = AgentRun(query_sequence=sequence, query_accession=accession, eval_mode=True, max_steps=max_steps)
+def gather_once(ctx: AgentContext) -> tuple[list[dict], list[dict]]:
+    """Runs the deterministic evidence pipeline + aggregator exactly once.
+    Callers that need both aggregator_only AND full_agent predictions for
+    the same protein should call this once and pass the results to both
+    (via aggregator_only_from_ledger and full_agent's ledger= param) instead
+    of each separately re-running InterProScan/DIAMOND/etc."""
+    import os
+
+    ledger = gather_evidence(ctx, os.environ.get("EBI_CONTACT_EMAIL"))
+    candidates = aggregate(ledger)
+    return ledger, candidates
+
+
+def aggregator_only_from_candidates(candidates: list[dict]) -> list[dict]:
+    """Every candidate is grounded by construction (agent/aggregator.py only
+    ever scores GO IDs that came from a real tool's raw output), so no
+    separate grounding check is needed here."""
+    return [{"go_id": c["go_id"], "confidence": c["confidence"]} for c in candidates]
+
+
+def aggregator_only(sequence: str, ctx: AgentContext) -> tuple[list[dict], list[dict]]:
+    """Standalone version (gathers its own evidence) for callers that only
+    want this one method, not both aggregator_only and full_agent."""
+    ledger, candidates = gather_once(ctx)
+    return aggregator_only_from_candidates(candidates), candidates
+
+
+def full_agent(
+    sequence: str,
+    accession: str,
+    max_steps: int | None = None,
+    ctx: AgentContext | None = None,
+    ledger: list[dict] | None = None,
+    aggregator_candidates: list[dict] | None = None,
+    client=None,
+) -> tuple[list[dict], dict]:
+    run = AgentRun(
+        query_sequence=sequence,
+        query_accession=accession,
+        eval_mode=True,
+        max_steps=max_steps,
+        ctx=ctx,
+        ledger=ledger,
+        aggregator_candidates=aggregator_candidates,
+        client=client,
+    )
     report = run.run()
     terms = [{"go_id": t["go_id"], "confidence": t["confidence"]} for t in report.get("go_terms", [])]
     return terms, report

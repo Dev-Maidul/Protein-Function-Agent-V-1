@@ -1,59 +1,73 @@
 # Phase 3 Evaluation
 
-This directory implements a small, honest evaluation of the protein-function agent against three simpler baselines, with leakage control so no method can simply look up the answer.
+This directory implements an evaluation of the protein-function agent against four simpler baselines, with leakage control so no method can simply look up the answer, and a dev/test split so nothing is tuned on the set the final numbers are reported on.
 
-## Benchmark (`build_benchmark.py` → `benchmark.json`)
+## Two benchmarks: dev set and held-out test set
 
-- **Why these proteins:** CAFA-style benchmarks score predictions against *experimental* GO evidence only — computational/inferred annotations (IEA, etc.) don't count as ground truth, since they're themselves predictions. We additionally prefer *recently* annotated proteins, since an LLM is less likely to have memorized a GO assignment made after (or close to) its training cutoff.
-- **Selection method:**
-  1. Query QuickGO's annotation-search API (`https://www.ebi.ac.uk/QuickGO/services/annotation/search`) for the six experimental evidence codes — EXP (ECO:0000269), IDA (ECO:0000314), IMP (ECO:0000315), IGI (ECO:0000316), IPI (ECO:0000353), IEP (ECO:0000270) — across 15 pages (200 rows each), with no taxon restriction. QuickGO is used instead of UniProt's own query language because UniProt doesn't expose evidence-code filtering directly.
-  2. Group the rows by accession; keep every experimental GO term per protein (this is the ground-truth set used for Fmax) and the single most recent annotation date.
-  3. Cross-check each candidate accession is reviewed (Swiss-Prot), not TrEMBL, via a batched UniProt query.
-  4. Sort by most-recent-annotation-date descending, keep the top N with sequence length in [20, 1500] aa (so even the slower tools, like InterProScan, finish in reasonable time), and fetch the full sequence.
-- **Reproduce:** `python -m eval.build_benchmark --n 20 --pages 15`
-- **Caveat, stated honestly:** this is a convenience sample (recency-sorted, not a random sample of all experimentally-annotated proteins), and 15 QuickGO pages is a shallow scan of a dataset with >1.28M experimental annotation rows — it is NOT a representative sample of Swiss-Prot as a whole, only of *very recently annotated* proteins. That bias is exactly the point (fresher = less likely memorized), but it does mean this benchmark should not be read as "performance on typical Swiss-Prot proteins."
+**Dev set** (`eval/benchmark.json`, 20 proteins) -- the original Phase 3 benchmark. Used to find and fix problems (it's how the grounding gap, the checkpoint bug, and the plain-text-fallback issue were all found). **No longer used for reporting final numbers** -- it was inspected closely while diagnosing `full_agent`'s Fmax=0.000 result, so reporting on it again would be tuning on the test set in spirit even without touching the code based on its specific contents.
+
+**Held-out test set** (`eval/test_set.json`, 57 proteins, target was ~60) -- built fresh (`eval/build_test_set.py`) and never inspected before any method ran on it:
+1. Scan up to 100 pages (200 rows each) of QuickGO's annotation-search API for the same 6 experimental evidence codes as the dev set (EXP/IDA/IMP/IGI/IPI/IEP), collecting distinct accessions. **Honest caveat**: this is a bounded scan (6,178 distinct accessions found), not the full universe of experimentally-annotated proteins (QuickGO's annotation-search has no cheap accession-only projection, and the real universe has 1.28M+ annotation rows -- scanning all of it isn't practical). It's a large, bounded sample, not a true census.
+2. Cross-check reviewed (Swiss-Prot) status via batched UniProt queries -> 1,330 candidates.
+3. Remove every accession already in the dev set (0 overlap possible by construction).
+4. `random.Random(seed=43)` (a different seed from the dev set's recency-sort and from `shared_subset.tsv`'s seed 42, so there's no hidden correlation) samples 60 accessions uniformly.
+5. Fetch sequence + GO terms; 3 were dropped by the length filter ([20, 1500] aa), leaving 57.
+- Reproduce: `python -m eval.build_test_set --n 60 --pages 100 --seed 43`
 
 ## Leakage control
 
-For every benchmark protein, before any baseline runs: `agent.dispatch.AgentContext.build_exclusions()` runs DIAMOND once against the query sequence and builds an exclusion set = {the query's own accession} ∪ {every DIAMOND hit with ≥ 50% sequence identity} (threshold: `HOMOLOG_IDENTITY_THRESHOLD` in `agent/dispatch.py`, configurable). This same exclusion set is passed to every baseline that does retrieval against Swiss-Prot:
-- `diamond_transfer`: the top DIAMOND hit used for GO transfer is never the query or an excluded homolog.
-- `protrek_transfer`: ProTrek's candidate pool excludes those accessions.
-- `full_agent`: runs in `eval_mode=True`, which additionally removes `uniprot_lookup` from the agent's tool list entirely (the ground-truth source itself must not be queryable).
-- `llm_no_tools` has no database access at all, so there is nothing to exclude.
+Unchanged from the dev-set phase, but now applied consistently everywhere -- a real gap was found and fixed here: `tools/diamond_blast.py` and `tools/alphafold_foldseek.py` used to have NO exclusion logic at all when called via the agent's own tool-calling path (only `eval/baselines.py`'s `diamond_transfer` post-filtered). Both tools now accept `exclude_accessions` directly.
 
-## The four baselines (`baselines.py`)
+For every protein: `agent.context.AgentContext.build_exclusions()` runs DIAMOND once and builds an exclusion set = {query's own accession} ∪ {every hit at ≥ 50% identity}. This set is passed into every retrieval call in every method, and `full_agent`/`aggregator_only` run with `eval_mode=True`.
 
-| Baseline | What it does | Evidence strength (per agent's own rules) |
-|---|---|---|
-| `diamond_transfer` | Classic BLAST-transfer: take the top non-excluded DIAMOND hit's own UniProt GO annotations, confidence = % identity | Strong |
-| `protrek_transfer` | ProTrek retrieves top-10 non-excluded Swiss-Prot matches; each retrieved protein's GO terms are a "vote", confidence = fraction of the 10 hits carrying that term | Weak (pathway/interaction-partner risk) |
-| `llm_no_tools` | One direct chat call, sequence only, no tools — the LLM guesses GO terms from pretraining knowledge alone | Baseline floor |
-| `full_agent` | The actual agent (`agent/loop.py`), `eval_mode=True`, same MAX_STEPS/MAX_TOKENS_PER_RUN as normal use | The system under test |
+## Five methods (`eval/baselines.py`)
 
-## Metrics (`metrics.py`)
+| Method | What it does |
+|---|---|
+| `diamond_transfer` | Top non-excluded DIAMOND hit's own UniProt GO annotations, confidence = % identity |
+| `protrek_transfer` | Vote across top-10 non-excluded ProTrek matches' own GO terms |
+| `llm_no_tools` | One direct chat call, sequence only, no tools |
+| `aggregator_only` | **New.** `agent/evidence_pipeline.py` + `agent/aggregator.py`, deterministic, **no LLM at all** |
+| `full_agent` | `agent/evidence_pipeline.py` + `agent/aggregator.py` + one LLM review call (`agent/loop.py`) |
 
-Protein-centric Fmax, computed separately per GO aspect (molecular_function / biological_process / cellular_component): for a grid of confidence thresholds τ, compute macro-averaged precision and recall (only using predictions with confidence ≥ τ), then report the τ that maximizes F1 = 2PR/(P+R).
+### The root-cause fix: closing the evidence gap
 
-**Simplification, stated honestly:** real CAFA propagates both predictions and ground truth up the GO DAG via the true-path rule (a prediction of a child term counts toward all its ancestors) before scoring. This implementation does **direct-term matching only** — no ancestor propagation. That makes this Fmax a stricter, lower-bound approximation of the real CAFA metric, not a faithful reproduction of it. See `docs/RESULTS.md`'s Limitations section.
+Phase 3's first run found `full_agent` scoring below every baseline, root-caused to: the agent's DIAMOND/Foldseek tool calls only ever returned hit accessions and identity/score, never the hits' own GO annotations, while `diamond_transfer` reads those GO terms directly from UniProt. The agent had strictly less evidence available than the baseline it was being compared against. Fixed with:
+- **`tools/homolog_go.py`** (new): given a list of homolog accessions (from DIAMOND, Foldseek, ProTrek, or ESM-2), fetches their own GO terms with evidence codes from UniProt, excluding the query/close-homolog set. This is now called automatically for every one of those four tools' hits.
+- **`tools/interpro2go.py`** (new): a second, independent path from an InterPro ID to its GO terms (EBI's canonical interpro2go mapping file, downloaded once and cached), supplementing InterProScan's own `goXRefs` field for entries where the live API response doesn't have it populated.
+- **`agent/evidence_pipeline.py`** (new): gathers all of the above deterministically, in a fixed order, for every protein -- evidence gathering no longer depends on the LLM reliably choosing to call the right tools (it was writing plain text instead of calling a tool ~30% of the time in the first eval run).
+- **`agent/aggregator.py`** (new): scores every candidate GO term with fixed, documented weights (InterPro domain match: 1.0; DIAMOND homolog transfer: identity-weighted; Foldseek: similarity-weighted, discounted 0.9x; ProTrek: WEAK, 0.25x; ESM-2: cosine-weighted, hub-flagged neighbours cut to 0.1x vs 0.4x for non-hub). This is itself the `aggregator_only` method -- reported separately from `full_agent` to answer whether the LLM review step adds anything over the deterministic rule-based score.
+- **`agent/loop.py`** (rewritten): the LLM is no longer given free-form tool-calling choice. It receives the already-gathered evidence and the aggregator's scored candidates, and gets exactly one review call (accept/reject/re-weight, write the summary) plus one retry if it writes plain text instead of calling `submit_final_answer`. If it fails twice, GO IDs and evidence-ID citations are parsed out of its free text with a documented regex heuristic (`agent.loop._parse_go_terms_from_text`) and the run is marked `recovered_from_text` -- reported, never hidden, never treated as equivalent to a real structured answer.
 
-## Hubness diagnostic
+## Scoring (`eval/metrics.py`)
 
-Separately from the 4 scored baselines, `run_hubness_diagnostic()` calls `tools/esm2_knn.py` directly on every benchmark protein (same exclusion set) and checks, for each of the top-10 returned neighbours: does *any* of that neighbour's own GO terms overlap the query's ground truth? It reports this hit-rate separately for hub-flagged vs. non-hub-flagged neighbours — a direct empirical answer to "are hub-flagged neighbours actually less reliable evidence," not just a theoretical justification for down-weighting them.
+Both **direct-match** Fmax (exact GO ID match, what the first eval run reported) and **propagated** Fmax (CAFA's true-path rule: both predictions and ground truth are expanded to their full ancestor sets before scoring, excluding the 3 GO root terms) are computed and reported side by side, per aspect. Ancestor sets are fetched once per unique GO ID via QuickGO and cached (`eval/runs/ancestor_cache.json`, persists across runs) -- an evaluation run across 2 methods x 3 aspects x dozens of proteins would otherwise re-query the same handful of common ancestor terms hundreds of times.
+
+## Hubness diagnostic, with actual statistics (`eval/stats.py`)
+
+Same mechanism as before (run `tools/esm2_knn.py` directly, check whether each neighbour's own GO terms overlap ground truth, compare hub-flagged vs non-hub hit rates) but now reports a 95% Wilson-score confidence interval per rate and a Fisher exact test p-value on the 2x2 table. **The result is only described as "confirmed" if `significant_at_0.05` is True** -- the first eval run's dev-set sample (10 hub-flagged neighbours) was too small to responsibly make that claim without a test; this is why.
 
 ## Running it
 
 ```bash
-# Build the benchmark once
-python -m eval.build_benchmark --n 20
+# Build the held-out test set once (already done, checked into eval/test_set.json)
+python -m eval.build_test_set --n 60 --pages 100 --seed 43
 
-# Run the full evaluation (takes hours locally -- see docs/RESULTS.md for
-# measured per-protein runtimes; the full_agent baseline dominates the cost)
-python -m eval.run_eval
+# Full run on the test set -- the cheap methods (diamond/protrek/llm_no_tools) run
+# on all 57 proteins; aggregator_only/full_agent are restricted to a seeded random
+# subset via --expensive-limit since each full_agent call costs ~9.5 minutes on
+# this hardware (CPU-only M1, qwen3:8b via Ollama) -- running all 57 would take
+# ~9 hours. This is reported plainly in run_config.json, never silently.
+python -m eval.run_eval --dataset test --expensive-limit 15
+
+# Resumable: a crash or interruption picks back up from eval/runs/in_progress_checkpoint.json
+# unless --fresh is passed.
+python -m eval.run_eval --dataset test --expensive-limit 15  # re-run to resume
 
 # Smaller/faster smoke test
-python -m eval.run_eval --limit 2 --max-steps 5
+python -m eval.run_eval --dataset test --limit 2 --expensive-limit 1 --fresh
 ```
 
-Output for each run is saved under `eval/runs/<timestamp>/`: `predictions.json` (raw per-protein, per-method predicted GO terms), `metrics.json` (Fmax per method per aspect), `full_agent_reports.json` (stop reason, steps used, token usage per protein), `hubness_diagnostic.json`, `runtimes.json`.
+Output for each run is saved under `eval/runs/<dataset>_<timestamp>/`: `predictions.json`, `metrics.json` (direct + propagated Fmax per method per aspect), `full_agent_reports.json` (stop reason, `recovered_from_text`, token usage per protein), `hubness_diagnostic.json` (with CI + p-value), `runtimes.json`, `run_config.json` (exact CLI args used, including any `--expensive-limit`).
 
-Nothing in this benchmark is used for tuning — every number reported in `docs/RESULTS.md` is from one read-only pass over `benchmark.json`, weak results included.
+Nothing in either benchmark is used for tuning -- every number reported in `docs/RESULTS.md` is from a read-only pass, weak results included.

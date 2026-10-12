@@ -1,0 +1,252 @@
+{
+  "diamond": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.357883519816386,
+        "threshold": 0.37,
+        "precision": 0.3746031746031746,
+        "recall": 0.3425925925925926,
+        "coverage": 0.5833333333333334
+      },
+      "propagated": {
+        "fmax": 0.5259005535104183,
+        "threshold": 0.0,
+        "precision": 0.5077068348219217,
+        "recall": 0.5454466829466829,
+        "coverage": 0.7222222222222222
+      }
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.26093306041573205,
+        "threshold": 0.3,
+        "precision": 0.2855889724310777,
+        "recall": 0.24019607843137253,
+        "coverage": 0.5588235294117647
+      },
+      "propagated": {
+        "fmax": 0.34762569330465104,
+        "threshold": 0.0,
+        "precision": 0.3453529976363525,
+        "recall": 0.3499284993906628,
+        "coverage": 0.6764705882352942
+      }
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.3321349477983261,
+        "threshold": 0.0,
+        "precision": 0.3965659340659341,
+        "recall": 0.2857142857142857,
+        "coverage": 0.5
+      },
+      "propagated": {
+        "fmax": 0.4202177744419381,
+        "threshold": 0.0,
+        "precision": 0.5230182101998546,
+        "recall": 0.3511904761904762,
+        "coverage": 0.5
+      }
+    }
+  },
+  "protrek": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.24143189755529687,
+        "threshold": 0.21,
+        "precision": 0.290625,
+        "recall": 0.2064814814814815,
+        "coverage": 0.4444444444444444
+      },
+      "propagated": {
+        "fmax": 0.3273062140098528,
+        "threshold": 0.11,
+        "precision": 0.2846982781959566,
+        "recall": 0.3849121557454891,
+        "coverage": 0.75
+      }
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.13966005665722378,
+        "threshold": 0.21,
+        "precision": 0.20238095238095238,
+        "recall": 0.10661764705882353,
+        "coverage": 0.4117647058823529
+      },
+      "propagated": {
+        "fmax": 0.2811226687817416,
+        "threshold": 0.11,
+        "precision": 0.2850767402179696,
+        "recall": 0.27727678429508695,
+        "coverage": 0.7352941176470589
+      }
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.5171730515191545,
+        "threshold": 0.21,
+        "precision": 0.5576923076923077,
+        "recall": 0.48214285714285715,
+        "coverage": 0.9285714285714286
+      },
+      "propagated": {
+        "fmax": 0.6253156221300326,
+        "threshold": 0.21,
+        "precision": 0.6806887556887558,
+        "recall": 0.5782738095238095,
+        "coverage": 0.9285714285714286
+      }
+    }
+  },
+  "llm_no_tools": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.030769230769230767,
+        "threshold": 0.51,
+        "precision": 0.034482758620689655,
+        "recall": 0.027777777777777776,
+        "coverage": 0.8055555555555556
+      },
+      "propagated": {
+        "fmax": 0.11673028614291348,
+        "threshold": 0.56,
+        "precision": 0.12166492511320098,
+        "recall": 0.11218033509700177,
+        "coverage": 0.8055555555555556
+      }
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.0,
+        "threshold": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "coverage": 0.0
+      },
+      "propagated": {
+        "fmax": 0.058413955107816475,
+        "threshold": 0.56,
+        "precision": 0.1165204678362573,
+        "recall": 0.03897691728574081,
+        "coverage": 0.6470588235294118
+      }
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.07692307692307693,
+        "threshold": 0.41,
+        "precision": 0.2,
+        "recall": 0.047619047619047616,
+        "coverage": 0.35714285714285715
+      },
+      "propagated": {
+        "fmax": 0.1732592635681461,
+        "threshold": 0.41,
+        "precision": 0.35,
+        "recall": 0.11512445887445888,
+        "coverage": 0.35714285714285715
+      }
+    }
+  },
+  "aggregator_only": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.26785919045980966,
+        "threshold": 0.5,
+        "precision": 0.3370851370851371,
+        "recall": 0.2222222222222222,
+        "coverage": 0.25
+      },
+      "propagated": {
+        "fmax": 0.2837358184180001,
+        "threshold": 0.75,
+        "precision": 0.3923398864881949,
+        "recall": 0.2222222222222222,
+        "coverage": 0.25
+      }
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.16931874822465068,
+        "threshold": 0.88,
+        "precision": 0.17761286332714904,
+        "recall": 0.16176470588235295,
+        "coverage": 0.20588235294117646
+      },
+      "propagated": {
+        "fmax": 0.12506482695886106,
+        "threshold": 0.86,
+        "precision": 0.10149381065404908,
+        "recall": 0.16289592760180996,
+        "coverage": 0.20588235294117646
+      }
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.3785211267605634,
+        "threshold": 0.94,
+        "precision": 0.645,
+        "recall": 0.26785714285714285,
+        "coverage": 0.35714285714285715
+      },
+      "propagated": {
+        "fmax": 0.397930614729154,
+        "threshold": 1.0,
+        "precision": 0.7,
+        "recall": 0.2779761904761905,
+        "coverage": 0.35714285714285715
+      }
+    }
+  },
+  "full_agent": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.12962962962962962,
+        "threshold": 0.0,
+        "precision": 0.2916666666666667,
+        "recall": 0.08333333333333333,
+        "coverage": 0.16666666666666666
+      },
+      "propagated": {
+        "fmax": 0.15255849832861917,
+        "threshold": 0.0,
+        "precision": 0.39659090909090905,
+        "recall": 0.09444444444444444,
+        "coverage": 0.16666666666666666
+      }
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.1,
+        "threshold": 0.86,
+        "precision": 0.3333333333333333,
+        "recall": 0.058823529411764705,
+        "coverage": 0.11764705882352941
+      },
+      "propagated": {
+        "fmax": 0.10203820877613036,
+        "threshold": 0.51,
+        "precision": 0.26213786213786217,
+        "recall": 0.06334841628959276,
+        "coverage": 0.14705882352941177
+      }
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.2623906705539359,
+        "threshold": 0.0,
+        "precision": 0.7142857142857143,
+        "recall": 0.16071428571428573,
+        "coverage": 0.25
+      },
+      "propagated": {
+        "fmax": 0.24793388429752064,
+        "threshold": 0.0,
+        "precision": 0.7142857142857143,
+        "recall": 0.15,
+        "coverage": 0.25
+      }
+    }
+  }
+}

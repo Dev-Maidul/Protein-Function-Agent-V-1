@@ -12,6 +12,8 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any
 
+import requests
+
 
 @dataclass
 class Evidence:
@@ -51,6 +53,27 @@ def timed_call(tool: str, query: str, fn, *args, **kwargs) -> Evidence:
             runtime_s=round(time.monotonic() - start, 3),
             error=f"{type(exc).__name__}: {exc}",
         )
+
+
+def get_with_retry(url: str, max_retries: int = 3, base_delay: float = 2.0, **kwargs) -> requests.Response:
+    """GET with retry + exponential backoff on rate-limiting/transient server
+    errors (429/502/503/504) -- found necessary during the Phase 3 full test-set
+    run, where thousands of sequential EBI calls (QuickGO/UniProt) triggered
+    rate-limiting that silently turned into empty results everywhere, not a
+    single clear error. A real 4xx/other failure still raises immediately."""
+    last_exc: Exception | None = None
+    for attempt in range(max_retries):
+        try:
+            resp = requests.get(url, **kwargs)
+            if resp.status_code in (429, 502, 503, 504) and attempt < max_retries - 1:
+                time.sleep(base_delay * (2**attempt))
+                continue
+            return resp
+        except requests.exceptions.RequestException as exc:
+            last_exc = exc
+            if attempt < max_retries - 1:
+                time.sleep(base_delay * (2**attempt))
+    raise last_exc
 
 
 def save_fixture(name: str, payload: Any, fixtures_dir: str | Path = "tests/fixtures") -> Path:
