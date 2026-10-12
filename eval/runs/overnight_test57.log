@@ -1,0 +1,323 @@
+Evaluating on 57 proteins from test_set.json (test set).
+[1/57] A0A072VG05 (384 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/209 [00:00<?, ?it/s]Loading weights: 100%|██████████| 209/209 [00:00<00:00, 8366.35it/s]
+[1mEsmModel LOAD REPORT[0m from: facebook/esm2_t12_35M_UR50D
+Key                         | Status     | 
+----------------------------+------------+-
+lm_head.dense.weight        | UNEXPECTED | 
+lm_head.layer_norm.weight   | UNEXPECTED | 
+lm_head.bias                | UNEXPECTED | 
+lm_head.dense.bias          | UNEXPECTED | 
+esm.embeddings.position_ids | UNEXPECTED | 
+lm_head.layer_norm.bias     | UNEXPECTED | 
+pooler.dense.bias           | MISSING    | 
+pooler.dense.weight         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  full_agent: recovered_from_text (recovered_from_text=True, 1 GO terms)
+[2/57] A0A0F8XYN9 (636 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 0 GO terms)
+[3/57] A0A1D8PPT5 (137 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 3 GO terms)
+[4/57] A0A178U9Y5 (592 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/eval/run_eval.py", line 304, in <module>
+    main()
+    ~~~~^^
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/eval/run_eval.py", line 222, in main
+    terms, report = full_agent(seq, acc, ctx=ctx, ledger=ledger, aggregator_candidates=candidates)
+                    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/eval/baselines.py", line 144, in full_agent
+    report = run.run()
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/agent/loop.py", line 216, in run
+    return self._finish()
+           ~~~~~~~~~~~~^^
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/agent/loop.py", line 225, in _finish
+    report = build_report(label, self.ctx.eval_mode, self.final_answer, self.ledger, token_usage, self.stop_reason)
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/agent/report.py", line 84, in build_report
+    go_terms_kept, go_terms_ungrounded, go_terms_dropped = validate_go_terms(final_answer.get("go_terms", []), ledger)
+                                                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/agent/report.py", line 44, in validate_go_terms
+    ev = quickgo.run(term["go_id"])
+                     ~~~~^^^^^^^^^
+KeyError: 'go_id'
+Evaluating on 57 proteins from test_set.json (test set).
+NOTE: aggregator_only/full_agent restricted to a seeded random subset of 15/57 proteins (seed=7) -- too slow to run on all.
+Resuming from checkpoint: 3 cheap, 3 expensive already done.
+[1/57] A0A072VG05 -- already done, skipping
+[2/57] A0A0F8XYN9 -- already done, skipping
+[3/57] A0A1D8PPT5 -- already done, skipping
+[4/57] A0A178U9Y5 (592 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/209 [00:00<?, ?it/s]Loading weights: 100%|██████████| 209/209 [00:00<00:00, 7422.73it/s]
+[1mEsmModel LOAD REPORT[0m from: facebook/esm2_t12_35M_UR50D
+Key                         | Status     | 
+----------------------------+------------+-
+lm_head.layer_norm.weight   | UNEXPECTED | 
+lm_head.dense.weight        | UNEXPECTED | 
+lm_head.bias                | UNEXPECTED | 
+esm.embeddings.position_ids | UNEXPECTED | 
+lm_head.layer_norm.bias     | UNEXPECTED | 
+lm_head.dense.bias          | UNEXPECTED | 
+pooler.dense.bias           | MISSING    | 
+pooler.dense.weight         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  full_agent: submitted final answer (recovered_from_text=False, 9 GO terms)
+[5/57] A0A0B5AC95 (115 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 2 GO terms)
+[6/57] A0A1D8PMB1 (618 aa) ...
+  excluded 5 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 0 GO terms)
+[7/57] A0A2H1VE33 (332 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 21 GO terms)
+[8/57] A0A1L8GR68 (784 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[9/57] A0A2I1BSW0 (327 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[10/57] A0A060KY90 (630 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 4 GO terms)
+[11/57] A0A1P8AW69 (1019 aa) ...
+  excluded 9 accession(s) (query + close homologs)
+[12/57] A0A1D8PES5 (283 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[13/57] A0A224AM54 (472 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[14/57] A0A179UL48 (362 aa) ...
+  excluded 7 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 7 GO terms)
+[15/57] A0A2K1X4I9 (420 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+[16/57] A0A1V0E492 (559 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[17/57] A0A1D8PFG4 (136 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+[18/57] A0A1B1PF34 (657 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[19/57] A0A0H2XJL0 (246 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+[20/57] A0A087WT01 (109 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[21/57] A0A0C9QKT6 (257 aa) ...
+  excluded 6 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 0 GO terms)
+[22/57] A0A0D3MJQ5 (270 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+[23/57] A0A182BSS4 (102 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[24/57] A0A0G2KIZ8 (968 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 3 GO terms)
+[25/57] A0A0B5AC19 (293 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[26/57] A0A0H2UMY0 (491 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 6 GO terms)
+[27/57] A0A1P8AS03 (605 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+[28/57] A0A1L8FDW4 (619 aa) ...
+  excluded 8 accession(s) (query + close homologs)
+[29/57] A0A0D8BWP6 (302 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+[30/57] A0A1B0GSN8 (89 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[31/57] A0A2H1A5W4 (679 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+[32/57] A0A0P0XXR9 (476 aa) ...
+  excluded 9 accession(s) (query + close homologs)
+[33/57] A0A221J5P3 (387 aa) ...
+  excluded 9 accession(s) (query + close homologs)
+  full_agent: recovered_from_text (recovered_from_text=True, 5 GO terms)
+[34/57] A0A0H2ZM82 (230 aa) ...
+  excluded 5 accession(s) (query + close homologs)
+[35/57] A0A090XBL6 (118 aa) ...
+  excluded 8 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 2 GO terms)
+[36/57] A0A075TRB3 (259 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[37/57] A0A261GRE4 (466 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[38/57] A0A088SG62 (68 aa) ...
+  excluded 3 accession(s) (query + close homologs)
+  full_agent: recovered_from_text (recovered_from_text=True, 1 GO terms)
+[39/57] A0A0H2ZQT7 (269 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[40/57] A0A0H2USG1 (575 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+[41/57] A0A0R6Y3I5 (263 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[42/57] A0A0P1AK67 (132 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+  full_agent: recovered_from_text (recovered_from_text=True, 2 GO terms)
+[43/57] A0A0A1GNF2 (293 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[44/57] A0A1R3RGJ7 (516 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[45/57] A0A2K1JJ00 (701 aa) ...
+  excluded 5 accession(s) (query + close homologs)
+[46/57] A0A0C3VJP4 (495 aa) ...
+  excluded 9 accession(s) (query + close homologs)
+[47/57] A0A287B8J2 (1281 aa) ...
+  excluded 7 accession(s) (query + close homologs)
+[48/57] A0A0B4ZTQ2 (408 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[49/57] A0A2K1J5A5 (709 aa) ...
+  excluded 7 accession(s) (query + close homologs)
+[50/57] A0A1D8PN96 (981 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[51/57] A0A2R6W0K6 (652 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+[52/57] A0A125S9F0 (81 aa) ...
+  excluded 1 accession(s) (query + close homologs)
+[53/57] A0A125S9E6 (67 aa) ...
+  excluded 10 accession(s) (query + close homologs)
+  full_agent: submitted final answer (recovered_from_text=False, 2 GO terms)
+[54/57] A0A1S3YTK9 (567 aa) ...
+  excluded 6 accession(s) (query + close homologs)
+[55/57] A0A1D8PH98 (554 aa) ...
+  excluded 4 accession(s) (query + close homologs)
+[56/57] A0A0H2V760 (400 aa) ...
+  excluded 2 accession(s) (query + close homologs)
+[57/57] A0A0D3QS98 (488 aa) ...
+  excluded 8 accession(s) (query + close homologs)
+
+Building GO ancestor cache (for propagated Fmax) ...
+  fetching ancestors for 1077 new GO IDs (cache had 0) ...
+/opt/anaconda3/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-22842-r8_x0btc'}
+  warnings.warn(
+(eval):1: command not found: setsid
+env: python: No such file or directory
+nohup: python: No such file or directory
+Evaluating on 57 proteins from test_set.json (test set).
+NOTE: aggregator_only/full_agent restricted to a seeded random subset of 15/57 proteins (seed=7) -- too slow to run on all.
+Resuming from checkpoint: 57 cheap, 17 expensive already done.
+[1/57] A0A072VG05 -- already done, skipping
+[2/57] A0A0F8XYN9 -- already done, skipping
+[3/57] A0A1D8PPT5 -- already done, skipping
+[4/57] A0A178U9Y5 -- already done, skipping
+[5/57] A0A0B5AC95 -- already done, skipping
+[6/57] A0A1D8PMB1 -- already done, skipping
+[7/57] A0A2H1VE33 -- already done, skipping
+[8/57] A0A1L8GR68 -- already done, skipping
+[9/57] A0A2I1BSW0 -- already done, skipping
+[10/57] A0A060KY90 -- already done, skipping
+[11/57] A0A1P8AW69 -- already done, skipping
+[12/57] A0A1D8PES5 -- already done, skipping
+[13/57] A0A224AM54 -- already done, skipping
+[14/57] A0A179UL48 -- already done, skipping
+[15/57] A0A2K1X4I9 -- already done, skipping
+[16/57] A0A1V0E492 -- already done, skipping
+[17/57] A0A1D8PFG4 -- already done, skipping
+[18/57] A0A1B1PF34 -- already done, skipping
+[19/57] A0A0H2XJL0 -- already done, skipping
+[20/57] A0A087WT01 -- already done, skipping
+[21/57] A0A0C9QKT6 -- already done, skipping
+[22/57] A0A0D3MJQ5 -- already done, skipping
+[23/57] A0A182BSS4 -- already done, skipping
+[24/57] A0A0G2KIZ8 -- already done, skipping
+[25/57] A0A0B5AC19 -- already done, skipping
+[26/57] A0A0H2UMY0 -- already done, skipping
+[27/57] A0A1P8AS03 -- already done, skipping
+[28/57] A0A1L8FDW4 -- already done, skipping
+[29/57] A0A0D8BWP6 -- already done, skipping
+[30/57] A0A1B0GSN8 -- already done, skipping
+[31/57] A0A2H1A5W4 -- already done, skipping
+[32/57] A0A0P0XXR9 -- already done, skipping
+[33/57] A0A221J5P3 -- already done, skipping
+[34/57] A0A0H2ZM82 -- already done, skipping
+[35/57] A0A090XBL6 -- already done, skipping
+[36/57] A0A075TRB3 -- already done, skipping
+[37/57] A0A261GRE4 -- already done, skipping
+[38/57] A0A088SG62 -- already done, skipping
+[39/57] A0A0H2ZQT7 -- already done, skipping
+[40/57] A0A0H2USG1 -- already done, skipping
+[41/57] A0A0R6Y3I5 -- already done, skipping
+[42/57] A0A0P1AK67 -- already done, skipping
+[43/57] A0A0A1GNF2 -- already done, skipping
+[44/57] A0A1R3RGJ7 -- already done, skipping
+[45/57] A0A2K1JJ00 -- already done, skipping
+[46/57] A0A0C3VJP4 -- already done, skipping
+[47/57] A0A287B8J2 -- already done, skipping
+[48/57] A0A0B4ZTQ2 -- already done, skipping
+[49/57] A0A2K1J5A5 -- already done, skipping
+[50/57] A0A1D8PN96 -- already done, skipping
+[51/57] A0A2R6W0K6 -- already done, skipping
+[52/57] A0A125S9F0 -- already done, skipping
+[53/57] A0A125S9E6 -- already done, skipping
+[54/57] A0A1S3YTK9 -- already done, skipping
+[55/57] A0A1D8PH98 -- already done, skipping
+[56/57] A0A0H2V760 -- already done, skipping
+[57/57] A0A0D3QS98 -- already done, skipping
+
+Building GO ancestor cache (for propagated Fmax) ...
+  fetching ancestors for 1077 new GO IDs (cache had 0) ...
+Computing Fmax (direct + propagated) per method per aspect ...
+Running ESM-2 hubness diagnostic ...
+
+Saved results -> /Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/eval/runs/test_20261012T034443Z
+
+=== Fmax summary (direct | propagated) ===
+
+diamond:
+  molecular_function: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  cellular_component: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+
+protrek:
+  molecular_function: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  cellular_component: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+
+llm_no_tools:
+  molecular_function: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  cellular_component: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+
+aggregator_only:
+  molecular_function: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  cellular_component: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+
+full_agent:
+  molecular_function: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+  cellular_component: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.000 (cov=0.00)
+
+=== Hubness diagnostic (with significance test) ===
+{
+  "hub_hit_rate": null,
+  "hub_hit_rate_95ci": null,
+  "nonhub_hit_rate": null,
+  "nonhub_hit_rate_95ci": null,
+  "odds_ratio": null,
+  "p_value": 1.0,
+  "significant_at_0.05": false,
+  "n_hub": 0,
+  "n_nonhub": 0,
+  "total_neighbours_examined": 0,
+  "note": "hit = at least one of the neighbour's own GO terms overlaps the query's ground truth"
+}
+CAVEAT: small sample (n_hub=0, n_nonhub=0) -- treat the CI/p-value cautiously.
+Statistically significant at p<0.05: False
+
+=== Avg runtime per protein ===
+  diamond: 9.3s avg (n=57)
+  protrek: 0.0s avg (n=57)
+  llm_no_tools: 201.4s avg (n=57)
+  aggregator_only: 223.2s avg (n=17)
+  full_agent: 537.7s avg (n=17)

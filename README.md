@@ -87,9 +87,11 @@ Output is printed and the full trace (evidence ledger, aggregator candidates, LL
 
 Full methodology (dev set vs. held-out test set, leakage control, scoring, hubness diagnostic with significance testing) is in `eval/README.md`. Results are in `docs/RESULTS.md`.
 
-### Status: evaluation complete (held-out 57-protein test set)
+### Status: preliminary results (re-evaluation in progress)
 
 Full numbers, methodology, and an honest account of two pipeline bugs found and fixed mid-run (EBI API rate-limiting silently zeroing out results; a hubness-diagnostic context bug on resumed runs) are in `docs/RESULTS.md`. Headline results, direct-match | CAFA-propagated Fmax:
+
+Note: `aggregator_only` and `full_agent` were evaluated on a 17-protein subset, while the three baselines ran on all 57 proteins, so these rows are not directly comparable. In this run, ProTrek evidence was also missing inside the agent pipeline because of an environment error (`protrek_transfer` itself ran correctly). A same-set re-evaluation with ProTrek fixed is in progress.
 
 | Method (n) | molecular_function | biological_process | cellular_component |
 |---|---|---|---|
@@ -99,7 +101,7 @@ Full numbers, methodology, and an honest account of two pipeline bugs found and 
 | `aggregator_only` (17) | 0.268 \| 0.284 | 0.169 \| 0.125 | 0.379 \| 0.398 |
 | `full_agent` (17) | 0.130 \| 0.153 | 0.100 \| 0.102 | 0.262 \| 0.248 |
 
-`aggregator_only` and `full_agent` ran on a seeded random subset of 17/57 proteins (full detail on why in `docs/RESULTS.md`); the other three ran on all 57. **Notable finding:** the deterministic `aggregator_only` method beats `full_agent` (the LLM review step) on every aspect -- the LLM review currently narrows results rather than improving them, a genuine negative result reported as found, not smoothed over. The hubness diagnostic is now statistically significant (p=0.0202, Fisher exact test, n=570 neighbours): hub-flagged ESM-2 neighbours hit at 11.1% vs. 27.4% for non-hub ones, supporting the aggregator's down-weighting of hub-flagged evidence.
+On this 17-protein subset, the deterministic `aggregator_only` method beats `full_agent` (the LLM review step) on every aspect, but this is preliminary -- the LLM review currently narrows results rather than improving them, a genuine negative result reported as found, not smoothed over, though it needs the same-set re-evaluation above to confirm. The hubness diagnostic is now statistically significant (p=0.0202, Fisher exact test, n=570 neighbours): hub-flagged ESM-2 neighbours hit at 11.1% vs. 27.4% for non-hub ones, supporting the aggregator's down-weighting of hub-flagged evidence.
 
 ## Repository layout
 
@@ -108,8 +110,7 @@ agent/       -- agent loop, evidence pipeline, deterministic aggregator, report 
 tools/       -- one file per external tool, each returning a standard Evidence object
 eval/        -- benchmark sets, leakage control, baselines, metrics, held-out test set
 docs/        -- TOOLS.md, RESULTS.md (this README covers architecture)
-examples/    -- full agent traces for a few proteins
-runs/        -- full trace of every run (<protein>/<timestamp>/)
+runs/        -- full trace of every run (<protein>/<timestamp>/) (local only, not committed)
 tests/       -- unit tests, with real-call fixtures under tests/fixtures/
 ```
 

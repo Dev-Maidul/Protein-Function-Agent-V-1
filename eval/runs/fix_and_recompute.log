@@ -1,0 +1,141 @@
+Re-running protrek_transfer on 57 proteins (retry-safe now) ...
+No lr_scheduler_kwargs provided. The default learning rate is 0.
+No optimizer_kwargs provided. The default optimizer is AdamW.
+[31mSome weights of ParameterList were not initialized from the model checkpoint: ['1.model.esm.rotary_embeddings.inv_freq', '3.model.esm.rotary_embeddings.inv_freq'][0m
+[31mSome weights of the model checkpoint were not used: ['1.model.esm.embeddings.position_ids', '1.model.esm.encoder.layer.0.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.1.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.2.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.3.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.4.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.5.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.6.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.7.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.8.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.9.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.10.attention.self.rotary_embeddings.inv_freq', '1.model.esm.encoder.layer.11.attention.self.rotary_embeddings.inv_freq', '2.model.embeddings.position_ids', '3.model.esm.embeddings.position_ids', '3.model.esm.encoder.layer.0.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.1.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.2.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.3.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.4.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.5.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.6.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.7.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.8.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.9.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.10.attention.self.rotary_embeddings.inv_freq', '3.model.esm.encoder.layer.11.attention.self.rotary_embeddings.inv_freq'][0m
+  [1/57] A0A072VG05: 44 GO terms (23.6s)
+  [2/57] A0A0F8XYN9: 47 GO terms (17.2s)
+  [3/57] A0A1D8PPT5: 28 GO terms (17.2s)
+  [4/57] A0A178U9Y5: 26 GO terms (16.3s)
+  [5/57] A0A0B5AC95: 17 GO terms (15.8s)
+  [6/57] A0A1D8PMB1: 30 GO terms (17.4s)
+  [7/57] A0A2H1VE33: 68 GO terms (17.0s)
+  [8/57] A0A1L8GR68: 81 GO terms (16.9s)
+  [9/57] A0A2I1BSW0: 7 GO terms (16.0s)
+  [10/57] A0A060KY90: 66 GO terms (17.3s)
+  [11/57] A0A1P8AW69: 59 GO terms (16.1s)
+  [12/57] A0A1D8PES5: 34 GO terms (17.1s)
+  [13/57] A0A224AM54: 32 GO terms (16.8s)
+  [14/57] A0A179UL48: 32 GO terms (17.5s)
+  [15/57] A0A2K1X4I9: 35 GO terms (17.2s)
+  [16/57] A0A1V0E492: 24 GO terms (16.7s)
+  [17/57] A0A1D8PFG4: 34 GO terms (17.8s)
+  [18/57] A0A1B1PF34: 19 GO terms (19.3s)
+  [19/57] A0A0H2XJL0: 20 GO terms (16.8s)
+  [20/57] A0A087WT01: 52 GO terms (16.6s)
+  [21/57] A0A0C9QKT6: 37 GO terms (15.7s)
+  [22/57] A0A0D3MJQ5: 37 GO terms (16.0s)
+  [23/57] A0A182BSS4: 23 GO terms (16.0s)
+  [24/57] A0A0G2KIZ8: 78 GO terms (16.8s)
+  [25/57] A0A0B5AC19: 29 GO terms (16.8s)
+  [26/57] A0A0H2UMY0: 29 GO terms (16.8s)
+  [27/57] A0A1P8AS03: 58 GO terms (16.5s)
+  [28/57] A0A1L8FDW4: 132 GO terms (17.8s)
+  [29/57] A0A0D8BWP6: 15 GO terms (17.9s)
+  [30/57] A0A1B0GSN8: 76 GO terms (17.5s)
+  [31/57] A0A2H1A5W4: 54 GO terms (17.7s)
+  [32/57] A0A0P0XXR9: 37 GO terms (16.1s)
+  [33/57] A0A221J5P3: 32 GO terms (15.9s)
+  [34/57] A0A0H2ZM82: 24 GO terms (16.3s)
+  [35/57] A0A090XBL6: 5 GO terms (16.2s)
+  [36/57] A0A075TRB3: 19 GO terms (16.3s)
+  [37/57] A0A261GRE4: 22 GO terms (17.0s)
+  [38/57] A0A088SG62: 5 GO terms (17.2s)
+  [39/57] A0A0H2ZQT7: 39 GO terms (17.5s)
+  [40/57] A0A0H2USG1: 35 GO terms (16.6s)
+  [41/57] A0A0R6Y3I5: 12 GO terms (16.0s)
+  [42/57] A0A0P1AK67: 20 GO terms (15.9s)
+  [43/57] A0A0A1GNF2: 29 GO terms (16.8s)
+  [44/57] A0A1R3RGJ7: 80 GO terms (16.4s)
+  [45/57] A0A2K1JJ00: 144 GO terms (17.9s)
+  [46/57] A0A0C3VJP4: 37 GO terms (18.1s)
+  [47/57] A0A287B8J2: 30 GO terms (16.3s)
+  [48/57] A0A0B4ZTQ2: 33 GO terms (16.7s)
+  [49/57] A0A2K1J5A5: 90 GO terms (16.1s)
+  [50/57] A0A1D8PN96: 48 GO terms (16.4s)
+  [51/57] A0A2R6W0K6: 44 GO terms (16.6s)
+  [52/57] A0A125S9F0: 4 GO terms (16.4s)
+  [53/57] A0A125S9E6: 18 GO terms (15.6s)
+  [54/57] A0A1S3YTK9: 22 GO terms (16.8s)
+  [55/57] A0A1D8PH98: 48 GO terms (16.2s)
+  [56/57] A0A0H2V760: 45 GO terms (16.4s)
+  [57/57] A0A0D3QS98: 87 GO terms (17.4s)
+protrek: 57/57 proteins now have nonzero predictions (was 0 before the fix).
+
+Computing ground truth + ancestor cache ...
+  fetching ancestors for 942 new GO IDs (cache had 1077) ...
+Computing Fmax (direct + propagated) per method per aspect (retry-safe QuickGO now) ...
+Running ESM-2 hubness diagnostic (ctx-rebuild fix applied) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/198 [00:00<?, ?it/s]Loading weights: 100%|██████████| 198/198 [00:00<00:00, 7909.26it/s]
+[transformers] [1mEsmModel LOAD REPORT[0m from: facebook/esm2_t12_35M_UR50D
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+pooler.dense.weight       | MISSING    | 
+pooler.dense.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Saved fixed results -> /Users/a1234/Desktop/All Docs for Master/Task/protein-function-agent/eval/runs/test_20261012T075650Z_fixed
+
+=== Fmax summary (direct | propagated) ===
+
+diamond:
+  molecular_function: direct Fmax=0.358 (cov=0.58)  |  propagated Fmax=0.526 (cov=0.72)
+  biological_process: direct Fmax=0.261 (cov=0.56)  |  propagated Fmax=0.348 (cov=0.68)
+  cellular_component: direct Fmax=0.332 (cov=0.50)  |  propagated Fmax=0.420 (cov=0.50)
+
+protrek:
+  molecular_function: direct Fmax=0.241 (cov=0.44)  |  propagated Fmax=0.327 (cov=0.75)
+  biological_process: direct Fmax=0.140 (cov=0.41)  |  propagated Fmax=0.281 (cov=0.74)
+  cellular_component: direct Fmax=0.517 (cov=0.93)  |  propagated Fmax=0.625 (cov=0.93)
+
+llm_no_tools:
+  molecular_function: direct Fmax=0.031 (cov=0.81)  |  propagated Fmax=0.117 (cov=0.81)
+  biological_process: direct Fmax=0.000 (cov=0.00)  |  propagated Fmax=0.058 (cov=0.65)
+  cellular_component: direct Fmax=0.077 (cov=0.36)  |  propagated Fmax=0.173 (cov=0.36)
+
+aggregator_only:
+  molecular_function: direct Fmax=0.268 (cov=0.25)  |  propagated Fmax=0.284 (cov=0.25)
+  biological_process: direct Fmax=0.169 (cov=0.21)  |  propagated Fmax=0.125 (cov=0.21)
+  cellular_component: direct Fmax=0.379 (cov=0.36)  |  propagated Fmax=0.398 (cov=0.36)
+
+full_agent:
+  molecular_function: direct Fmax=0.130 (cov=0.17)  |  propagated Fmax=0.153 (cov=0.17)
+  biological_process: direct Fmax=0.100 (cov=0.12)  |  propagated Fmax=0.102 (cov=0.15)
+  cellular_component: direct Fmax=0.262 (cov=0.25)  |  propagated Fmax=0.248 (cov=0.25)
+
+=== Hubness diagnostic ===
+{
+  "hub_hit_rate": 0.1111111111111111,
+  "hub_hit_rate_95ci": [
+    0.04840400437825557,
+    0.23499375490890945
+  ],
+  "nonhub_hit_rate": 0.2742857142857143,
+  "nonhub_hit_rate_95ci": [
+    0.23786426819831463,
+    0.3139864182832329
+  ],
+  "odds_ratio": 0.3307291666666667,
+  "p_value": 0.020177123533309756,
+  "significant_at_0.05": true,
+  "n_hub": 45,
+  "n_nonhub": 525,
+  "total_neighbours_examined": 570,
+  "note": "hit = at least one of the neighbour's own GO terms overlaps the query's ground truth"
+}
+
+=== Avg runtime per protein ===
+  diamond: 9.3s avg (n=57)
+  protrek: 16.9s avg (n=57)
+  llm_no_tools: 201.4s avg (n=57)
+  aggregator_only: 223.2s avg (n=17)
+  full_agent: 537.7s avg (n=17)

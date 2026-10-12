@@ -1,10 +1,12 @@
 # Phase 3 Results
 
-> **⚠️ The numbers in the "Superseded" section at the bottom of this file are OUTDATED and must not be cited.** They come from the 20-protein DEV set (`eval/benchmark.json`), before the root-cause fix described in `eval/README.md` ("The root-cause fix: closing the evidence gap"). Kept only as the historical record of how that bug was found. **The numbers below are the current, trustworthy ones** -- held-out 57-protein TEST set, post-fix, read-only pass.
+> **⚠️ The numbers in the "Superseded" section at the bottom of this file are OUTDATED and must not be cited.** They come from the 20-protein DEV set (`eval/benchmark.json`), before the root-cause fix described in `eval/README.md` ("The root-cause fix: closing the evidence gap"). Kept only as the historical record of how that bug was found. **The numbers below are the current preliminary results** -- held-out 57-protein TEST set, post-fix, read-only pass.
 
 ---
 
 ## Current results (held-out 57-protein test set, `eval/test_set.json`)
+
+Note: `aggregator_only` and `full_agent` were evaluated on a 17-protein subset, while the three baselines ran on all 57 proteins, so these rows are not directly comparable. In this run, ProTrek evidence was also missing inside the agent pipeline because of an environment error (`protrek_transfer` itself ran correctly). A same-set re-evaluation with ProTrek fixed is in progress.
 
 Raw data: `eval/runs/test_20261012T075650Z_fixed/`. Zero overlap with the 20-protein dev set (see `eval/README.md` for the sampling procedure). `diamond_transfer`, `protrek_transfer`, and `llm_no_tools` ran on all 57 proteins; `aggregator_only` and `full_agent` share an expensive evidence-gathering pipeline (~9 min/protein on this CPU-only hardware) and were restricted to a seeded random subset -- `--expensive-limit 15` (seed=7) plus 2 proteins already completed before that limit was set in a resumed run, for **17 proteins total**, reported plainly here, not silently.
 
