@@ -1,7 +1,6 @@
 .venv/
 __pycache__/
 *.pyc
-.env
 runs/*/
 !runs/.gitkeep
 *.egg-info/
@@ -20,3 +19,5 @@ weights/
 # Dev-facing instructions for Claude Code (in Bengali) -- not for the public
 # repo / the professor; kept locally only.
 
+config.bat
+node_modules
