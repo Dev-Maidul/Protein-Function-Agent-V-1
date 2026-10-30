@@ -29,6 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from agent.context import AgentContext
+from agent.run_metadata import capture_run_metadata
 from eval.baselines import aggregator_only_from_candidates, diamond_transfer, full_agent, gather_once, llm_no_tools, protrek_transfer
 from eval.metrics import build_ancestor_cache, fmax_both
 from eval.stats import compare_hit_rates
@@ -288,6 +289,7 @@ def main() -> None:
     (run_dir / "hubness_diagnostic.json").write_text(json.dumps(hubness_diagnostic, indent=2, default=str))
     (run_dir / "runtimes.json").write_text(json.dumps(runtimes, indent=2, default=str))
     (run_dir / "run_config.json").write_text(json.dumps(vars(args), indent=2, default=str))
+    (run_dir / "metadata.json").write_text(json.dumps(capture_run_metadata(), indent=2, default=str))
     CHECKPOINT_PATH.unlink(missing_ok=True)
 
     print(f"\nSaved results -> {run_dir}")

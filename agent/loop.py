@@ -35,6 +35,7 @@ from agent.context import AgentContext
 from agent.evidence_pipeline import gather_evidence
 from agent.llm_client import LLMClient
 from agent.report import build_report, render_markdown
+from agent.run_metadata import capture_run_metadata
 from agent.tool_schemas import SUBMIT_FINAL_ANSWER_SCHEMA
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -231,5 +232,6 @@ class AgentRun:
         (run_dir / "trace.json").write_text(json.dumps(self.trace, indent=2, default=str))
         (run_dir / "report.json").write_text(json.dumps(report, indent=2, default=str))
         (run_dir / "report.md").write_text(render_markdown(report))
+        (run_dir / "metadata.json").write_text(json.dumps(capture_run_metadata(), indent=2, default=str))
         report["run_dir"] = str(run_dir)
         return report

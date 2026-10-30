@@ -42,16 +42,20 @@ def precision_recall_at_threshold(
     ground_truth: dict[str, set[str]],
     threshold: float,
     ancestor_cache: dict[str, set[str]] | None = None,
+    protein_ids: list[str] | None = None,
 ) -> tuple[float, float, int]:
     """predictions: protein_id -> [{"go_id", "confidence"}, ...] (should
     already be filtered to one GO aspect by the caller).
     ground_truth: protein_id -> set of true GO IDs for that aspect.
     If ancestor_cache is given, both sides are expanded (true-path rule,
     propagated Fmax); otherwise this is direct-term matching.
+    protein_ids, if given, iterates this list instead of ground_truth.keys()
+    -- lets a bootstrap resample (with repeats) reuse this function unchanged.
     Returns (macro_precision, macro_recall, n_proteins_with_predictions)."""
     precisions, recalls = [], []
     n_with_predictions = 0
-    for protein_id, true_terms in ground_truth.items():
+    for protein_id in (protein_ids if protein_ids is not None else list(ground_truth.keys())):
+        true_terms = ground_truth.get(protein_id, set())
         if not true_terms:
             continue
         preds = predictions.get(protein_id, [])
@@ -79,13 +83,15 @@ def fmax(
     ground_truth: dict[str, set[str]],
     thresholds: list[float] | None = None,
     ancestor_cache: dict[str, set[str]] | None = None,
+    protein_ids: list[str] | None = None,
 ) -> dict:
     thresholds = thresholds or [round(i * 0.01, 2) for i in range(0, 101)]
     best = {"fmax": 0.0, "threshold": 0.0, "precision": 0.0, "recall": 0.0, "coverage": 0.0}
-    n_proteins = len([p for p, t in ground_truth.items() if t])
+    ids = protein_ids if protein_ids is not None else list(ground_truth.keys())
+    n_proteins = len([p for p in ids if ground_truth.get(p)])
 
     for tau in thresholds:
-        p, r, n_with_pred = precision_recall_at_threshold(predictions, ground_truth, tau, ancestor_cache)
+        p, r, n_with_pred = precision_recall_at_threshold(predictions, ground_truth, tau, ancestor_cache, protein_ids=ids)
         f = 0.0 if p + r == 0 else 2 * p * r / (p + r)
         if f > best["fmax"]:
             best = {
@@ -96,6 +102,34 @@ def fmax(
                 "coverage": n_with_pred / n_proteins if n_proteins else 0.0,
             }
     return best
+
+
+def fmax_bootstrap_ci(
+    predictions: dict[str, list[dict]],
+    ground_truth: dict[str, set[str]],
+    ancestor_cache: dict[str, set[str]] | None = None,
+    thresholds: list[float] | None = None,
+    n_boot: int = 1000,
+    seed: int = 42,
+) -> tuple[float, float]:
+    """95% bootstrap CI for Fmax, resampling PROTEINS with replacement (not
+    GO terms) -- the standard non-parametric bootstrap for a protein-centric
+    metric. Each resample re-optimizes its own threshold (a full bootstrap,
+    not just resampling around the point estimate's fixed threshold)."""
+    import random
+
+    ids = [p for p in ground_truth if ground_truth[p]]
+    if not ids:
+        return (0.0, 0.0)
+    rng = random.Random(seed)
+    scores = []
+    for _ in range(n_boot):
+        resample = rng.choices(ids, k=len(ids))
+        scores.append(fmax(predictions, ground_truth, thresholds, ancestor_cache, protein_ids=resample)["fmax"])
+    scores.sort()
+    lo_idx = int(0.025 * n_boot)
+    hi_idx = min(n_boot - 1, int(0.975 * n_boot))
+    return (scores[lo_idx], scores[hi_idx])
 
 
 def fmax_both(
