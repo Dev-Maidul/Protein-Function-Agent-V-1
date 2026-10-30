@@ -1,6 +1,8 @@
 import numpy as np
+import pytest
 from unittest.mock import patch
 
+from tests.conftest import load_fixture_json
 from tools import protrek
 
 
@@ -60,3 +62,43 @@ def test_protrek_missing_cache_becomes_error_not_exception(tmp_path):
     ev = protrek.run("FAKESEQ", cache_path=missing_cache, device="cpu")
 
     assert ev.error is not None
+
+
+@pytest.mark.skipif(
+    not protrek.DEFAULT_WEIGHTS_DIR.exists() or not protrek.DEFAULT_CACHE_PATH.exists(),
+    reason="real ProTrek weights/text-embedding cache not present in this environment",
+)
+def test_protrek_real_environment_loads_and_matches_fixture():
+    """Unlike every other test in this file, this one does NOT mock
+    _load_model/_load_text_cache/_apply_monkeypatches -- it exercises the
+    real import chain (torch, transformers, torchmetrics, pytorch-lightning,
+    plus vendor/ProTrek's own faiss/pandas/sklearn/biopython/omegaconf/etc.
+    imports) end to end. This is the test that would have caught the
+    environment bug found 2026-10-29: the project's actual interpreter
+    (previously /opt/anaconda3/bin/python3, no dedicated .venv) was missing
+    torchmetrics and several of vendor/ProTrek's own transitive imports, so
+    every full_agent/aggregator_only run silently lost ProTrek evidence
+    (tools/evidence.py's timed_call swallows the ImportError into
+    Evidence.error instead of crashing) while the mocked tests above kept
+    passing and the standalone protrek_transfer baseline worked fine under a
+    different, borrowed environment -- see docs/RESULTS.md and the
+    requirements.txt comment above faiss-cpu for the full writeup.
+
+    Real top-1 result is compared against tests/fixtures/protrek_top10_p53.json
+    (captured from an earlier real run) -- same top accession (allowing the
+    score to differ slightly, since the fixture's query sequence has one
+    single-residue difference from the one used here)."""
+    fixture = load_fixture_json("protrek_top10_p53.json")
+    sequence = (
+        "MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPVPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSS"
+        "VPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQH"
+        "LIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLR"
+        "KKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKT"
+        "EGPDSD"
+    )
+
+    ev = protrek.run(sequence, top_k=10)
+
+    assert ev.error is None
+    assert ev.raw_scores["ranked"]
+    assert ev.raw_scores["ranked"][0]["accession"] == fixture["raw_scores"]["ranked"][0]["accession"]

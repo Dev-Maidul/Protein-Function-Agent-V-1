@@ -14,6 +14,29 @@ torch==2.14.0
 transformers==5.17.0
 torchmetrics==1.9.0
 pytorch-lightning==2.6.6
+# The rest of this block is NOT imported by tools/protrek.py's own code, but
+# vendor/ProTrek/model/ProTrek/protrek_trimodal_model.py (the vendored repo
+# code it calls into) imports all of these at module level, so they're
+# required just to import that module, even though this project's own
+# retrieval logic (cosine-similarity top-k over a cached embedding matrix)
+# never calls into faiss/sklearn/biopython directly. Found and pinned by
+# diffing `pip list` against a sibling project's venv where ProTrek was
+# already verified working, since this project previously had no single
+# environment with ProTrek's dependencies fully installed -- see docs/TOOLS.md.
+faiss-cpu==1.15.0
+pandas==3.0.5
+scikit-learn==1.9.1
+biopython==1.88
+omegaconf==2.3.1
+easydict==1.13
+tabulate==0.10.0
+joblib==1.6.0
+threadpoolctl==3.6.0
+antlr4-python3-runtime==4.9.3
+cloudpickle==3.1.2
+dill==0.4.1
+multiprocess==0.70.19
+narwhals==2.26.0
 
 # tools/esm2_knn.py + tools/build_esm2_index.py -- verified working against
 # the newer torch/transformers already installed in this project's base env
