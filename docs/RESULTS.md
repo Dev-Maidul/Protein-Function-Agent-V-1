@@ -1,6 +1,6 @@
 # Phase 3 Results
 
-> **⚠️ The numbers in the "Superseded" section at the bottom of this file are OUTDATED and must not be cited.** They come from the 20-protein DEV set (`eval/benchmark.json`), before the root-cause fix described in `eval/README.md` ("The root-cause fix: closing the evidence gap"). Kept only as the historical record of how that bug was found. **The numbers below are the current, trustworthy ones** -- held-out 57-protein TEST set, post-fix, read-only pass.
+> **⚠️ The numbers in the "Superseded" section at the bottom of this file are OUTDATED and must not be cited.** They come from the 20-protein DEV set (`eval/benchmark.json`), before the root-cause fix described in `eval/README.md` ("The root-cause fix: closing the evidence gap"). Kept only as the historical record of how that bug was found. **The numbers below are the current preliminary results** -- held-out 57-protein TEST set, post-fix, read-only pass.
 
 ---
 
