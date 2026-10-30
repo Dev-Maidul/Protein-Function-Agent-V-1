@@ -1,0 +1,322 @@
+{
+  "diamond_transfer": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.3849386551943913,
+        "threshold": 0.41,
+        "precision": 0.41833333333333333,
+        "recall": 0.3564814814814815,
+        "coverage": 0.5555555555555556,
+        "ci95": [
+          0.2633053221288515,
+          0.5229447373559851
+        ]
+      },
+      "propagated": {
+        "fmax": 0.5717503083050025,
+        "threshold": 0.0,
+        "precision": 0.5291317982694624,
+        "recall": 0.6218355718355718,
+        "coverage": 0.8055555555555556,
+        "ci95": [
+          0.4523167009791072,
+          0.6757371361833199
+        ]
+      },
+      "n_proteins_with_ground_truth": 36,
+      "n_with_at_least_one_prediction": 29
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.23334322232935303,
+        "threshold": 0.34,
+        "precision": 0.2613095238095238,
+        "recall": 0.2107843137254902,
+        "coverage": 0.5882352941176471,
+        "ci95": [
+          0.10813823857302118,
+          0.38413606040612863
+        ]
+      },
+      "propagated": {
+        "fmax": 0.3532402323902238,
+        "threshold": 0.34,
+        "precision": 0.407364423016597,
+        "recall": 0.3118116009796467,
+        "coverage": 0.5882352941176471,
+        "ci95": [
+          0.22408266054481477,
+          0.49498486529275215
+        ]
+      },
+      "n_proteins_with_ground_truth": 34,
+      "n_with_at_least_one_prediction": 25
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.3858397689088015,
+        "threshold": 0.0,
+        "precision": 0.41955128205128206,
+        "recall": 0.35714285714285715,
+        "coverage": 0.6428571428571429,
+        "ci95": [
+          0.22400060114217013,
+          0.5471628930241085
+        ]
+      },
+      "propagated": {
+        "fmax": 0.4654344533862873,
+        "threshold": 0.0,
+        "precision": 0.5179030523776648,
+        "recall": 0.4226190476190476,
+        "coverage": 0.6428571428571429,
+        "ci95": [
+          0.3113470611901426,
+          0.6236894374224915
+        ]
+      },
+      "n_proteins_with_ground_truth": 28,
+      "n_with_at_least_one_prediction": 18
+    }
+  },
+  "protrek_transfer": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.2184757823017116,
+        "threshold": 0.11,
+        "precision": 0.18733333333333335,
+        "recall": 0.26203703703703707,
+        "coverage": 0.6944444444444444,
+        "ci95": [
+          0.12359550561797755,
+          0.347857876360649
+        ]
+      },
+      "propagated": {
+        "fmax": 0.33590987119750887,
+        "threshold": 0.11,
+        "precision": 0.3068680798455725,
+        "recall": 0.3710232668566002,
+        "coverage": 0.6944444444444444,
+        "ci95": [
+          0.2277093713510817,
+          0.44491585115077076
+        ]
+      },
+      "n_proteins_with_ground_truth": 36,
+      "n_with_at_least_one_prediction": 36
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.13157894736842107,
+        "threshold": 0.41,
+        "precision": 0.625,
+        "recall": 0.07352941176470588,
+        "coverage": 0.11764705882352941,
+        "ci95": [
+          0.05555555555555555,
+          0.269811320754717
+        ]
+      },
+      "propagated": {
+        "fmax": 0.2688784641934136,
+        "threshold": 0.11,
+        "precision": 0.27439746646268387,
+        "recall": 0.2635770938926102,
+        "coverage": 0.7058823529411765,
+        "ci95": [
+          0.15906078873368024,
+          0.38743392502830337
+        ]
+      },
+      "n_proteins_with_ground_truth": 34,
+      "n_with_at_least_one_prediction": 33
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.5195482189400522,
+        "threshold": 0.21,
+        "precision": 0.5897435897435898,
+        "recall": 0.4642857142857143,
+        "coverage": 0.9285714285714286,
+        "ci95": [
+          0.37023914968999116,
+          0.6829581993569133
+        ]
+      },
+      "propagated": {
+        "fmax": 0.6123774574162247,
+        "threshold": 0.21,
+        "precision": 0.6883810633810634,
+        "recall": 0.5514880952380953,
+        "coverage": 0.9285714285714286,
+        "ci95": [
+          0.4933186605879578,
+          0.7533823965559941
+        ]
+      },
+      "n_proteins_with_ground_truth": 28,
+      "n_with_at_least_one_prediction": 28
+    }
+  },
+  "llm_no_tools": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.05128205128205128,
+        "threshold": 0.86,
+        "precision": 0.3333333333333333,
+        "recall": 0.027777777777777776,
+        "coverage": 0.08333333333333333,
+        "ci95": [
+          0.0,
+          0.15384615384615385
+        ]
+      },
+      "propagated": {
+        "fmax": 0.1832333724964334,
+        "threshold": 0.31,
+        "precision": 0.17132536700110057,
+        "recall": 0.19692036358703024,
+        "coverage": 0.7777777777777778,
+        "ci95": [
+          0.11233412816984867,
+          0.2750668397929248
+        ]
+      },
+      "n_proteins_with_ground_truth": 36,
+      "n_with_at_least_one_prediction": 28
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.0,
+        "threshold": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "coverage": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "propagated": {
+        "fmax": 0.08201115062145888,
+        "threshold": 0.41,
+        "precision": 0.12432983682983684,
+        "recall": 0.06118525858554997,
+        "coverage": 0.6470588235294118,
+        "ci95": [
+          0.037397831453519305,
+          0.13536154502500347
+        ]
+      },
+      "n_proteins_with_ground_truth": 34,
+      "n_with_at_least_one_prediction": 24
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.045454545454545456,
+        "threshold": 0.61,
+        "precision": 0.0625,
+        "recall": 0.03571428571428571,
+        "coverage": 0.2857142857142857,
+        "ci95": [
+          0.0,
+          0.13043478260869565
+        ]
+      },
+      "propagated": {
+        "fmax": 0.19179823387744183,
+        "threshold": 0.0,
+        "precision": 0.30500000000000005,
+        "recall": 0.13988095238095238,
+        "coverage": 0.35714285714285715,
+        "ci95": [
+          0.0662739322533137,
+          0.3204594572960858
+        ]
+      },
+      "n_proteins_with_ground_truth": 28,
+      "n_with_at_least_one_prediction": 10
+    }
+  },
+  "aggregator_only": {
+    "molecular_function": {
+      "direct": {
+        "fmax": 0.3427919958486544,
+        "threshold": 0.91,
+        "precision": 0.23920372556736194,
+        "recall": 0.6046296296296296,
+        "coverage": 0.9166666666666666,
+        "ci95": [
+          0.25958702064896755,
+          0.4575378160293262
+        ]
+      },
+      "propagated": {
+        "fmax": 0.5446504046501511,
+        "threshold": 0.91,
+        "precision": 0.44465887510402863,
+        "recall": 0.702659069325736,
+        "coverage": 0.9166666666666666,
+        "ci95": [
+          0.4412882319482786,
+          0.6606104842964537
+        ]
+      },
+      "n_proteins_with_ground_truth": 36,
+      "n_with_at_least_one_prediction": 36
+    },
+    "biological_process": {
+      "direct": {
+        "fmax": 0.22015553057293774,
+        "threshold": 1.0,
+        "precision": 0.16234410430839002,
+        "recall": 0.34191176470588236,
+        "coverage": 0.8235294117647058,
+        "ci95": [
+          0.13748150058508912,
+          0.3196363239228963
+        ]
+      },
+      "propagated": {
+        "fmax": 0.28045297859546253,
+        "threshold": 0.9,
+        "precision": 0.21359776991796062,
+        "recall": 0.4082260135604343,
+        "coverage": 0.8235294117647058,
+        "ci95": [
+          0.19627670791398646,
+          0.3987244558729621
+        ]
+      },
+      "n_proteins_with_ground_truth": 34,
+      "n_with_at_least_one_prediction": 34
+    },
+    "cellular_component": {
+      "direct": {
+        "fmax": 0.5314322502923321,
+        "threshold": 0.81,
+        "precision": 0.45292742237186684,
+        "recall": 0.6428571428571429,
+        "coverage": 0.9642857142857143,
+        "ci95": [
+          0.39215177205868473,
+          0.6726335674852815
+        ]
+      },
+      "propagated": {
+        "fmax": 0.6206334706816852,
+        "threshold": 0.81,
+        "precision": 0.537639175435873,
+        "recall": 0.7339285714285715,
+        "coverage": 0.9642857142857143,
+        "ci95": [
+          0.5015154780831987,
+          0.756557232724398
+        ]
+      },
+      "n_proteins_with_ground_truth": 28,
+      "n_with_at_least_one_prediction": 28
+    }
+  }
+}
