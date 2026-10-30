@@ -21,3 +21,5 @@ weights/
 # Dev-facing instructions for Claude Code (in Bengali) -- not for the public
 # repo / the professor; kept locally only.
 
+config.bat
+node_modules

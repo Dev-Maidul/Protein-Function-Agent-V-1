@@ -110,7 +110,7 @@ agent/       -- agent loop, evidence pipeline, deterministic aggregator, report 
 tools/       -- one file per external tool, each returning a standard Evidence object
 eval/        -- benchmark sets, leakage control, baselines, metrics, held-out test set
 docs/        -- TOOLS.md, RESULTS.md (this README covers architecture)
-runs/        -- full trace of every run (<protein>/<timestamp>/)
+runs/        -- full trace of every run (<protein>/<timestamp>/) (local only, not committed)
 tests/       -- unit tests, with real-call fixtures under tests/fixtures/
 ```
 
