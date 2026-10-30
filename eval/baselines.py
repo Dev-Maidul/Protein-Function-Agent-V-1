@@ -33,7 +33,16 @@ from tools import protrek, uniprot
 def diamond_transfer(sequence: str, ctx: AgentContext, top_n: int = 10) -> list[dict]:
     from tools import diamond_blast
 
-    ev = diamond_blast.run(sequence, query_id=ctx.query_accession or "query", top_n=top_n)
+    # exclude_accessions must be passed here (not just used to post-filter
+    # below) -- tools/diamond_blast.py's own --max-target-seqs is sized from
+    # it (fetch_n = top_n + len(exclude_accessions)), so DIAMOND is asked for
+    # enough extra hits to still have top_n candidates left after exclusion.
+    # Found 2026-10-30 alongside the same cap bug in agent/context.py's
+    # build_exclusions(): without this, a protein with many close homologs
+    # (e.g. p53) could have its entire top_n window consist of now-excluded
+    # entries, silently returning zero predictions instead of the next-best
+    # non-excluded hit.
+    ev = diamond_blast.run(sequence, query_id=ctx.query_accession or "query", top_n=top_n, exclude_accessions=ctx.exclude_accessions or None)
     if ev.error:
         return []
     hits = [h for h in ev.raw_scores.get("hits", []) if h["uniprot_accession"] not in ctx.exclude_accessions]

@@ -1,0 +1,3 @@
+Q00000	sp|Q00000|FAKE_HUMAN	100	50	0	0	1	50	1	50	1.00e-30	100	sp|Q00000|FAKE_HUMAN Synthetic test protein (self-hit) OS=Homo sapiens OX=9606 GN=FAKE1 PE=1 SV=1
+Q00000	sp|A11111|FAKE_MOUSE	70	50	15	0	1	50	1	50	1.00e-20	80	sp|A11111|FAKE_MOUSE Synthetic test homolog (70% identity) OS=Mus musculus OX=10090 GN=Fake1 PE=1 SV=1
+Q00000	sp|B22222|FAKE_YEAST	30	50	35	0	1	50	1	50	1.00e-05	40	sp|B22222|FAKE_YEAST Synthetic test distant hit (30% identity) OS=Saccharomyces cerevisiae OX=4932 GN=FAKE1 PE=1 SV=1
